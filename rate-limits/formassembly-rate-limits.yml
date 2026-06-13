@@ -1,0 +1,39 @@
+name: FormAssembly API Rate Limits
+description: FormAssembly does not publish explicit numeric rate limits in their public API documentation. The REST API uses OAuth2 bearer tokens for authentication and is available across all plan tiers. Submission volume is described as unlimited on all current Atlas plans. Rate limiting details, if any, are enforced at the infrastructure level and may be addressed in enterprise support agreements. Access token lifespan is 10 years with refresh token support.
+specificationVersion: '0.1'
+limits:
+  - name: API Access Token Lifespan
+    description: OAuth2 access tokens issued by FormAssembly are valid for 10 years. Refresh tokens are supported for token renewal.
+    unit: years
+    limit: 10
+    scope: token
+
+  - name: Submission Volume
+    description: FormAssembly Atlas plans (Explorer, Team, Enterprise, Gov Cloud) offer unlimited form submissions with no documented per-submission rate cap. Historical plans had submission limits with overage fees of $0.10-$0.50 per submission, but current Atlas plans describe submissions as unlimited.
+    unit: submissions
+    limit: unlimited
+    scope: account
+
+  - name: API Requests
+    description: No explicit numeric rate limits on API requests are documented in FormAssembly's public documentation or GitHub repository. Enterprise customers should consult their account agreement for any infrastructure-level throttling policies.
+    unit: requests
+    limit: undocumented
+    scope: account
+
+  - name: Active Workflows
+    description: The Explorer plan limits active workflows to 3. Team, Enterprise, and Gov Cloud plans support unlimited active workflows. Workflows may trigger API-connected connector operations.
+    unit: workflows
+    limit: 3
+    scope: account
+    plans:
+      - Atlas Explorer
+    note: Unlimited on Team, Enterprise, and Gov Cloud plans
+
+notes:
+  - FormAssembly does not publish rate limit headers or documented throttling tiers in their public API reference.
+  - Enterprise and Gov Cloud customers may have custom SLA terms covering API throughput and concurrency.
+  - The Developer Sandbox environment (developer.formassembly.com) may impose separate limits for testing purposes.
+  - For definitive rate limit details, contact FormAssembly support or review your enterprise agreement.
+contact:
+  - url: https://www.formassembly.com/support/
+  - url: https://help.formassembly.com/help/working-with-the-formassembly-api

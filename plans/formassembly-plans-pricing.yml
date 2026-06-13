@@ -1,0 +1,76 @@
+name: FormAssembly Plans and Pricing
+description: FormAssembly offers four plan tiers under the Atlas platform, targeting individuals, small businesses, enterprises, and government agencies. All plans include unlimited forms and responses. The REST API is available across all plans. Higher tiers unlock advanced compliance features, multi-user access, Salesforce integrations, and government-grade FedRAMP authorization.
+specificationVersion: '0.1'
+plans:
+  - name: Atlas Explorer
+    description: Entry-level plan for individuals and small projects starting with data collection. Includes core form building, one standard user, three active workflows, basic document generation, and single-signer e-signatures. API access is included.
+    url: https://www.formassembly.com/pricing/
+    type: freemium
+    features:
+      - Unlimited forms and responses
+      - 1 standard user
+      - 3 active workflows
+      - Basic document generation (single signer)
+      - Single-signer e-signatures
+      - REST API access
+      - Custom domain (add-on)
+      - Integrations (add-on)
+    limitations:
+      - No HIPAA compliance
+      - No custom HTML/CSS/JS
+      - No multi-signer e-signatures
+      - Limited workflows
+
+  - name: Atlas Team
+    description: Mid-tier plan for workgroups and small businesses. Labeled as "Best Business Value." Includes three standard users plus five limited users, unlimited workflows, multi-signer e-signatures, custom domain, and custom HTML/CSS/JS. Salesforce and other integrations included.
+    url: https://www.formassembly.com/pricing/
+    type: paid
+    features:
+      - Unlimited forms and responses
+      - 3 standard users + 5 limited users
+      - Unlimited active workflows
+      - Customizable document generation (multi-signer)
+      - Multi-signer e-signatures
+      - REST API access
+      - Custom domain included
+      - Custom HTML/CSS/JS
+      - Salesforce and other integrations
+    limitations:
+      - No HIPAA compliance or BAA
+
+  - name: Atlas Enterprise
+    description: Enterprise plan for larger organizations requiring advanced security, compliance, and multi-team support. Includes HIPAA compliance with BAA, five standard users plus ten limited users, field-level encryption, and all platform features. Pricing is custom-quoted and typically ranges from $800 to $1,500+ per month or $34,728+ annually.
+    url: https://www.formassembly.com/pricing/
+    type: enterprise
+    features:
+      - Unlimited forms and responses
+      - 5 standard users + 10 limited users
+      - Unlimited active workflows
+      - Customizable document generation (multi-signer)
+      - Multi-signer e-signatures
+      - REST API access (admin endpoints included)
+      - Custom domain included
+      - Custom HTML/CSS/JS
+      - HIPAA compliance with BAA
+      - Field-level encryption
+      - Advanced security controls
+      - Salesforce and other integrations
+      - Dedicated support
+
+  - name: Gov Cloud
+    description: Government-specific plan hosted in a FedRAMP-authorized High-Impact environment. Designed for U.S. federal, state, and local government agencies. Includes all enterprise features plus FedRAMP authorization and government-grade security controls. Custom pricing.
+    url: https://www.formassembly.com/pricing/
+    type: enterprise
+    features:
+      - Unlimited forms and responses
+      - 5 standard users + 10 limited users
+      - Unlimited active workflows
+      - Customizable document generation (multi-signer)
+      - Multi-signer e-signatures
+      - REST API access
+      - Custom domain included
+      - Custom HTML/CSS/JS
+      - HIPAA compliance
+      - FedRAMP-authorized (High-Impact level)
+      - Government-grade security controls
+      - Salesforce and other integrations

@@ -1,0 +1,70 @@
+aid: formassembly
+name: FormAssembly
+description: FormAssembly is an enterprise form and data collection platform with a REST API for managing forms, exporting submission data, handling Salesforce integrations, and building compliant data collection workflows. The API supports OAuth2 authentication and enables programmatic access to forms, responses, themes, connectors, and account components across cloud, enterprise, and government deployment environments.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/formassembly/refs/heads/main/apis.yml
+created: 2026-06-13
+modified: 2026-06-13
+specificationVersion: '0.19'
+tags:
+  - Forms
+  - Data Collection
+  - Salesforce
+  - Enterprise
+  - HIPAA
+  - Compliance
+  - Government
+  - FedRAMP
+  - Workflows
+  - E-Signatures
+apis:
+  - aid: formassembly:formassembly-api
+    name: FormAssembly REST API
+    description: REST API for managing FormAssembly forms, responses, themes, connectors, and account data. Supports JSON, XML, CSV, and ZIP response formats. OAuth2 authentication is required for all requests. Endpoints vary by deployment edition including Developer Sandbox, FormAssembly.com cloud, and self-hosted Enterprise instances.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://help.formassembly.com/help/working-with-the-formassembly-api
+    baseURL: https://app.formassembly.com/api_v1
+    tags:
+      - Forms
+      - Responses
+      - Connectors
+      - Themes
+      - OAuth2
+      - REST
+    properties:
+      - type: Documentation
+        url: https://help.formassembly.com/help/working-with-the-formassembly-api
+      - type: GitHubRepository
+        url: https://github.com/FormAssembly/formassembly-api
+      - type: PostmanCollection
+        url: https://www.postman.com/hayleyj1/my-workspace/collection/ot30hq0/formassembly-api
+    contact:
+      - FN: FormAssembly Developer Hub
+        url: https://developer.formassembly.com/
+common:
+  - type: Website
+    url: https://www.formassembly.com/
+  - type: Documentation
+    url: https://help.formassembly.com/help/working-with-the-formassembly-api
+  - type: GitHubOrg
+    url: https://github.com/formassembly
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/formassembly
+  - type: Blog
+    url: https://www.formassembly.com/blog/
+  - type: Pricing
+    url: https://www.formassembly.com/pricing/
+  - type: StatusPage
+    url: https://status.formassembly.com/
+  - type: X
+    url: https://twitter.com/FormAssembly
+  - type: Plans
+    url: plans/formassembly-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/formassembly-rate-limits.yml
+  - type: FinOps
+    url: finops/formassembly-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

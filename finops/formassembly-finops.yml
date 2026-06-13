@@ -1,0 +1,128 @@
+name: FormAssembly FinOps Framework
+description: Financial operations guidance for FormAssembly API usage aligned with FOCUS (FinOps Open Cost and Usage Specification) 1.0. FormAssembly pricing is subscription-based with four Atlas plan tiers. All plans include unlimited forms and responses on current Atlas plans. Enterprise and Gov Cloud are custom-quoted. Key cost drivers include plan tier selection, number of users, add-on integrations (Salesforce, etc.), and custom domain requirements.
+specificationVersion: '1.0'
+
+cost_model:
+  type: subscription
+  billing_period: annual
+  pricing_model: tiered
+  currency: USD
+  negotiable: true
+  note: Enterprise pricing is custom-quoted and negotiable, particularly for high-volume and large organizations.
+
+tiers:
+  - name: Atlas Explorer
+    type: base
+    pricing_type: fixed
+    billing_period: annual
+    estimated_range:
+      low: 0
+      high: 0
+      note: Entry-level pricing; contact FormAssembly for current rates. Free or low-cost tier for individuals.
+    included_units:
+      - name: Forms
+        quantity: unlimited
+      - name: Responses
+        quantity: unlimited
+      - name: Users
+        quantity: 1
+      - name: Active Workflows
+        quantity: 3
+
+  - name: Atlas Team
+    type: base
+    pricing_type: fixed
+    billing_period: annual
+    estimated_range:
+      low: 2400
+      high: 9600
+      note: SMB organizations reported spending above $7,931 annually. Contact FormAssembly for current rates.
+    included_units:
+      - name: Forms
+        quantity: unlimited
+      - name: Responses
+        quantity: unlimited
+      - name: Users
+        quantity: 8
+      - name: Active Workflows
+        quantity: unlimited
+
+  - name: Atlas Enterprise
+    type: base
+    pricing_type: custom
+    billing_period: annual
+    estimated_range:
+      low: 9600
+      high: 18000
+      note: Typically $800-$1,500+/month. Enterprise organizations average $34,728 annually.
+    included_units:
+      - name: Forms
+        quantity: unlimited
+      - name: Responses
+        quantity: unlimited
+      - name: Users
+        quantity: 15
+      - name: Active Workflows
+        quantity: unlimited
+      - name: HIPAA BAA
+        quantity: 1
+
+  - name: Gov Cloud
+    type: base
+    pricing_type: custom
+    billing_period: annual
+    estimated_range:
+      low: 34728
+      high: 100000
+      note: Custom pricing for government agencies. FedRAMP High authorization included.
+    included_units:
+      - name: Forms
+        quantity: unlimited
+      - name: Responses
+        quantity: unlimited
+      - name: Users
+        quantity: 15
+      - name: Active Workflows
+        quantity: unlimited
+      - name: FedRAMP Authorization
+        quantity: 1
+
+add_ons:
+  - name: Custom Domain
+    description: Available as an add-on for Explorer plan; included in Team, Enterprise, and Gov Cloud.
+    pricing_type: variable
+    note: Contact FormAssembly for add-on pricing.
+
+  - name: Salesforce Integration
+    description: Salesforce connector available as add-on for lower tiers; included in higher tiers. Key integration for enterprise data collection workflows.
+    pricing_type: variable
+    note: May be included in Team and above or available as separate add-on.
+
+  - name: Additional Users
+    description: Standard and limited user seats beyond base plan allocation.
+    pricing_type: variable
+    note: Contact FormAssembly for per-seat pricing.
+
+cost_optimization:
+  - recommendation: Right-size user seats
+    description: FormAssembly distinguishes standard and limited user types. Limited users have restricted permissions and may cost less. Audit active users and assign limited roles where full access is not needed.
+
+  - recommendation: Monitor workflow usage on Explorer
+    description: The Explorer plan caps active workflows at 3. Exceeding this requires upgrading to Team. Evaluate whether workflow needs justify the tier jump before upgrading.
+
+  - recommendation: Negotiate enterprise contracts
+    description: FormAssembly enterprise pricing is negotiable. Organizations spending above $7,931 (SMB) or $34,728 (Enterprise) annually have meaningful leverage to negotiate discounts, particularly for multi-year commitments.
+
+  - recommendation: Evaluate Salesforce integration tier
+    description: Salesforce integration is a key cost driver. Confirm whether your required integration depth is included in your plan or requires an add-on to avoid unexpected costs.
+
+  - recommendation: Plan for historical overage structure
+    description: Legacy FormAssembly plans charged $0.10-$0.50 per submission over limits. Current Atlas plans are unlimited, but verify your contract terms to confirm no submission-based overage fees apply.
+
+references:
+  - url: https://www.formassembly.com/pricing/
+    description: Official FormAssembly pricing page
+  - url: https://www.vendr.com/marketplace/formassembly
+    description: Vendr marketplace pricing benchmarks for FormAssembly
+  - url: https://www.g2.com/products/formassembly/pricing
+    description: G2 FormAssembly pricing overview
