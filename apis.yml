@@ -39,6 +39,8 @@ apis:
         url: https://github.com/FormAssembly/formassembly-api
       - type: PostmanCollection
         url: https://www.postman.com/hayleyj1/my-workspace/collection/ot30hq0/formassembly-api
+      - type: OpenAPI
+        url: openapi/formassembly-formassembly-api-openapi.yml
     contact:
       - FN: FormAssembly Developer Hub
         url: https://developer.formassembly.com/
@@ -65,6 +67,10 @@ common:
     url: rate-limits/formassembly-rate-limits.yml
   - type: FinOps
     url: finops/formassembly-finops.yml
+  - type: Vocabulary
+    url: vocabulary/formassembly-vocabulary.yml
+  - type: JSONLDContext
+    url: json-ld/formassembly-context.jsonld
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

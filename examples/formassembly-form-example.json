@@ -1,0 +1,7 @@
+{
+  "id": 12345,
+  "name": "Employee Onboarding Form",
+  "language": "en_US",
+  "builder_version": "3",
+  "xml_data": "<form version=\"3\"><page><name>Personal Information</name><field id=\"tfa_1\" type=\"text\"><title>First Name</title><required>true</required></field><field id=\"tfa_2\" type=\"text\"><title>Last Name</title><required>true</required></field><field id=\"tfa_3\" type=\"email\"><title>Work Email</title><required>true</required></field></page></form>"
+}

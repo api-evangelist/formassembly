@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/formassembly/main/json-schema/formassembly-connector.json",
+  "title": "FormAssembly Connector",
+  "description": "A FormAssembly connector that integrates a form with an external service such as Salesforce.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "Unique identifier of the connector"
+    },
+    "form_id": {
+      "type": "integer",
+      "description": "ID of the form this connector is attached to"
+    },
+    "name": {
+      "type": "string",
+      "description": "Type/name of the connector (e.g., Salesforce, Email)"
+    },
+    "event": {
+      "type": "string",
+      "enum": ["beforerender", "before_save", "interactive", "background"],
+      "description": "Form lifecycle event that triggers this connector"
+    },
+    "mapping": {
+      "type": "string",
+      "description": "Field mapping configuration between form fields and the external service"
+    },
+    "login": {
+      "type": "string",
+      "description": "Login credential for the connected external service"
+    },
+    "password": {
+      "type": "string",
+      "description": "Password credential for the connected external service"
+    }
+  },
+  "required": ["id", "form_id", "name"]
+}

@@ -1,0 +1,26 @@
+{
+  "responses": [
+    {
+      "id": 987001,
+      "form_id": 12345,
+      "date_created": "2026-06-01T10:30:00Z",
+      "flag": 0,
+      "fields": {
+        "tfa_1": "Jane",
+        "tfa_2": "Smith",
+        "tfa_3": "jane.smith@example.com"
+      }
+    },
+    {
+      "id": 987002,
+      "form_id": 12345,
+      "date_created": "2026-06-02T14:15:00Z",
+      "flag": 1,
+      "fields": {
+        "tfa_1": "John",
+        "tfa_2": "Doe",
+        "tfa_3": "john.doe@example.com"
+      }
+    }
+  ]
+}

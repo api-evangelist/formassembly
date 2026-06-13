@@ -1,0 +1,9 @@
+{
+  "id": 4001,
+  "form_id": 12345,
+  "name": "Salesforce",
+  "event": "background",
+  "mapping": "tfa_1=FirstName;tfa_2=LastName;tfa_3=Email",
+  "login": "salesforce_user@example.com",
+  "password": ""
+}

@@ -1,0 +1,106 @@
+vocabulary:
+  - term: form
+    definition: A structured data collection document created in FormAssembly, consisting of fields, sections, and logic that captures user input and submission data.
+    tags:
+      - Forms
+      - Data Collection
+
+  - term: response
+    definition: A single submission of a FormAssembly form, containing the data entered by a respondent. Responses can be exported in JSON, XML, CSV, or ZIP formats.
+    tags:
+      - Responses
+      - Submissions
+
+  - term: connector
+    definition: An integration module attached to a form that connects FormAssembly to external services such as Salesforce, databases, or email systems. Connectors are triggered by form events.
+    tags:
+      - Connectors
+      - Integrations
+
+  - term: theme
+    definition: A CSS stylesheet applied to one or more forms to control visual appearance and branding. Themes are managed separately from form content.
+    tags:
+      - Themes
+      - Styling
+
+  - term: form_element
+    definition: A reusable building block used to construct forms (e.g., text field, dropdown, date picker). Custom form elements can be created and shared across forms.
+    tags:
+      - Form Elements
+      - Components
+
+  - term: aggregate
+    definition: Statistical counters and summary data compiled across form submissions, such as total response counts. Aggregates can be reset via the API.
+    tags:
+      - Aggregates
+      - Statistics
+
+  - term: access_token
+    definition: An OAuth2 bearer token used to authenticate all API requests. Tokens are user-scoped and typically expire after approximately 10 years.
+    tags:
+      - OAuth2
+      - Authentication
+
+  - term: refresh_token
+    definition: A token issued alongside an access_token that can be used to obtain a new access_token without requiring the user to re-authorize.
+    tags:
+      - OAuth2
+      - Authentication
+
+  - term: client_id
+    definition: The public identifier for a registered FormAssembly OAuth2 application, used in the authorization code flow.
+    tags:
+      - OAuth2
+      - Authentication
+
+  - term: client_secret
+    definition: The confidential credential for a registered FormAssembly OAuth2 application, used alongside client_id to exchange authorization codes for tokens.
+    tags:
+      - OAuth2
+      - Authentication
+
+  - term: xml_data
+    definition: The XML representation of a form or form element definition, used to programmatically create or update forms via the API.
+    tags:
+      - Forms
+      - Form Elements
+
+  - term: event
+    definition: A lifecycle trigger on a form that activates a connector. Events include beforerender (before form display), before_save (before submission), interactive (real-time during fill), and background (asynchronous).
+    tags:
+      - Connectors
+
+  - term: flag
+    definition: A status marker applied to individual form responses used to tag, filter, or track response review status.
+    tags:
+      - Responses
+
+  - term: page_size
+    definition: A query parameter controlling how many responses are returned per page when exporting responses. Defaults to 200.
+    tags:
+      - Responses
+      - Pagination
+
+  - term: admin
+    definition: An elevated permission level within FormAssembly that grants access to account-wide resources including all forms, connectors, themes, and form elements across all users.
+    tags:
+      - Admin
+      - Permissions
+
+  - term: instance
+    definition: A deployed FormAssembly environment. Instances can be the shared cloud (app.formassembly.com), the developer sandbox, or a self-hosted enterprise server accessed via a custom subdomain.
+    tags:
+      - Deployment
+      - Infrastructure
+
+  - term: fedramp
+    definition: A US government compliance certification (Federal Risk and Authorization Management Program) supported by FormAssembly Government edition, enabling use by federal agencies.
+    tags:
+      - Government
+      - Compliance
+
+  - term: hipaa
+    definition: Health Insurance Portability and Accountability Act compliance supported by FormAssembly for healthcare data collection workflows.
+    tags:
+      - Healthcare
+      - Compliance

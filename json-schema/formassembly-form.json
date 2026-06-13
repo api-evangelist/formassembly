@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/formassembly/main/json-schema/formassembly-form.json",
+  "title": "FormAssembly Form",
+  "description": "A FormAssembly form definition as returned by the REST API.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "Unique identifier of the form"
+    },
+    "name": {
+      "type": "string",
+      "description": "Display name of the form"
+    },
+    "language": {
+      "type": "string",
+      "description": "Language code of the form (e.g., en_US)"
+    },
+    "builder_version": {
+      "type": "string",
+      "description": "Version of the FormAssembly builder used to create this form"
+    },
+    "xml_data": {
+      "type": "string",
+      "description": "XML structure defining the form fields, sections, and logic"
+    }
+  },
+  "required": ["id", "name"]
+}

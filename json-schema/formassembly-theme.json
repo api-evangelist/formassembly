@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/formassembly/main/json-schema/formassembly-theme.json",
+  "title": "FormAssembly Theme",
+  "description": "A CSS theme applied to FormAssembly forms for visual customization.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "Unique identifier of the theme"
+    },
+    "name": {
+      "type": "string",
+      "description": "Display name of the theme"
+    },
+    "css_data": {
+      "type": "string",
+      "description": "Full CSS stylesheet content defining the theme's visual appearance"
+    }
+  },
+  "required": ["id", "name"]
+}

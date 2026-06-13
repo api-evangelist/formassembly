@@ -1,0 +1,163 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "fa": "https://www.formassembly.com/api/vocab#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "Form": "fa:Form",
+    "Response": "fa:Response",
+    "Connector": "fa:Connector",
+    "Theme": "fa:Theme",
+    "FormElement": "fa:FormElement",
+    "Aggregate": "fa:Aggregate",
+
+    "id": "@id",
+    "name": "schema:name",
+    "description": "schema:description",
+    "language": "schema:inLanguage",
+
+    "form_id": {
+      "@id": "fa:formId",
+      "@type": "@id"
+    },
+    "xml_data": {
+      "@id": "fa:xmlData",
+      "@type": "xsd:string"
+    },
+    "builder_version": {
+      "@id": "fa:builderVersion",
+      "@type": "xsd:string"
+    },
+
+    "date_created": {
+      "@id": "schema:dateCreated",
+      "@type": "xsd:dateTime"
+    },
+    "date_from": {
+      "@id": "schema:startDate",
+      "@type": "xsd:date"
+    },
+    "date_to": {
+      "@id": "schema:endDate",
+      "@type": "xsd:date"
+    },
+    "flag": {
+      "@id": "fa:flag",
+      "@type": "xsd:integer"
+    },
+    "page": {
+      "@id": "fa:page",
+      "@type": "xsd:integer"
+    },
+    "page_size": {
+      "@id": "fa:pageSize",
+      "@type": "xsd:integer"
+    },
+
+    "event": {
+      "@id": "fa:event",
+      "@type": "xsd:string"
+    },
+    "mapping": {
+      "@id": "fa:mapping",
+      "@type": "xsd:string"
+    },
+    "connector_id": {
+      "@id": "fa:connectorId",
+      "@type": "@id"
+    },
+
+    "css_data": {
+      "@id": "fa:cssData",
+      "@type": "xsd:string"
+    },
+    "theme_id": {
+      "@id": "fa:themeId",
+      "@type": "@id"
+    },
+
+    "category": {
+      "@id": "fa:category",
+      "@type": "xsd:string"
+    },
+    "subcategory": {
+      "@id": "fa:subcategory",
+      "@type": "xsd:string"
+    },
+    "comments": {
+      "@id": "schema:comment",
+      "@type": "xsd:string"
+    },
+    "batch": {
+      "@id": "fa:batch",
+      "@type": "xsd:string"
+    },
+    "element_id": {
+      "@id": "fa:elementId",
+      "@type": "@id"
+    },
+
+    "access_token": {
+      "@id": "fa:accessToken",
+      "@type": "xsd:string"
+    },
+    "refresh_token": {
+      "@id": "fa:refreshToken",
+      "@type": "xsd:string"
+    },
+    "expires_in": {
+      "@id": "fa:expiresIn",
+      "@type": "xsd:integer"
+    },
+    "client_id": {
+      "@id": "fa:clientId",
+      "@type": "xsd:string"
+    },
+    "client_secret": {
+      "@id": "fa:clientSecret",
+      "@type": "xsd:string"
+    },
+    "redirect_uri": {
+      "@id": "fa:redirectUri",
+      "@type": "@id"
+    },
+    "grant_type": {
+      "@id": "fa:grantType",
+      "@type": "xsd:string"
+    },
+    "scope": {
+      "@id": "fa:scope",
+      "@type": "xsd:string"
+    },
+
+    "status": {
+      "@id": "fa:status",
+      "@type": "xsd:string"
+    },
+    "message": {
+      "@id": "schema:description",
+      "@type": "xsd:string"
+    },
+
+    "forms": {
+      "@id": "fa:forms",
+      "@container": "@set"
+    },
+    "responses": {
+      "@id": "fa:responses",
+      "@container": "@set"
+    },
+    "connectors": {
+      "@id": "fa:connectors",
+      "@container": "@set"
+    },
+    "themes": {
+      "@id": "fa:themes",
+      "@container": "@set"
+    },
+    "elements": {
+      "@id": "fa:elements",
+      "@container": "@set"
+    }
+  }
+}
