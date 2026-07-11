@@ -45,6 +45,8 @@ apis:
       - FN: FormAssembly Developer Hub
         url: https://developer.formassembly.com/
 common:
+  - type: OAuthScopes
+    url: scopes/formassembly-scopes.yml
   - type: Website
     url: https://www.formassembly.com/
   - type: Documentation

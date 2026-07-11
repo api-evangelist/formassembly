@@ -1,0 +1,13 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/formassembly-formassembly-api-openapi.yml
+docs: https://github.com/FormAssembly/formassembly-api
+note: FormAssembly's OAuth2 API documents an authorization-code flow whose token response includes a scope field, but publishes no named scopes; access tokens are user-based with permissions tied to the authorizing user's account (https://github.com/FormAssembly/formassembly-api).
+schemes:
+- name: oauth2
+  source: openapi/formassembly-formassembly-api-openapi.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://app.formassembly.com/oauth/login
+    tokenUrl: https://app.formassembly.com/oauth/access_token
+scopes: []
