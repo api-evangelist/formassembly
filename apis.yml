@@ -45,6 +45,12 @@ apis:
       - FN: FormAssembly Developer Hub
         url: https://developer.formassembly.com/
 common:
+  - type: TrustCenter
+    url: security/formassembly-trust-center.yml
+  - type: DomainSecurity
+    url: security/formassembly-domain-security.yml
+  - type: Authentication
+    url: authentication/formassembly-authentication.yml
   - type: OAuthScopes
     url: scopes/formassembly-scopes.yml
   - type: Website

@@ -1,0 +1,18 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/formassembly-formassembly-api-openapi.yml
+summary:
+  types:
+  - oauth2
+  oauth2_flows:
+  - authorizationCode
+schemes:
+- name: oauth2
+  type: oauth2
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://app.formassembly.com/oauth/login
+    tokenUrl: https://app.formassembly.com/oauth/access_token
+    scopes: 0
+  sources:
+  - openapi/formassembly-formassembly-api-openapi.yml
