@@ -45,6 +45,8 @@ apis:
       - FN: FormAssembly Developer Hub
         url: https://developer.formassembly.com/
 common:
+  - type: AgenticAccess
+    url: agentic-access/formassembly-agentic-access.yml
   - type: TrustCenter
     url: security/formassembly-trust-center.yml
   - type: DomainSecurity
