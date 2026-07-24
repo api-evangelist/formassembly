@@ -1,0 +1,557 @@
+openapi: 3.0.3
+info:
+  title: FormAssembly REST Admin API
+  description: 'REST API for managing FormAssembly forms, responses, themes, connectors, form elements, and account data. Supports JSON, XML, CSV, and ZIP response formats. OAuth2 authentication is required for all requests. Endpoints vary by deployment edition including Developer Sandbox, FormAssembly.com cloud, and self-hosted Enterprise instances.
+
+    '
+  version: 1.0.0
+  contact:
+    name: FormAssembly Developer Hub
+    url: https://help.formassembly.com/help/working-with-the-formassembly-api
+  termsOfService: https://www.formassembly.com/terms-of-service/
+  license:
+    name: Proprietary
+servers:
+- url: https://app.formassembly.com
+  description: FormAssembly.com Cloud
+- url: https://developer.formassembly.com
+  description: Developer Sandbox
+- url: https://{instance_name}.tfaforms.net
+  description: Enterprise / Teams / Government Instance
+  variables:
+    instance_name:
+      default: yourinstance
+      description: Your FormAssembly enterprise instance name
+security:
+- oauth2: []
+tags:
+- name: Admin
+  description: Admin-only endpoints requiring elevated permissions
+paths:
+  /admin/api_v1/forms/index.{format}:
+    get:
+      operationId: adminListForms
+      summary: List all forms (Admin)
+      description: Admin-only endpoint that returns all forms across all users in the account.
+      tags:
+      - Admin
+      parameters:
+      - $ref: '#/components/parameters/formatJson'
+      responses:
+        '200':
+          description: List of all forms
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FormList'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/FormList'
+  /admin/api_v1/connectors/view/{connectorId}.{format}:
+    get:
+      operationId: getConnector
+      summary: View connector definition (Admin)
+      description: Returns the full definition of a specific connector.
+      tags:
+      - Admin
+      parameters:
+      - $ref: '#/components/parameters/connectorId'
+      - $ref: '#/components/parameters/formatJson'
+      responses:
+        '200':
+          description: Connector definition
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Connector'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Connector'
+        '404':
+          description: Connector not found
+  /admin/api_v1/connectors/create/{formId}/{connectorName}.{format}:
+    post:
+      operationId: createConnector
+      summary: Create a connector (Admin)
+      description: Creates a new connector for the specified form and connector type.
+      tags:
+      - Admin
+      parameters:
+      - $ref: '#/components/parameters/formId'
+      - $ref: '#/components/parameters/connectorName'
+      - $ref: '#/components/parameters/formatJson'
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                event:
+                  type: string
+                  enum:
+                  - beforerender
+                  - before_save
+                  - interactive
+                  - background
+                  description: Trigger event for the connector
+                mapping:
+                  type: string
+                  description: Field mapping configuration
+                login:
+                  type: string
+                  description: Login credential for the connector service
+                password:
+                  type: string
+                  description: Password credential for the connector service
+      responses:
+        '200':
+          description: Connector created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Connector'
+        '400':
+          description: Invalid request
+  /admin/api_v1/connectors/edit/{connectorId}.{format}:
+    post:
+      operationId: updateConnector
+      summary: Update a connector (Admin)
+      description: Updates the configuration of an existing connector.
+      tags:
+      - Admin
+      parameters:
+      - $ref: '#/components/parameters/connectorId'
+      - $ref: '#/components/parameters/formatJson'
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                event:
+                  type: string
+                  enum:
+                  - beforerender
+                  - before_save
+                  - interactive
+                  - background
+                mapping:
+                  type: string
+                login:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: Connector updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Connector'
+        '404':
+          description: Connector not found
+  /admin/api_v1/connectors/delete/{connectorId}.{format}:
+    post:
+      operationId: deleteConnector
+      summary: Delete a connector (Admin)
+      description: Permanently removes the specified connector from a form.
+      tags:
+      - Admin
+      parameters:
+      - $ref: '#/components/parameters/connectorId'
+      - $ref: '#/components/parameters/formatJson'
+      responses:
+        '200':
+          description: Connector deleted successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessResponse'
+        '404':
+          description: Connector not found
+  /admin/api_v1/themes/view/{themeId}.json:
+    get:
+      operationId: getTheme
+      summary: View theme CSS (Admin)
+      description: Returns the CSS content and metadata for the specified theme.
+      tags:
+      - Admin
+      parameters:
+      - $ref: '#/components/parameters/themeId'
+      responses:
+        '200':
+          description: Theme definition
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Theme'
+        '404':
+          description: Theme not found
+  /admin/api_v1/themes/create.json:
+    post:
+      operationId: createTheme
+      summary: Create a theme (Admin)
+      description: Creates a new CSS theme for use with forms.
+      tags:
+      - Admin
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: Display name for the theme
+                css_data:
+                  type: string
+                  description: Full CSS stylesheet content
+      responses:
+        '200':
+          description: Theme created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Theme'
+  /admin/api_v1/themes/edit/{themeId}.json:
+    post:
+      operationId: updateTheme
+      summary: Update a theme (Admin)
+      description: Updates the name and/or CSS of an existing theme.
+      tags:
+      - Admin
+      parameters:
+      - $ref: '#/components/parameters/themeId'
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                css_data:
+                  type: string
+      responses:
+        '200':
+          description: Theme updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Theme'
+        '404':
+          description: Theme not found
+  /admin/api_v1/themes/delete/{themeId}.json:
+    post:
+      operationId: deleteTheme
+      summary: Delete a theme (Admin)
+      description: Permanently removes the specified theme.
+      tags:
+      - Admin
+      parameters:
+      - $ref: '#/components/parameters/themeId'
+      responses:
+        '200':
+          description: Theme deleted successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessResponse'
+        '404':
+          description: Theme not found
+  /admin/api_v1/form_elements/view/{elementId}.xml:
+    get:
+      operationId: getFormElement
+      summary: View form element definition (Admin)
+      description: Returns the full XML definition of the specified form element type.
+      tags:
+      - Admin
+      parameters:
+      - $ref: '#/components/parameters/elementId'
+      responses:
+        '200':
+          description: Form element definition
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/FormElement'
+        '404':
+          description: Element not found
+  /admin/api_v1/form_elements/create.json:
+    post:
+      operationId: createFormElement
+      summary: Create a form element (Admin)
+      description: Creates a new custom form element type.
+      tags:
+      - Admin
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                xml_data:
+                  type: string
+                  description: XML definition of the element
+                name:
+                  type: string
+                  description: Display name for the element
+                comments:
+                  type: string
+                  description: Notes about the element
+                category:
+                  type: string
+                  description: Category for organizing elements
+                subcategory:
+                  type: string
+                  description: Subcategory for further organization
+                batch:
+                  type: string
+                  description: Batch identifier for bulk operations
+      responses:
+        '200':
+          description: Form element created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FormElement'
+  /admin/api_v1/form_elements/edit/{elementId}.json:
+    post:
+      operationId: updateFormElement
+      summary: Update a form element (Admin)
+      description: Updates an existing custom form element type.
+      tags:
+      - Admin
+      parameters:
+      - $ref: '#/components/parameters/elementId'
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                xml_data:
+                  type: string
+                name:
+                  type: string
+                comments:
+                  type: string
+                category:
+                  type: string
+                subcategory:
+                  type: string
+                batch:
+                  type: string
+      responses:
+        '200':
+          description: Form element updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FormElement'
+        '404':
+          description: Element not found
+  /admin/api_v1/form_elements/delete/{elementId}.json:
+    post:
+      operationId: deleteFormElement
+      summary: Delete a form element (Admin)
+      description: Permanently removes a custom form element type.
+      tags:
+      - Admin
+      parameters:
+      - $ref: '#/components/parameters/elementId'
+      responses:
+        '200':
+          description: Form element deleted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessResponse'
+        '404':
+          description: Element not found
+  /admin/api_v1/aggregates/reset_counters/{formId}.json:
+    post:
+      operationId: resetFormCounters
+      summary: Reset form counters (Admin)
+      description: Resets submission counters and aggregated statistics for the specified form.
+      tags:
+      - Admin
+      parameters:
+      - $ref: '#/components/parameters/formId'
+      responses:
+        '200':
+          description: Counters reset successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessResponse'
+        '404':
+          description: Form not found
+components:
+  schemas:
+    FormElement:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Unique identifier of the form element
+        name:
+          type: string
+          description: Display name of the element
+        comments:
+          type: string
+          description: Notes or comments about the element
+        category:
+          type: string
+          description: Category the element belongs to
+        subcategory:
+          type: string
+          description: Subcategory of the element
+        xml_data:
+          type: string
+          description: XML definition of the element
+        batch:
+          type: string
+          description: Batch identifier for bulk operations
+    Connector:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Unique identifier of the connector
+        form_id:
+          type: integer
+          description: ID of the form this connector is attached to
+        name:
+          type: string
+          description: Name/type of the connector
+        event:
+          type: string
+          enum:
+          - beforerender
+          - before_save
+          - interactive
+          - background
+          description: Trigger event for the connector
+        mapping:
+          type: string
+          description: Field mapping configuration
+        login:
+          type: string
+          description: Login credential for connector
+        password:
+          type: string
+          description: Password credential for connector
+    FormList:
+      type: object
+      properties:
+        forms:
+          type: array
+          items:
+            $ref: '#/components/schemas/Form'
+    Form:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Unique identifier of the form
+        name:
+          type: string
+          description: Display name of the form
+        language:
+          type: string
+          description: Language code of the form
+        builder_version:
+          type: string
+          description: Version of the form builder used
+        xml_data:
+          type: string
+          description: XML definition of the form structure
+      required:
+      - id
+      - name
+    SuccessResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+          - success
+        message:
+          type: string
+    Theme:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Unique identifier of the theme
+        name:
+          type: string
+          description: Display name of the theme
+        css_data:
+          type: string
+          description: CSS stylesheet content of the theme
+  parameters:
+    connectorName:
+      name: connectorName
+      in: path
+      description: Name of the connector type to create
+      required: true
+      schema:
+        type: string
+    connectorId:
+      name: connectorId
+      in: path
+      description: Unique identifier of the connector
+      required: true
+      schema:
+        type: integer
+    elementId:
+      name: elementId
+      in: path
+      description: Unique identifier of the form element
+      required: true
+      schema:
+        type: integer
+    formId:
+      name: formId
+      in: path
+      description: Unique identifier of the form
+      required: true
+      schema:
+        type: integer
+    themeId:
+      name: themeId
+      in: path
+      description: Unique identifier of the theme
+      required: true
+      schema:
+        type: integer
+    formatJson:
+      name: format
+      in: path
+      description: Response format (json or xml)
+      required: true
+      schema:
+        type: string
+        enum:
+        - json
+        - xml
+        default: json
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://app.formassembly.com/oauth/login
+          tokenUrl: https://app.formassembly.com/oauth/access_token
+          scopes: {}
+externalDocs:
+  description: FormAssembly API Documentation
+  url: https://help.formassembly.com/help/working-with-the-formassembly-api

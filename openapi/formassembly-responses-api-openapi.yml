@@ -1,0 +1,161 @@
+openapi: 3.0.3
+info:
+  title: FormAssembly REST Admin Responses API
+  description: 'REST API for managing FormAssembly forms, responses, themes, connectors, form elements, and account data. Supports JSON, XML, CSV, and ZIP response formats. OAuth2 authentication is required for all requests. Endpoints vary by deployment edition including Developer Sandbox, FormAssembly.com cloud, and self-hosted Enterprise instances.
+
+    '
+  version: 1.0.0
+  contact:
+    name: FormAssembly Developer Hub
+    url: https://help.formassembly.com/help/working-with-the-formassembly-api
+  termsOfService: https://www.formassembly.com/terms-of-service/
+  license:
+    name: Proprietary
+servers:
+- url: https://app.formassembly.com
+  description: FormAssembly.com Cloud
+- url: https://developer.formassembly.com
+  description: Developer Sandbox
+- url: https://{instance_name}.tfaforms.net
+  description: Enterprise / Teams / Government Instance
+  variables:
+    instance_name:
+      default: yourinstance
+      description: Your FormAssembly enterprise instance name
+security:
+- oauth2: []
+tags:
+- name: Responses
+  description: Export and manage form submission responses
+paths:
+  /api_v1/responses/export/{formId}.{format}:
+    get:
+      operationId: exportResponses
+      summary: Export form responses
+      description: 'Exports submitted responses for a form. Supports JSON, XML, CSV, and ZIP formats. Filtering by date range, specific response IDs, and flag status is supported.
+
+        '
+      tags:
+      - Responses
+      parameters:
+      - $ref: '#/components/parameters/formId'
+      - name: format
+        in: path
+        required: true
+        schema:
+          type: string
+          enum:
+          - json
+          - xml
+          - csv
+          - zip
+        description: Export format
+      - name: date_from
+        in: query
+        schema:
+          type: string
+          format: date
+        description: Filter responses submitted on or after this date
+      - name: date_to
+        in: query
+        schema:
+          type: string
+          format: date
+        description: Filter responses submitted on or before this date
+      - name: filter
+        in: query
+        schema:
+          type: string
+          enum:
+          - all
+          default: all
+        description: Filter preset
+      - name: response_ids
+        in: query
+        schema:
+          type: string
+        description: Comma-delimited list of specific response IDs to export
+      - name: flag
+        in: query
+        schema:
+          type: integer
+        description: Filter by flag status
+      - name: unlock
+        in: query
+        schema:
+          type: boolean
+        description: Include locked responses
+      - name: page
+        in: query
+        schema:
+          type: integer
+          default: 1
+        description: Page number for paginated results
+      - name: page_size
+        in: query
+        schema:
+          type: integer
+          default: 200
+        description: Number of responses per page (default 200)
+      responses:
+        '200':
+          description: Exported responses
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  responses:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Response'
+            application/xml:
+              schema:
+                type: object
+            text/csv:
+              schema:
+                type: string
+                format: binary
+            application/zip:
+              schema:
+                type: string
+                format: binary
+        '404':
+          description: Form not found
+components:
+  parameters:
+    formId:
+      name: formId
+      in: path
+      description: Unique identifier of the form
+      required: true
+      schema:
+        type: integer
+  schemas:
+    Response:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Unique identifier of the response
+        form_id:
+          type: integer
+          description: ID of the form this response belongs to
+        date_created:
+          type: string
+          format: date-time
+          description: Timestamp when the response was submitted
+        flag:
+          type: integer
+          description: Flag status of the response
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://app.formassembly.com/oauth/login
+          tokenUrl: https://app.formassembly.com/oauth/access_token
+          scopes: {}
+externalDocs:
+  description: FormAssembly API Documentation
+  url: https://help.formassembly.com/help/working-with-the-formassembly-api

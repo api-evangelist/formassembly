@@ -1,0 +1,153 @@
+openapi: 3.0.3
+info:
+  title: FormAssembly REST Admin OAuth2 API
+  description: 'REST API for managing FormAssembly forms, responses, themes, connectors, form elements, and account data. Supports JSON, XML, CSV, and ZIP response formats. OAuth2 authentication is required for all requests. Endpoints vary by deployment edition including Developer Sandbox, FormAssembly.com cloud, and self-hosted Enterprise instances.
+
+    '
+  version: 1.0.0
+  contact:
+    name: FormAssembly Developer Hub
+    url: https://help.formassembly.com/help/working-with-the-formassembly-api
+  termsOfService: https://www.formassembly.com/terms-of-service/
+  license:
+    name: Proprietary
+servers:
+- url: https://app.formassembly.com
+  description: FormAssembly.com Cloud
+- url: https://developer.formassembly.com
+  description: Developer Sandbox
+- url: https://{instance_name}.tfaforms.net
+  description: Enterprise / Teams / Government Instance
+  variables:
+    instance_name:
+      default: yourinstance
+      description: Your FormAssembly enterprise instance name
+security:
+- oauth2: []
+tags:
+- name: OAuth2
+  description: OAuth2 authorization code flow for obtaining access tokens
+paths:
+  /oauth/login:
+    get:
+      operationId: initiateOAuth2Login
+      summary: Initiate OAuth2 authorization
+      description: Redirect users here to begin the OAuth2 authorization code flow.
+      tags:
+      - OAuth2
+      parameters:
+      - name: type
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - web
+      - name: client_id
+        in: query
+        required: true
+        schema:
+          type: string
+        description: Your registered OAuth2 client ID
+      - name: redirect_uri
+        in: query
+        required: true
+        schema:
+          type: string
+          format: uri
+        description: Callback URI registered with your application
+      - name: response_type
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - code
+      responses:
+        '302':
+          description: Redirect to FormAssembly login page
+      security: []
+  /oauth/access_token:
+    post:
+      operationId: requestAccessToken
+      summary: Exchange authorization code for access token
+      description: Exchange the authorization code received after login for an OAuth2 access token.
+      tags:
+      - OAuth2
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required:
+              - grant_type
+              - type
+              - client_id
+              - client_secret
+              - redirect_uri
+              - code
+              properties:
+                grant_type:
+                  type: string
+                  enum:
+                  - authorization_code
+                type:
+                  type: string
+                  enum:
+                  - web_server
+                client_id:
+                  type: string
+                client_secret:
+                  type: string
+                redirect_uri:
+                  type: string
+                  format: uri
+                code:
+                  type: string
+                  description: Authorization code from callback
+      responses:
+        '200':
+          description: Access token issued
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  access_token:
+                    type: string
+                  expires_in:
+                    type: integer
+                  scope:
+                    type: string
+                  refresh_token:
+                    type: string
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      security: []
+components:
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+          - error
+        message:
+          type: string
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://app.formassembly.com/oauth/login
+          tokenUrl: https://app.formassembly.com/oauth/access_token
+          scopes: {}
+externalDocs:
+  description: FormAssembly API Documentation
+  url: https://help.formassembly.com/help/working-with-the-formassembly-api

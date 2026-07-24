@@ -1,0 +1,78 @@
+openapi: 3.0.3
+info:
+  title: FormAssembly REST Admin Aggregates API
+  description: 'REST API for managing FormAssembly forms, responses, themes, connectors, form elements, and account data. Supports JSON, XML, CSV, and ZIP response formats. OAuth2 authentication is required for all requests. Endpoints vary by deployment edition including Developer Sandbox, FormAssembly.com cloud, and self-hosted Enterprise instances.
+
+    '
+  version: 1.0.0
+  contact:
+    name: FormAssembly Developer Hub
+    url: https://help.formassembly.com/help/working-with-the-formassembly-api
+  termsOfService: https://www.formassembly.com/terms-of-service/
+  license:
+    name: Proprietary
+servers:
+- url: https://app.formassembly.com
+  description: FormAssembly.com Cloud
+- url: https://developer.formassembly.com
+  description: Developer Sandbox
+- url: https://{instance_name}.tfaforms.net
+  description: Enterprise / Teams / Government Instance
+  variables:
+    instance_name:
+      default: yourinstance
+      description: Your FormAssembly enterprise instance name
+security:
+- oauth2: []
+tags:
+- name: Aggregates
+  description: Manage aggregated statistics and counters for forms
+paths:
+  /admin/api_v1/aggregates/reset_counters/{formId}.json:
+    post:
+      operationId: resetFormCounters
+      summary: Reset form counters (Admin)
+      description: Resets submission counters and aggregated statistics for the specified form.
+      tags:
+      - Aggregates
+      parameters:
+      - $ref: '#/components/parameters/formId'
+      responses:
+        '200':
+          description: Counters reset successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessResponse'
+        '404':
+          description: Form not found
+components:
+  parameters:
+    formId:
+      name: formId
+      in: path
+      description: Unique identifier of the form
+      required: true
+      schema:
+        type: integer
+  schemas:
+    SuccessResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+          - success
+        message:
+          type: string
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://app.formassembly.com/oauth/login
+          tokenUrl: https://app.formassembly.com/oauth/access_token
+          scopes: {}
+externalDocs:
+  description: FormAssembly API Documentation
+  url: https://help.formassembly.com/help/working-with-the-formassembly-api
