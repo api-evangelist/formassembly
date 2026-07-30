@@ -2,7 +2,20 @@ aid: formassembly
 name: FormAssembly
 description: FormAssembly is an enterprise form and data collection platform with a REST API for managing forms, exporting submission data, handling Salesforce integrations, and building compliant data collection workflows. The API supports OAuth2 authentication and enables programmatic access to forms, responses, themes, connectors, and account components across cloud, enterprise, and government deployment environments.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: paid
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Paid · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/formassembly.png
 url: https://raw.githubusercontent.com/api-evangelist/formassembly/refs/heads/main/apis.yml
 created: 2026-06-13
 modified: 2026-06-13
@@ -19,32 +32,137 @@ tags:
   - Workflows
   - E-Signatures
 apis:
-  - aid: formassembly:formassembly-api
-    name: FormAssembly REST API
-    description: REST API for managing FormAssembly forms, responses, themes, connectors, and account data. Supports JSON, XML, CSV, and ZIP response formats. OAuth2 authentication is required for all requests. Endpoints vary by deployment edition including Developer Sandbox, FormAssembly.com cloud, and self-hosted Enterprise instances.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://help.formassembly.com/help/working-with-the-formassembly-api
-    baseURL: https://app.formassembly.com/api_v1
-    tags:
-      - Forms
-      - Responses
-      - Connectors
-      - Themes
-      - OAuth2
-      - REST
-    properties:
-      - type: Documentation
-        url: https://help.formassembly.com/help/working-with-the-formassembly-api
-      - type: GitHubRepository
-        url: https://github.com/FormAssembly/formassembly-api
-      - type: PostmanCollection
-        url: https://www.postman.com/hayleyj1/my-workspace/collection/ot30hq0/formassembly-api
-      - type: OpenAPI
-        url: openapi/formassembly-formassembly-api-openapi.yml
-    contact:
-      - FN: FormAssembly Developer Hub
-        url: https://developer.formassembly.com/
+- aid: formassembly:formassembly-admin-api
+  name: FormAssembly Admin API
+  description: Admin-only endpoints requiring elevated permissions
+  humanURL: https://help.formassembly.com/help/working-with-the-formassembly-api
+  baseURL: https://app.formassembly.com/api_v1
+  tags:
+  - Admin
+  properties:
+  - type: OpenAPI
+    url: openapi/formassembly-admin-api-openapi.yml
+  - type: Documentation
+    url: https://help.formassembly.com/help/working-with-the-formassembly-api
+  - type: GitHubRepository
+    url: https://github.com/FormAssembly/formassembly-api
+  - type: PostmanCollection
+    url: https://www.postman.com/hayleyj1/my-workspace/collection/ot30hq0/formassembly-api
+- aid: formassembly:formassembly-aggregates-api
+  name: FormAssembly Aggregates API
+  description: Manage aggregated statistics and counters for forms
+  humanURL: https://help.formassembly.com/help/working-with-the-formassembly-api
+  baseURL: https://app.formassembly.com/api_v1
+  tags:
+  - Aggregates
+  properties:
+  - type: OpenAPI
+    url: openapi/formassembly-aggregates-api-openapi.yml
+  - type: Documentation
+    url: https://help.formassembly.com/help/working-with-the-formassembly-api
+  - type: GitHubRepository
+    url: https://github.com/FormAssembly/formassembly-api
+  - type: PostmanCollection
+    url: https://www.postman.com/hayleyj1/my-workspace/collection/ot30hq0/formassembly-api
+- aid: formassembly:formassembly-connectors-api
+  name: FormAssembly Connectors API
+  description: Manage integrations (Salesforce, etc.) attached to forms
+  humanURL: https://help.formassembly.com/help/working-with-the-formassembly-api
+  baseURL: https://app.formassembly.com/api_v1
+  tags:
+  - Connectors
+  properties:
+  - type: OpenAPI
+    url: openapi/formassembly-connectors-api-openapi.yml
+  - type: Documentation
+    url: https://help.formassembly.com/help/working-with-the-formassembly-api
+  - type: GitHubRepository
+    url: https://github.com/FormAssembly/formassembly-api
+  - type: PostmanCollection
+    url: https://www.postman.com/hayleyj1/my-workspace/collection/ot30hq0/formassembly-api
+- aid: formassembly:formassembly-form-elements-api
+  name: FormAssembly Form Elements API
+  description: Manage custom reusable form element types
+  humanURL: https://help.formassembly.com/help/working-with-the-formassembly-api
+  baseURL: https://app.formassembly.com/api_v1
+  tags:
+  - Form Elements
+  properties:
+  - type: OpenAPI
+    url: openapi/formassembly-form-elements-api-openapi.yml
+  - type: Documentation
+    url: https://help.formassembly.com/help/working-with-the-formassembly-api
+  - type: GitHubRepository
+    url: https://github.com/FormAssembly/formassembly-api
+  - type: PostmanCollection
+    url: https://www.postman.com/hayleyj1/my-workspace/collection/ot30hq0/formassembly-api
+- aid: formassembly:formassembly-forms-api
+  name: FormAssembly Forms API
+  description: Create, read, update, and delete form definitions
+  humanURL: https://help.formassembly.com/help/working-with-the-formassembly-api
+  baseURL: https://app.formassembly.com/api_v1
+  tags:
+  - Forms
+  properties:
+  - type: OpenAPI
+    url: openapi/formassembly-forms-api-openapi.yml
+  - type: Documentation
+    url: https://help.formassembly.com/help/working-with-the-formassembly-api
+  - type: GitHubRepository
+    url: https://github.com/FormAssembly/formassembly-api
+  - type: PostmanCollection
+    url: https://www.postman.com/hayleyj1/my-workspace/collection/ot30hq0/formassembly-api
+- aid: formassembly:formassembly-oauth2-api
+  name: FormAssembly OAuth2 API
+  description: OAuth2 authorization code flow for obtaining access tokens
+  humanURL: https://help.formassembly.com/help/working-with-the-formassembly-api
+  baseURL: https://app.formassembly.com/api_v1
+  tags:
+  - OAuth2
+  properties:
+  - type: OpenAPI
+    url: openapi/formassembly-oauth2-api-openapi.yml
+  - type: Documentation
+    url: https://help.formassembly.com/help/working-with-the-formassembly-api
+  - type: GitHubRepository
+    url: https://github.com/FormAssembly/formassembly-api
+  - type: PostmanCollection
+    url: https://www.postman.com/hayleyj1/my-workspace/collection/ot30hq0/formassembly-api
+- aid: formassembly:formassembly-responses-api
+  name: FormAssembly Responses API
+  description: Export and manage form submission responses
+  humanURL: https://help.formassembly.com/help/working-with-the-formassembly-api
+  baseURL: https://app.formassembly.com/api_v1
+  tags:
+  - Responses
+  properties:
+  - type: OpenAPI
+    url: openapi/formassembly-responses-api-openapi.yml
+  - type: Documentation
+    url: https://help.formassembly.com/help/working-with-the-formassembly-api
+  - type: GitHubRepository
+    url: https://github.com/FormAssembly/formassembly-api
+  - type: PostmanCollection
+    url: https://www.postman.com/hayleyj1/my-workspace/collection/ot30hq0/formassembly-api
+- aid: formassembly:formassembly-themes-api
+  name: FormAssembly Themes API
+  description: Manage CSS themes applied to forms
+  humanURL: https://help.formassembly.com/help/working-with-the-formassembly-api
+  baseURL: https://app.formassembly.com/api_v1
+  tags:
+  - Themes
+  properties:
+  - type: OpenAPI
+    url: openapi/formassembly-themes-api-openapi.yml
+  - type: Documentation
+    url: https://help.formassembly.com/help/working-with-the-formassembly-api
+  - type: GitHubRepository
+    url: https://github.com/FormAssembly/formassembly-api
+  - type: PostmanCollection
+    url: https://www.postman.com/hayleyj1/my-workspace/collection/ot30hq0/formassembly-api
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/formassembly/overview
   - type: AgenticAccess
     url: agentic-access/formassembly-agentic-access.yml
   - type: TrustCenter
