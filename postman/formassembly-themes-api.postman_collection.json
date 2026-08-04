@@ -1,0 +1,760 @@
+{
+  "info": {
+    "_postman_id": "af173cee-e046-4e4b-95aa-1bcb922432f4",
+    "name": "FormAssembly REST Admin Themes API",
+    "description": "REST API for managing FormAssembly forms, responses, themes, connectors, form elements, and account data. Supports JSON, XML, CSV, and ZIP response formats. OAuth2 authentication is required for all requests. Endpoints vary by deployment edition including Developer Sandbox, FormAssembly.com cloud, and self-hosted Enterprise instances.\n\n\nContact Support:\n Name: FormAssembly Developer Hub",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:42:26.000Z",
+    "updatedAt": "2026-07-28T01:42:26.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-af173cee-e046-4e4b-95aa-1bcb922432f4"
+  },
+  "item": [
+    {
+      "name": "api_v1",
+      "item": [
+        {
+          "name": "themes",
+          "item": [
+            {
+              "name": "index.json",
+              "item": [
+                {
+                  "name": "List user themes",
+                  "id": "bc5bfd88-0fef-4eff-981f-657f9946e253",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api_v1/themes/index.json",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api_v1",
+                        "themes",
+                        "index.json"
+                      ]
+                    },
+                    "description": "Returns all themes belonging to the authenticated user."
+                  },
+                  "response": [
+                    {
+                      "id": "2936e22f-89cf-44a3-b819-0aa4a30226bd",
+                      "name": "List of themes",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api_v1/themes/index.json",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api_v1",
+                            "themes",
+                            "index.json"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"themes\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"css_data\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"css_data\": \"<string>\"\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T01:42:26.000Z",
+                      "updatedAt": "2026-07-28T01:42:26.000Z",
+                      "uid": "35240-2936e22f-89cf-44a3-b819-0aa4a30226bd"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:42:26.000Z",
+                  "updatedAt": "2026-07-28T01:42:26.000Z",
+                  "uid": "35240-bc5bfd88-0fef-4eff-981f-657f9946e253"
+                }
+              ],
+              "id": "a47a8619-7453-4820-9f1e-5a93ceb29612",
+              "createdAt": "2026-07-28T01:42:26.000Z",
+              "updatedAt": "2026-07-28T01:42:26.000Z",
+              "uid": "35240-a47a8619-7453-4820-9f1e-5a93ceb29612"
+            }
+          ],
+          "id": "5ccff168-1daf-46f8-bf9d-3b3e0e66a59e",
+          "createdAt": "2026-07-28T01:42:26.000Z",
+          "updatedAt": "2026-07-28T01:42:26.000Z",
+          "uid": "35240-5ccff168-1daf-46f8-bf9d-3b3e0e66a59e"
+        }
+      ],
+      "id": "28885402-9743-48aa-9071-276e009ac785",
+      "createdAt": "2026-07-28T01:42:26.000Z",
+      "updatedAt": "2026-07-28T01:42:26.000Z",
+      "uid": "35240-28885402-9743-48aa-9071-276e009ac785"
+    },
+    {
+      "name": "admin",
+      "item": [
+        {
+          "name": "api_v1",
+          "item": [
+            {
+              "name": "themes",
+              "item": [
+                {
+                  "name": "view",
+                  "item": [
+                    {
+                      "name": "{themeId}.json",
+                      "item": [
+                        {
+                          "name": "View theme CSS (Admin)",
+                          "id": "28ae953d-6149-4ca0-a0af-9244ad01bb70",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/admin/api_v1/themes/view/{{themeId}}.json",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "admin",
+                                "api_v1",
+                                "themes",
+                                "view",
+                                "{{themeId}}.json"
+                              ]
+                            },
+                            "description": "Returns the CSS content and metadata for the specified theme."
+                          },
+                          "response": [
+                            {
+                              "id": "29b51781-7054-46a5-bc8c-6abf0eb9a05c",
+                              "name": "Theme definition",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/admin/api_v1/themes/view/{{themeId}}.json",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "admin",
+                                    "api_v1",
+                                    "themes",
+                                    "view",
+                                    "{{themeId}}.json"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"css_data\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T01:42:26.000Z",
+                              "updatedAt": "2026-07-28T01:42:26.000Z",
+                              "uid": "35240-29b51781-7054-46a5-bc8c-6abf0eb9a05c"
+                            },
+                            {
+                              "id": "05f8c8ac-5d48-4f60-8af3-06715dd061fb",
+                              "name": "Theme not found",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/admin/api_v1/themes/view/{{themeId}}.json",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "admin",
+                                    "api_v1",
+                                    "themes",
+                                    "view",
+                                    "{{themeId}}.json"
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T01:42:26.000Z",
+                              "updatedAt": "2026-07-28T01:42:26.000Z",
+                              "uid": "35240-05f8c8ac-5d48-4f60-8af3-06715dd061fb"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:42:26.000Z",
+                          "updatedAt": "2026-07-28T01:42:26.000Z",
+                          "uid": "35240-28ae953d-6149-4ca0-a0af-9244ad01bb70"
+                        }
+                      ],
+                      "id": "c47e98fc-05fc-4b2a-89fd-64b0f52c6e6b",
+                      "createdAt": "2026-07-28T01:42:26.000Z",
+                      "updatedAt": "2026-07-28T01:42:26.000Z",
+                      "uid": "35240-c47e98fc-05fc-4b2a-89fd-64b0f52c6e6b"
+                    }
+                  ],
+                  "id": "83e5e728-3117-4dfd-98fc-536f73e1d533",
+                  "createdAt": "2026-07-28T01:42:26.000Z",
+                  "updatedAt": "2026-07-28T01:42:26.000Z",
+                  "uid": "35240-83e5e728-3117-4dfd-98fc-536f73e1d533"
+                },
+                {
+                  "name": "create.json",
+                  "item": [
+                    {
+                      "name": "Create a theme (Admin)",
+                      "id": "674fbe8f-683f-43e8-86f4-b3805fe5f688",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/x-www-form-urlencoded"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "urlencoded",
+                          "urlencoded": [
+                            {
+                              "description": "Display name for the theme",
+                              "key": "name",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Full CSS stylesheet content",
+                              "key": "css_data",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/admin/api_v1/themes/create.json",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "admin",
+                            "api_v1",
+                            "themes",
+                            "create.json"
+                          ]
+                        },
+                        "description": "Creates a new CSS theme for use with forms."
+                      },
+                      "response": [
+                        {
+                          "id": "6bb92ec0-3832-40c6-af4b-a734111645cb",
+                          "name": "Theme created successfully",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/x-www-form-urlencoded"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "urlencoded",
+                              "urlencoded": [
+                                {
+                                  "description": "Display name for the theme",
+                                  "key": "name",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Full CSS stylesheet content",
+                                  "key": "css_data",
+                                  "value": "<string>"
+                                }
+                              ]
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/admin/api_v1/themes/create.json",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "admin",
+                                "api_v1",
+                                "themes",
+                                "create.json"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"css_data\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T01:42:26.000Z",
+                          "updatedAt": "2026-07-28T01:42:26.000Z",
+                          "uid": "35240-6bb92ec0-3832-40c6-af4b-a734111645cb"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:42:26.000Z",
+                      "updatedAt": "2026-07-28T01:42:26.000Z",
+                      "uid": "35240-674fbe8f-683f-43e8-86f4-b3805fe5f688"
+                    }
+                  ],
+                  "id": "00a79149-15ac-4640-82cc-8cb86f898f47",
+                  "createdAt": "2026-07-28T01:42:26.000Z",
+                  "updatedAt": "2026-07-28T01:42:26.000Z",
+                  "uid": "35240-00a79149-15ac-4640-82cc-8cb86f898f47"
+                },
+                {
+                  "name": "edit",
+                  "item": [
+                    {
+                      "name": "{themeId}.json",
+                      "item": [
+                        {
+                          "name": "Update a theme (Admin)",
+                          "id": "b42c18d2-214e-41f7-ac9f-78d05c0eb677",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/x-www-form-urlencoded"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "urlencoded",
+                              "urlencoded": [
+                                {
+                                  "key": "name",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "css_data",
+                                  "value": "<string>"
+                                }
+                              ]
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/admin/api_v1/themes/edit/{{themeId}}.json",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "admin",
+                                "api_v1",
+                                "themes",
+                                "edit",
+                                "{{themeId}}.json"
+                              ]
+                            },
+                            "description": "Updates the name and/or CSS of an existing theme."
+                          },
+                          "response": [
+                            {
+                              "id": "460cf4e7-14bb-44f0-b00e-f3d62f352b40",
+                              "name": "Theme updated successfully",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/x-www-form-urlencoded"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "urlencoded",
+                                  "urlencoded": [
+                                    {
+                                      "key": "name",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "css_data",
+                                      "value": "<string>"
+                                    }
+                                  ]
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/admin/api_v1/themes/edit/{{themeId}}.json",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "admin",
+                                    "api_v1",
+                                    "themes",
+                                    "edit",
+                                    "{{themeId}}.json"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"css_data\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T01:42:26.000Z",
+                              "updatedAt": "2026-07-28T01:42:26.000Z",
+                              "uid": "35240-460cf4e7-14bb-44f0-b00e-f3d62f352b40"
+                            },
+                            {
+                              "id": "f0d1bfdb-be5d-4c82-bb2c-484572c25ec7",
+                              "name": "Theme not found",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/x-www-form-urlencoded"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "urlencoded",
+                                  "urlencoded": [
+                                    {
+                                      "key": "name",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "css_data",
+                                      "value": "<string>"
+                                    }
+                                  ]
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/admin/api_v1/themes/edit/{{themeId}}.json",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "admin",
+                                    "api_v1",
+                                    "themes",
+                                    "edit",
+                                    "{{themeId}}.json"
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T01:42:26.000Z",
+                              "updatedAt": "2026-07-28T01:42:26.000Z",
+                              "uid": "35240-f0d1bfdb-be5d-4c82-bb2c-484572c25ec7"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:42:26.000Z",
+                          "updatedAt": "2026-07-28T01:42:26.000Z",
+                          "uid": "35240-b42c18d2-214e-41f7-ac9f-78d05c0eb677"
+                        }
+                      ],
+                      "id": "da5cb0f7-702a-4c33-ac35-abeee88ec2c0",
+                      "createdAt": "2026-07-28T01:42:26.000Z",
+                      "updatedAt": "2026-07-28T01:42:26.000Z",
+                      "uid": "35240-da5cb0f7-702a-4c33-ac35-abeee88ec2c0"
+                    }
+                  ],
+                  "id": "1bf7f226-a7a9-4028-8d8c-87ffadbdc259",
+                  "createdAt": "2026-07-28T01:42:26.000Z",
+                  "updatedAt": "2026-07-28T01:42:26.000Z",
+                  "uid": "35240-1bf7f226-a7a9-4028-8d8c-87ffadbdc259"
+                },
+                {
+                  "name": "delete",
+                  "item": [
+                    {
+                      "name": "{themeId}.json",
+                      "item": [
+                        {
+                          "name": "Delete a theme (Admin)",
+                          "id": "e06b4414-9366-4e57-9f1f-874adfaea024",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/admin/api_v1/themes/delete/{{themeId}}.json",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "admin",
+                                "api_v1",
+                                "themes",
+                                "delete",
+                                "{{themeId}}.json"
+                              ]
+                            },
+                            "description": "Permanently removes the specified theme."
+                          },
+                          "response": [
+                            {
+                              "id": "25a780c6-17a1-4523-bd59-77c0c354ba04",
+                              "name": "Theme deleted successfully",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/admin/api_v1/themes/delete/{{themeId}}.json",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "admin",
+                                    "api_v1",
+                                    "themes",
+                                    "delete",
+                                    "{{themeId}}.json"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"status\": \"success\",\n  \"message\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T01:42:26.000Z",
+                              "updatedAt": "2026-07-28T01:42:26.000Z",
+                              "uid": "35240-25a780c6-17a1-4523-bd59-77c0c354ba04"
+                            },
+                            {
+                              "id": "79d0fdea-60bb-435a-bc6a-4618375fbaa5",
+                              "name": "Theme not found",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/admin/api_v1/themes/delete/{{themeId}}.json",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "admin",
+                                    "api_v1",
+                                    "themes",
+                                    "delete",
+                                    "{{themeId}}.json"
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T01:42:26.000Z",
+                              "updatedAt": "2026-07-28T01:42:26.000Z",
+                              "uid": "35240-79d0fdea-60bb-435a-bc6a-4618375fbaa5"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:42:26.000Z",
+                          "updatedAt": "2026-07-28T01:42:26.000Z",
+                          "uid": "35240-e06b4414-9366-4e57-9f1f-874adfaea024"
+                        }
+                      ],
+                      "id": "68f11687-f6f2-4dfd-ae91-e88895559849",
+                      "createdAt": "2026-07-28T01:42:26.000Z",
+                      "updatedAt": "2026-07-28T01:42:26.000Z",
+                      "uid": "35240-68f11687-f6f2-4dfd-ae91-e88895559849"
+                    }
+                  ],
+                  "id": "d43432b8-920d-41bc-9ce9-2c955b3deba5",
+                  "createdAt": "2026-07-28T01:42:26.000Z",
+                  "updatedAt": "2026-07-28T01:42:26.000Z",
+                  "uid": "35240-d43432b8-920d-41bc-9ce9-2c955b3deba5"
+                }
+              ],
+              "id": "56cfb88e-c7d7-46bb-b100-220d0036a642",
+              "createdAt": "2026-07-28T01:42:26.000Z",
+              "updatedAt": "2026-07-28T01:42:26.000Z",
+              "uid": "35240-56cfb88e-c7d7-46bb-b100-220d0036a642"
+            }
+          ],
+          "id": "1388e4b5-4e0a-43ad-a866-bdcbac78cec8",
+          "createdAt": "2026-07-28T01:42:26.000Z",
+          "updatedAt": "2026-07-28T01:42:26.000Z",
+          "uid": "35240-1388e4b5-4e0a-43ad-a866-bdcbac78cec8"
+        }
+      ],
+      "id": "fe758311-885e-4fa2-b044-e27fe1f9211a",
+      "createdAt": "2026-07-28T01:42:26.000Z",
+      "updatedAt": "2026-07-28T01:42:26.000Z",
+      "uid": "35240-fe758311-885e-4fa2-b044-e27fe1f9211a"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://app.formassembly.com/oauth/access_token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://app.formassembly.com/oauth/login",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://app.formassembly.com"
+    },
+    {
+      "key": "themeId",
+      "value": "<integer>"
+    }
+  ]
+}

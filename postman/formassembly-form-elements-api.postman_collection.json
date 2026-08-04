@@ -1,0 +1,848 @@
+{
+  "info": {
+    "_postman_id": "25483af1-3a75-4e26-935e-9070269142bc",
+    "name": "FormAssembly REST Admin Form Elements API",
+    "description": "REST API for managing FormAssembly forms, responses, themes, connectors, form elements, and account data. Supports JSON, XML, CSV, and ZIP response formats. OAuth2 authentication is required for all requests. Endpoints vary by deployment edition including Developer Sandbox, FormAssembly.com cloud, and self-hosted Enterprise instances.\n\n\nContact Support:\n Name: FormAssembly Developer Hub",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:42:17.000Z",
+    "updatedAt": "2026-07-28T01:42:17.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-25483af1-3a75-4e26-935e-9070269142bc"
+  },
+  "item": [
+    {
+      "name": "api_v1",
+      "item": [
+        {
+          "name": "form_elements",
+          "item": [
+            {
+              "name": "index.xml",
+              "item": [
+                {
+                  "name": "List available form elements",
+                  "id": "44bb69db-b192-4da0-813f-ec48ec7e4dce",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/xml"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api_v1/form_elements/index.xml",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api_v1",
+                        "form_elements",
+                        "index.xml"
+                      ]
+                    },
+                    "description": "Returns a list of all available form element types in XML format."
+                  },
+                  "response": [
+                    {
+                      "id": "dd4cd8d5-da78-47da-aea1-5e01d3ef9fbe",
+                      "name": "List of form elements",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/xml"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api_v1/form_elements/index.xml",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api_v1",
+                            "form_elements",
+                            "index.xml"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "xml",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/xml"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <elements>\n    <id>(integer)</id>\n    <name>(string)</name>\n    <comments>(string)</comments>\n    <category>(string)</category>\n    <subcategory>(string)</subcategory>\n    <xml_data>(string)</xml_data>\n    <batch>(string)</batch>\n  </elements>\n  <elements>\n    <id>(integer)</id>\n    <name>(string)</name>\n    <comments>(string)</comments>\n    <category>(string)</category>\n    <subcategory>(string)</subcategory>\n    <xml_data>(string)</xml_data>\n    <batch>(string)</batch>\n  </elements>\n</element>",
+                      "createdAt": "2026-07-28T01:42:17.000Z",
+                      "updatedAt": "2026-07-28T01:42:17.000Z",
+                      "uid": "35240-dd4cd8d5-da78-47da-aea1-5e01d3ef9fbe"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:42:17.000Z",
+                  "updatedAt": "2026-07-28T01:42:17.000Z",
+                  "uid": "35240-44bb69db-b192-4da0-813f-ec48ec7e4dce"
+                }
+              ],
+              "id": "1ca4238b-cf1f-410c-9139-0419be796bca",
+              "createdAt": "2026-07-28T01:42:17.000Z",
+              "updatedAt": "2026-07-28T01:42:17.000Z",
+              "uid": "35240-1ca4238b-cf1f-410c-9139-0419be796bca"
+            }
+          ],
+          "id": "3241a5ca-59e4-4cf3-84c0-119d286eae81",
+          "createdAt": "2026-07-28T01:42:17.000Z",
+          "updatedAt": "2026-07-28T01:42:17.000Z",
+          "uid": "35240-3241a5ca-59e4-4cf3-84c0-119d286eae81"
+        }
+      ],
+      "id": "1a69f89b-3e1c-44bd-85dc-4a4eb26c859f",
+      "createdAt": "2026-07-28T01:42:17.000Z",
+      "updatedAt": "2026-07-28T01:42:17.000Z",
+      "uid": "35240-1a69f89b-3e1c-44bd-85dc-4a4eb26c859f"
+    },
+    {
+      "name": "admin",
+      "item": [
+        {
+          "name": "api_v1",
+          "item": [
+            {
+              "name": "form_elements",
+              "item": [
+                {
+                  "name": "view",
+                  "item": [
+                    {
+                      "name": "{elementId}.xml",
+                      "item": [
+                        {
+                          "name": "View form element definition (Admin)",
+                          "id": "ad12ba58-4dae-4074-8735-d70d0240c69a",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/xml"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/admin/api_v1/form_elements/view/{{elementId}}.xml",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "admin",
+                                "api_v1",
+                                "form_elements",
+                                "view",
+                                "{{elementId}}.xml"
+                              ]
+                            },
+                            "description": "Returns the full XML definition of the specified form element type."
+                          },
+                          "response": [
+                            {
+                              "id": "28387a6e-7c0f-4eb0-a014-4ace0c2ab3b9",
+                              "name": "Form element definition",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/xml"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/admin/api_v1/form_elements/view/{{elementId}}.xml",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "admin",
+                                    "api_v1",
+                                    "form_elements",
+                                    "view",
+                                    "{{elementId}}.xml"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "xml",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/xml"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <id>(integer)</id>\n  <name>(string)</name>\n  <comments>(string)</comments>\n  <category>(string)</category>\n  <subcategory>(string)</subcategory>\n  <xml_data>(string)</xml_data>\n  <batch>(string)</batch>\n</element>",
+                              "createdAt": "2026-07-28T01:42:17.000Z",
+                              "updatedAt": "2026-07-28T01:42:17.000Z",
+                              "uid": "35240-28387a6e-7c0f-4eb0-a014-4ace0c2ab3b9"
+                            },
+                            {
+                              "id": "e53f921c-dc10-4a94-8533-774d4e0339f0",
+                              "name": "Element not found",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/admin/api_v1/form_elements/view/{{elementId}}.xml",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "admin",
+                                    "api_v1",
+                                    "form_elements",
+                                    "view",
+                                    "{{elementId}}.xml"
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T01:42:17.000Z",
+                              "updatedAt": "2026-07-28T01:42:17.000Z",
+                              "uid": "35240-e53f921c-dc10-4a94-8533-774d4e0339f0"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:42:17.000Z",
+                          "updatedAt": "2026-07-28T01:42:17.000Z",
+                          "uid": "35240-ad12ba58-4dae-4074-8735-d70d0240c69a"
+                        }
+                      ],
+                      "id": "4907d86a-4033-4199-913b-9b2e0ee5ed19",
+                      "createdAt": "2026-07-28T01:42:17.000Z",
+                      "updatedAt": "2026-07-28T01:42:17.000Z",
+                      "uid": "35240-4907d86a-4033-4199-913b-9b2e0ee5ed19"
+                    }
+                  ],
+                  "id": "4abbc4dc-c5d9-4b79-b59a-c1e3a44ac9b9",
+                  "createdAt": "2026-07-28T01:42:17.000Z",
+                  "updatedAt": "2026-07-28T01:42:17.000Z",
+                  "uid": "35240-4abbc4dc-c5d9-4b79-b59a-c1e3a44ac9b9"
+                },
+                {
+                  "name": "create.json",
+                  "item": [
+                    {
+                      "name": "Create a form element (Admin)",
+                      "id": "a2703f61-0080-469c-be02-5620797062c3",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/x-www-form-urlencoded"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "urlencoded",
+                          "urlencoded": [
+                            {
+                              "description": "XML definition of the element",
+                              "key": "xml_data",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Display name for the element",
+                              "key": "name",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Notes about the element",
+                              "key": "comments",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Category for organizing elements",
+                              "key": "category",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Subcategory for further organization",
+                              "key": "subcategory",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Batch identifier for bulk operations",
+                              "key": "batch",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/admin/api_v1/form_elements/create.json",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "admin",
+                            "api_v1",
+                            "form_elements",
+                            "create.json"
+                          ]
+                        },
+                        "description": "Creates a new custom form element type."
+                      },
+                      "response": [
+                        {
+                          "id": "a8f43e9d-000a-45c2-af26-3581c0dfa564",
+                          "name": "Form element created successfully",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/x-www-form-urlencoded"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "urlencoded",
+                              "urlencoded": [
+                                {
+                                  "description": "XML definition of the element",
+                                  "key": "xml_data",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Display name for the element",
+                                  "key": "name",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Notes about the element",
+                                  "key": "comments",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Category for organizing elements",
+                                  "key": "category",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Subcategory for further organization",
+                                  "key": "subcategory",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Batch identifier for bulk operations",
+                                  "key": "batch",
+                                  "value": "<string>"
+                                }
+                              ]
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/admin/api_v1/form_elements/create.json",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "admin",
+                                "api_v1",
+                                "form_elements",
+                                "create.json"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"comments\": \"<string>\",\n  \"category\": \"<string>\",\n  \"subcategory\": \"<string>\",\n  \"xml_data\": \"<string>\",\n  \"batch\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T01:42:17.000Z",
+                          "updatedAt": "2026-07-28T01:42:17.000Z",
+                          "uid": "35240-a8f43e9d-000a-45c2-af26-3581c0dfa564"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:42:17.000Z",
+                      "updatedAt": "2026-07-28T01:42:17.000Z",
+                      "uid": "35240-a2703f61-0080-469c-be02-5620797062c3"
+                    }
+                  ],
+                  "id": "6818f5aa-8801-4f7a-a319-3ba7a16b26c5",
+                  "createdAt": "2026-07-28T01:42:17.000Z",
+                  "updatedAt": "2026-07-28T01:42:17.000Z",
+                  "uid": "35240-6818f5aa-8801-4f7a-a319-3ba7a16b26c5"
+                },
+                {
+                  "name": "edit",
+                  "item": [
+                    {
+                      "name": "{elementId}.json",
+                      "item": [
+                        {
+                          "name": "Update a form element (Admin)",
+                          "id": "2e2cedc8-5d37-4077-8e84-f2c47c8b8ba5",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/x-www-form-urlencoded"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "urlencoded",
+                              "urlencoded": [
+                                {
+                                  "key": "xml_data",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "name",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "comments",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "category",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "subcategory",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "batch",
+                                  "value": "<string>"
+                                }
+                              ]
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/admin/api_v1/form_elements/edit/{{elementId}}.json",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "admin",
+                                "api_v1",
+                                "form_elements",
+                                "edit",
+                                "{{elementId}}.json"
+                              ]
+                            },
+                            "description": "Updates an existing custom form element type."
+                          },
+                          "response": [
+                            {
+                              "id": "1ee61a20-c3e5-417e-aa40-bc0358b4af56",
+                              "name": "Form element updated successfully",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/x-www-form-urlencoded"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "urlencoded",
+                                  "urlencoded": [
+                                    {
+                                      "key": "xml_data",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "name",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "comments",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "category",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "subcategory",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "batch",
+                                      "value": "<string>"
+                                    }
+                                  ]
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/admin/api_v1/form_elements/edit/{{elementId}}.json",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "admin",
+                                    "api_v1",
+                                    "form_elements",
+                                    "edit",
+                                    "{{elementId}}.json"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"comments\": \"<string>\",\n  \"category\": \"<string>\",\n  \"subcategory\": \"<string>\",\n  \"xml_data\": \"<string>\",\n  \"batch\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T01:42:17.000Z",
+                              "updatedAt": "2026-07-28T01:42:17.000Z",
+                              "uid": "35240-1ee61a20-c3e5-417e-aa40-bc0358b4af56"
+                            },
+                            {
+                              "id": "f0e719d1-3d2a-482c-9bbd-1cbee1ab1c84",
+                              "name": "Element not found",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/x-www-form-urlencoded"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "urlencoded",
+                                  "urlencoded": [
+                                    {
+                                      "key": "xml_data",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "name",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "comments",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "category",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "subcategory",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "batch",
+                                      "value": "<string>"
+                                    }
+                                  ]
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/admin/api_v1/form_elements/edit/{{elementId}}.json",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "admin",
+                                    "api_v1",
+                                    "form_elements",
+                                    "edit",
+                                    "{{elementId}}.json"
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T01:42:17.000Z",
+                              "updatedAt": "2026-07-28T01:42:17.000Z",
+                              "uid": "35240-f0e719d1-3d2a-482c-9bbd-1cbee1ab1c84"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:42:17.000Z",
+                          "updatedAt": "2026-07-28T01:42:17.000Z",
+                          "uid": "35240-2e2cedc8-5d37-4077-8e84-f2c47c8b8ba5"
+                        }
+                      ],
+                      "id": "fb642892-4607-4c45-87d9-375f2d7c2df9",
+                      "createdAt": "2026-07-28T01:42:17.000Z",
+                      "updatedAt": "2026-07-28T01:42:17.000Z",
+                      "uid": "35240-fb642892-4607-4c45-87d9-375f2d7c2df9"
+                    }
+                  ],
+                  "id": "1858d07e-4c3d-4a52-900a-39b276c8fb7d",
+                  "createdAt": "2026-07-28T01:42:17.000Z",
+                  "updatedAt": "2026-07-28T01:42:17.000Z",
+                  "uid": "35240-1858d07e-4c3d-4a52-900a-39b276c8fb7d"
+                },
+                {
+                  "name": "delete",
+                  "item": [
+                    {
+                      "name": "{elementId}.json",
+                      "item": [
+                        {
+                          "name": "Delete a form element (Admin)",
+                          "id": "a3d98767-6c16-49af-98a6-c38562434478",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/admin/api_v1/form_elements/delete/{{elementId}}.json",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "admin",
+                                "api_v1",
+                                "form_elements",
+                                "delete",
+                                "{{elementId}}.json"
+                              ]
+                            },
+                            "description": "Permanently removes a custom form element type."
+                          },
+                          "response": [
+                            {
+                              "id": "a0720965-8ef4-4007-b6ee-f4e831f43056",
+                              "name": "Form element deleted",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/admin/api_v1/form_elements/delete/{{elementId}}.json",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "admin",
+                                    "api_v1",
+                                    "form_elements",
+                                    "delete",
+                                    "{{elementId}}.json"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"status\": \"success\",\n  \"message\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T01:42:17.000Z",
+                              "updatedAt": "2026-07-28T01:42:17.000Z",
+                              "uid": "35240-a0720965-8ef4-4007-b6ee-f4e831f43056"
+                            },
+                            {
+                              "id": "93c9d069-3731-46ba-9465-c0e4ce8da7d2",
+                              "name": "Element not found",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/admin/api_v1/form_elements/delete/{{elementId}}.json",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "admin",
+                                    "api_v1",
+                                    "form_elements",
+                                    "delete",
+                                    "{{elementId}}.json"
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T01:42:17.000Z",
+                              "updatedAt": "2026-07-28T01:42:17.000Z",
+                              "uid": "35240-93c9d069-3731-46ba-9465-c0e4ce8da7d2"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:42:17.000Z",
+                          "updatedAt": "2026-07-28T01:42:17.000Z",
+                          "uid": "35240-a3d98767-6c16-49af-98a6-c38562434478"
+                        }
+                      ],
+                      "id": "9fb96a5d-2ace-477d-b7df-a3b13625d6ca",
+                      "createdAt": "2026-07-28T01:42:17.000Z",
+                      "updatedAt": "2026-07-28T01:42:17.000Z",
+                      "uid": "35240-9fb96a5d-2ace-477d-b7df-a3b13625d6ca"
+                    }
+                  ],
+                  "id": "ea6d9eef-0645-4e6e-bf55-9317e070f370",
+                  "createdAt": "2026-07-28T01:42:17.000Z",
+                  "updatedAt": "2026-07-28T01:42:17.000Z",
+                  "uid": "35240-ea6d9eef-0645-4e6e-bf55-9317e070f370"
+                }
+              ],
+              "id": "9d4b7f55-7dc3-4d4b-be0e-ed2af8f56729",
+              "createdAt": "2026-07-28T01:42:17.000Z",
+              "updatedAt": "2026-07-28T01:42:17.000Z",
+              "uid": "35240-9d4b7f55-7dc3-4d4b-be0e-ed2af8f56729"
+            }
+          ],
+          "id": "ce6a8b13-6625-4af0-b822-4a224b282b15",
+          "createdAt": "2026-07-28T01:42:17.000Z",
+          "updatedAt": "2026-07-28T01:42:17.000Z",
+          "uid": "35240-ce6a8b13-6625-4af0-b822-4a224b282b15"
+        }
+      ],
+      "id": "945ba637-1bf6-47e2-965c-aa1e9c26313c",
+      "createdAt": "2026-07-28T01:42:17.000Z",
+      "updatedAt": "2026-07-28T01:42:17.000Z",
+      "uid": "35240-945ba637-1bf6-47e2-965c-aa1e9c26313c"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://app.formassembly.com/oauth/access_token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://app.formassembly.com/oauth/login",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://app.formassembly.com"
+    },
+    {
+      "key": "elementId",
+      "value": "<integer>"
+    }
+  ]
+}

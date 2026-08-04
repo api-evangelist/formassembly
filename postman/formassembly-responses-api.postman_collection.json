@@ -1,0 +1,325 @@
+{
+  "info": {
+    "_postman_id": "2bcd9258-a773-4506-8996-136144c971d3",
+    "name": "FormAssembly REST Admin Responses API",
+    "description": "REST API for managing FormAssembly forms, responses, themes, connectors, form elements, and account data. Supports JSON, XML, CSV, and ZIP response formats. OAuth2 authentication is required for all requests. Endpoints vary by deployment edition including Developer Sandbox, FormAssembly.com cloud, and self-hosted Enterprise instances.\n\n\nContact Support:\n Name: FormAssembly Developer Hub",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:42:25.000Z",
+    "updatedAt": "2026-07-28T01:42:25.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-2bcd9258-a773-4506-8996-136144c971d3"
+  },
+  "item": [
+    {
+      "name": "api_v1",
+      "item": [
+        {
+          "name": "responses",
+          "item": [
+            {
+              "name": "export",
+              "item": [
+                {
+                  "name": "{formId}.{format}",
+                  "item": [
+                    {
+                      "name": "Export form responses",
+                      "id": "7148a50f-b0e8-4859-a38f-810a7607f870",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api_v1/responses/export/{{formId}}.{{format}}?date_from=<date>&date_to=<date>&filter=all&response_ids=<string>&flag=<integer>&unlock=<boolean>&page=1&page_size=200",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api_v1",
+                            "responses",
+                            "export",
+                            "{{formId}}.{{format}}"
+                          ],
+                          "query": [
+                            {
+                              "description": "Filter responses submitted on or after this date",
+                              "key": "date_from",
+                              "value": "<date>"
+                            },
+                            {
+                              "description": "Filter responses submitted on or before this date",
+                              "key": "date_to",
+                              "value": "<date>"
+                            },
+                            {
+                              "description": "Filter preset",
+                              "key": "filter",
+                              "value": "all"
+                            },
+                            {
+                              "description": "Comma-delimited list of specific response IDs to export",
+                              "key": "response_ids",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Filter by flag status",
+                              "key": "flag",
+                              "value": "<integer>"
+                            },
+                            {
+                              "description": "Include locked responses",
+                              "key": "unlock",
+                              "value": "<boolean>"
+                            },
+                            {
+                              "description": "Page number for paginated results",
+                              "key": "page",
+                              "value": "1"
+                            },
+                            {
+                              "description": "Number of responses per page (default 200)",
+                              "key": "page_size",
+                              "value": "200"
+                            }
+                          ]
+                        },
+                        "description": "Exports submitted responses for a form. Supports JSON, XML, CSV, and ZIP formats. Filtering by date range, specific response IDs, and flag status is supported.\n"
+                      },
+                      "response": [
+                        {
+                          "id": "8156f0f9-b11a-4305-bfa4-c6717fbe58b2",
+                          "name": "Exported responses",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api_v1/responses/export/{{formId}}.{{format}}?date_from=<date>&date_to=<date>&filter=all&response_ids=<string>&flag=<integer>&unlock=<boolean>&page=1&page_size=200",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api_v1",
+                                "responses",
+                                "export",
+                                "{{formId}}.{{format}}"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Filter responses submitted on or after this date",
+                                  "key": "date_from",
+                                  "value": "<date>"
+                                },
+                                {
+                                  "description": "Filter responses submitted on or before this date",
+                                  "key": "date_to",
+                                  "value": "<date>"
+                                },
+                                {
+                                  "description": "Filter preset",
+                                  "key": "filter",
+                                  "value": "all"
+                                },
+                                {
+                                  "description": "Comma-delimited list of specific response IDs to export",
+                                  "key": "response_ids",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter by flag status",
+                                  "key": "flag",
+                                  "value": "<integer>"
+                                },
+                                {
+                                  "description": "Include locked responses",
+                                  "key": "unlock",
+                                  "value": "<boolean>"
+                                },
+                                {
+                                  "description": "Page number for paginated results",
+                                  "key": "page",
+                                  "value": "1"
+                                },
+                                {
+                                  "description": "Number of responses per page (default 200)",
+                                  "key": "page_size",
+                                  "value": "200"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"responses\": [\n    {\n      \"id\": \"<integer>\",\n      \"form_id\": \"<integer>\",\n      \"date_created\": \"<dateTime>\",\n      \"flag\": \"<integer>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"form_id\": \"<integer>\",\n      \"date_created\": \"<dateTime>\",\n      \"flag\": \"<integer>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:42:25.000Z",
+                          "updatedAt": "2026-07-28T01:42:25.000Z",
+                          "uid": "35240-8156f0f9-b11a-4305-bfa4-c6717fbe58b2"
+                        },
+                        {
+                          "id": "ae2273f8-9dcc-486b-855a-1b16ea455057",
+                          "name": "Form not found",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api_v1/responses/export/{{formId}}.{{format}}?date_from=<date>&date_to=<date>&filter=all&response_ids=<string>&flag=<integer>&unlock=<boolean>&page=1&page_size=200",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api_v1",
+                                "responses",
+                                "export",
+                                "{{formId}}.{{format}}"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Filter responses submitted on or after this date",
+                                  "key": "date_from",
+                                  "value": "<date>"
+                                },
+                                {
+                                  "description": "Filter responses submitted on or before this date",
+                                  "key": "date_to",
+                                  "value": "<date>"
+                                },
+                                {
+                                  "description": "Filter preset",
+                                  "key": "filter",
+                                  "value": "all"
+                                },
+                                {
+                                  "description": "Comma-delimited list of specific response IDs to export",
+                                  "key": "response_ids",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter by flag status",
+                                  "key": "flag",
+                                  "value": "<integer>"
+                                },
+                                {
+                                  "description": "Include locked responses",
+                                  "key": "unlock",
+                                  "value": "<boolean>"
+                                },
+                                {
+                                  "description": "Page number for paginated results",
+                                  "key": "page",
+                                  "value": "1"
+                                },
+                                {
+                                  "description": "Number of responses per page (default 200)",
+                                  "key": "page_size",
+                                  "value": "200"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T01:42:25.000Z",
+                          "updatedAt": "2026-07-28T01:42:25.000Z",
+                          "uid": "35240-ae2273f8-9dcc-486b-855a-1b16ea455057"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:42:25.000Z",
+                      "updatedAt": "2026-07-28T01:42:25.000Z",
+                      "uid": "35240-7148a50f-b0e8-4859-a38f-810a7607f870"
+                    }
+                  ],
+                  "id": "8d94bcd5-443f-46b2-8e6b-7694b82987f5",
+                  "createdAt": "2026-07-28T01:42:25.000Z",
+                  "updatedAt": "2026-07-28T01:42:25.000Z",
+                  "uid": "35240-8d94bcd5-443f-46b2-8e6b-7694b82987f5"
+                }
+              ],
+              "id": "08a9588c-2c72-45af-a2c6-93c9ffc36f7b",
+              "createdAt": "2026-07-28T01:42:25.000Z",
+              "updatedAt": "2026-07-28T01:42:25.000Z",
+              "uid": "35240-08a9588c-2c72-45af-a2c6-93c9ffc36f7b"
+            }
+          ],
+          "id": "813a38e3-d5ac-4dc3-af20-4867af37b366",
+          "createdAt": "2026-07-28T01:42:25.000Z",
+          "updatedAt": "2026-07-28T01:42:25.000Z",
+          "uid": "35240-813a38e3-d5ac-4dc3-af20-4867af37b366"
+        }
+      ],
+      "id": "6603309a-3eac-47d0-908f-5fa62a7b3a34",
+      "createdAt": "2026-07-28T01:42:25.000Z",
+      "updatedAt": "2026-07-28T01:42:25.000Z",
+      "uid": "35240-6603309a-3eac-47d0-908f-5fa62a7b3a34"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://app.formassembly.com/oauth/access_token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://app.formassembly.com/oauth/login",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://app.formassembly.com"
+    },
+    {
+      "key": "formId",
+      "value": "<integer>"
+    },
+    {
+      "key": "format",
+      "value": "zip"
+    }
+  ]
+}

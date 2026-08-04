@@ -1,0 +1,28 @@
+{
+  "provider": "formassembly",
+  "sources": [
+    "formassembly-admin-api-openapi.yml",
+    "formassembly-aggregates-api-openapi.yml",
+    "formassembly-connectors-api-openapi.yml",
+    "formassembly-form-elements-api-openapi.yml",
+    "formassembly-forms-api-openapi.yml",
+    "formassembly-oauth2-api-openapi.yml",
+    "formassembly-responses-api-openapi.yml",
+    "formassembly-themes-api-openapi.yml"
+  ],
+  "outputs": [
+    "formassembly-admin-api-openapi.yml",
+    "formassembly-aggregates-api-openapi.yml",
+    "formassembly-connectors-api-openapi.yml",
+    "formassembly-form-elements-api-openapi.yml",
+    "formassembly-forms-api-openapi.yml",
+    "formassembly-oauth2-api-openapi.yml",
+    "formassembly-responses-api-openapi.yml",
+    "formassembly-themes-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

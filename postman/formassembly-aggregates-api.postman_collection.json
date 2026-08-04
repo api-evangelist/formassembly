@@ -1,0 +1,207 @@
+{
+  "info": {
+    "_postman_id": "73e88387-c7ed-4797-bf90-c82a8c9b81bc",
+    "name": "FormAssembly REST Admin Aggregates API",
+    "description": "REST API for managing FormAssembly forms, responses, themes, connectors, form elements, and account data. Supports JSON, XML, CSV, and ZIP response formats. OAuth2 authentication is required for all requests. Endpoints vary by deployment edition including Developer Sandbox, FormAssembly.com cloud, and self-hosted Enterprise instances.\n\n\nContact Support:\n Name: FormAssembly Developer Hub",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:42:00.000Z",
+    "updatedAt": "2026-07-28T01:42:00.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-73e88387-c7ed-4797-bf90-c82a8c9b81bc"
+  },
+  "item": [
+    {
+      "name": "admin",
+      "item": [
+        {
+          "name": "api_v1",
+          "item": [
+            {
+              "name": "aggregates",
+              "item": [
+                {
+                  "name": "reset_counters",
+                  "item": [
+                    {
+                      "name": "{formId}.json",
+                      "item": [
+                        {
+                          "name": "Reset form counters (Admin)",
+                          "id": "9d78e254-db7a-4b40-99d5-b1f082218b16",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/admin/api_v1/aggregates/reset_counters/{{formId}}.json",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "admin",
+                                "api_v1",
+                                "aggregates",
+                                "reset_counters",
+                                "{{formId}}.json"
+                              ]
+                            },
+                            "description": "Resets submission counters and aggregated statistics for the specified form."
+                          },
+                          "response": [
+                            {
+                              "id": "b27956be-6c08-49dc-ab82-4c8c996036c5",
+                              "name": "Counters reset successfully",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/admin/api_v1/aggregates/reset_counters/{{formId}}.json",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "admin",
+                                    "api_v1",
+                                    "aggregates",
+                                    "reset_counters",
+                                    "{{formId}}.json"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"status\": \"success\",\n  \"message\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T01:42:01.000Z",
+                              "updatedAt": "2026-07-28T01:42:01.000Z",
+                              "uid": "35240-b27956be-6c08-49dc-ab82-4c8c996036c5"
+                            },
+                            {
+                              "id": "8e6a8c75-fcd2-45d8-82f0-cd7c0f6e4c55",
+                              "name": "Form not found",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/admin/api_v1/aggregates/reset_counters/{{formId}}.json",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "admin",
+                                    "api_v1",
+                                    "aggregates",
+                                    "reset_counters",
+                                    "{{formId}}.json"
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T01:42:01.000Z",
+                              "updatedAt": "2026-07-28T01:42:01.000Z",
+                              "uid": "35240-8e6a8c75-fcd2-45d8-82f0-cd7c0f6e4c55"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:42:00.000Z",
+                          "updatedAt": "2026-07-28T01:42:00.000Z",
+                          "uid": "35240-9d78e254-db7a-4b40-99d5-b1f082218b16"
+                        }
+                      ],
+                      "id": "99e4ac5b-cb12-4058-befe-1d90024758ee",
+                      "createdAt": "2026-07-28T01:42:00.000Z",
+                      "updatedAt": "2026-07-28T01:42:00.000Z",
+                      "uid": "35240-99e4ac5b-cb12-4058-befe-1d90024758ee"
+                    }
+                  ],
+                  "id": "fda706ad-28e5-4d7f-9248-42ff37170534",
+                  "createdAt": "2026-07-28T01:42:00.000Z",
+                  "updatedAt": "2026-07-28T01:42:00.000Z",
+                  "uid": "35240-fda706ad-28e5-4d7f-9248-42ff37170534"
+                }
+              ],
+              "id": "bfb9ea9c-531e-4bc4-aea5-2dd5d932dc24",
+              "createdAt": "2026-07-28T01:42:00.000Z",
+              "updatedAt": "2026-07-28T01:42:00.000Z",
+              "uid": "35240-bfb9ea9c-531e-4bc4-aea5-2dd5d932dc24"
+            }
+          ],
+          "id": "ec1e2ffe-6db5-4b44-9807-1258e8e25c00",
+          "createdAt": "2026-07-28T01:42:00.000Z",
+          "updatedAt": "2026-07-28T01:42:00.000Z",
+          "uid": "35240-ec1e2ffe-6db5-4b44-9807-1258e8e25c00"
+        }
+      ],
+      "id": "e25229b9-f841-4a47-9597-ba51a6175c49",
+      "createdAt": "2026-07-28T01:42:00.000Z",
+      "updatedAt": "2026-07-28T01:42:00.000Z",
+      "uid": "35240-e25229b9-f841-4a47-9597-ba51a6175c49"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://app.formassembly.com/oauth/access_token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://app.formassembly.com/oauth/login",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://app.formassembly.com"
+    },
+    {
+      "key": "formId",
+      "value": "<integer>"
+    }
+  ]
+}

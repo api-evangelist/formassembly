@@ -1,0 +1,407 @@
+{
+  "info": {
+    "_postman_id": "29d67d86-d3f1-4aec-9fd4-6976d91b2c39",
+    "name": "FormAssembly REST Admin OAuth2 API",
+    "description": "REST API for managing FormAssembly forms, responses, themes, connectors, form elements, and account data. Supports JSON, XML, CSV, and ZIP response formats. OAuth2 authentication is required for all requests. Endpoints vary by deployment edition including Developer Sandbox, FormAssembly.com cloud, and self-hosted Enterprise instances.\n\n\nContact Support:\n Name: FormAssembly Developer Hub",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:42:24.000Z",
+    "updatedAt": "2026-07-28T01:42:24.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-29d67d86-d3f1-4aec-9fd4-6976d91b2c39"
+  },
+  "item": [
+    {
+      "name": "oauth",
+      "item": [
+        {
+          "name": "login",
+          "item": [
+            {
+              "name": "Initiate OAuth2 authorization",
+              "id": "37eef425-dad8-4ee8-9872-cc35bf3aa09f",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/oauth/login?type=web&client_id=<string>&redirect_uri=<uri>&response_type=code",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oauth",
+                    "login"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "type",
+                      "value": "web"
+                    },
+                    {
+                      "description": "(Required) Your registered OAuth2 client ID",
+                      "key": "client_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) Callback URI registered with your application",
+                      "key": "redirect_uri",
+                      "value": "<uri>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "response_type",
+                      "value": "code"
+                    }
+                  ]
+                },
+                "description": "Redirect users here to begin the OAuth2 authorization code flow."
+              },
+              "response": [
+                {
+                  "id": "24c3768f-28bc-4695-b7f3-338d6c22b22e",
+                  "name": "Redirect to FormAssembly login page",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/oauth/login?type=web&client_id=<string>&redirect_uri=<uri>&response_type=code",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "oauth",
+                        "login"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "type",
+                          "value": "web"
+                        },
+                        {
+                          "description": "(Required) Your registered OAuth2 client ID",
+                          "key": "client_id",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "(Required) Callback URI registered with your application",
+                          "key": "redirect_uri",
+                          "value": "<uri>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "response_type",
+                          "value": "code"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Found",
+                  "code": 302,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T01:42:25.000Z",
+                  "updatedAt": "2026-07-28T01:42:25.000Z",
+                  "uid": "35240-24c3768f-28bc-4695-b7f3-338d6c22b22e"
+                }
+              ],
+              "createdAt": "2026-07-28T01:42:25.000Z",
+              "updatedAt": "2026-07-28T01:42:25.000Z",
+              "uid": "35240-37eef425-dad8-4ee8-9872-cc35bf3aa09f"
+            }
+          ],
+          "id": "9499b3f9-d5b9-46c5-b242-3899dc8d34d5",
+          "createdAt": "2026-07-28T01:42:25.000Z",
+          "updatedAt": "2026-07-28T01:42:25.000Z",
+          "uid": "35240-9499b3f9-d5b9-46c5-b242-3899dc8d34d5"
+        },
+        {
+          "name": "access_token",
+          "item": [
+            {
+              "name": "Exchange authorization code for access token",
+              "id": "72f4c6d8-97f9-468f-8e54-fae31c674756",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "description": "(Required) ",
+                      "key": "grant_type",
+                      "value": "authorization_code"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "type",
+                      "value": "web_server"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "client_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "client_secret",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "redirect_uri",
+                      "value": "<uri>"
+                    },
+                    {
+                      "description": "(Required) Authorization code from callback",
+                      "key": "code",
+                      "value": "<string>"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/oauth/access_token",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oauth",
+                    "access_token"
+                  ]
+                },
+                "description": "Exchange the authorization code received after login for an OAuth2 access token."
+              },
+              "response": [
+                {
+                  "id": "f7a0d20a-4d65-4685-9f23-a0f0b363e428",
+                  "name": "Access token issued",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/x-www-form-urlencoded"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "urlencoded",
+                      "urlencoded": [
+                        {
+                          "description": "(Required) ",
+                          "key": "grant_type",
+                          "value": "authorization_code"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "type",
+                          "value": "web_server"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "client_id",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "client_secret",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "redirect_uri",
+                          "value": "<uri>"
+                        },
+                        {
+                          "description": "(Required) Authorization code from callback",
+                          "key": "code",
+                          "value": "<string>"
+                        }
+                      ]
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/oauth/access_token",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "oauth",
+                        "access_token"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"access_token\": \"<string>\",\n  \"expires_in\": \"<integer>\",\n  \"scope\": \"<string>\",\n  \"refresh_token\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T01:42:25.000Z",
+                  "updatedAt": "2026-07-28T01:42:25.000Z",
+                  "uid": "35240-f7a0d20a-4d65-4685-9f23-a0f0b363e428"
+                },
+                {
+                  "id": "f66119f0-cc21-4df9-8893-5e8614fa632b",
+                  "name": "Invalid request",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/x-www-form-urlencoded"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "urlencoded",
+                      "urlencoded": [
+                        {
+                          "description": "(Required) ",
+                          "key": "grant_type",
+                          "value": "authorization_code"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "type",
+                          "value": "web_server"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "client_id",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "client_secret",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "redirect_uri",
+                          "value": "<uri>"
+                        },
+                        {
+                          "description": "(Required) Authorization code from callback",
+                          "key": "code",
+                          "value": "<string>"
+                        }
+                      ]
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/oauth/access_token",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "oauth",
+                        "access_token"
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"status\": \"error\",\n  \"message\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T01:42:25.000Z",
+                  "updatedAt": "2026-07-28T01:42:25.000Z",
+                  "uid": "35240-f66119f0-cc21-4df9-8893-5e8614fa632b"
+                }
+              ],
+              "createdAt": "2026-07-28T01:42:25.000Z",
+              "updatedAt": "2026-07-28T01:42:25.000Z",
+              "uid": "35240-72f4c6d8-97f9-468f-8e54-fae31c674756"
+            }
+          ],
+          "id": "7e79fb0b-cff9-4991-89fe-b44df5e042be",
+          "createdAt": "2026-07-28T01:42:25.000Z",
+          "updatedAt": "2026-07-28T01:42:25.000Z",
+          "uid": "35240-7e79fb0b-cff9-4991-89fe-b44df5e042be"
+        }
+      ],
+      "id": "79e30a3d-9c62-4320-81be-2d13f047bae4",
+      "createdAt": "2026-07-28T01:42:25.000Z",
+      "updatedAt": "2026-07-28T01:42:25.000Z",
+      "uid": "35240-79e30a3d-9c62-4320-81be-2d13f047bae4"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://app.formassembly.com/oauth/access_token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://app.formassembly.com/oauth/login",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://app.formassembly.com"
+    }
+  ]
+}

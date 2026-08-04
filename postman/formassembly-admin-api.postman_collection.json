@@ -1,0 +1,2345 @@
+{
+  "info": {
+    "_postman_id": "e42d881e-9afc-45ad-aada-ae0e3fc89400",
+    "name": "FormAssembly REST Admin API",
+    "description": "REST API for managing FormAssembly forms, responses, themes, connectors, form elements, and account data. Supports JSON, XML, CSV, and ZIP response formats. OAuth2 authentication is required for all requests. Endpoints vary by deployment edition including Developer Sandbox, FormAssembly.com cloud, and self-hosted Enterprise instances.\n\n\nContact Support:\n Name: FormAssembly Developer Hub",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:41:55.000Z",
+    "updatedAt": "2026-07-28T01:41:56.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-e42d881e-9afc-45ad-aada-ae0e3fc89400"
+  },
+  "item": [
+    {
+      "name": "admin",
+      "item": [
+        {
+          "name": "api_v1",
+          "item": [
+            {
+              "name": "forms",
+              "item": [
+                {
+                  "name": "index.{format}",
+                  "item": [
+                    {
+                      "name": "List all forms (Admin)",
+                      "id": "2b9bc711-19fb-4bee-856f-fe5a7b1e317e",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/admin/api_v1/forms/index.{{format}}",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "admin",
+                            "api_v1",
+                            "forms",
+                            "index.{{format}}"
+                          ]
+                        },
+                        "description": "Admin-only endpoint that returns all forms across all users in the account."
+                      },
+                      "response": [
+                        {
+                          "id": "ee536d26-6ff3-4008-a88a-feae84f95e4c",
+                          "name": "List of all forms",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/admin/api_v1/forms/index.{{format}}",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "admin",
+                                "api_v1",
+                                "forms",
+                                "index.{{format}}"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"forms\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"language\": \"<string>\",\n      \"builder_version\": \"<string>\",\n      \"xml_data\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"language\": \"<string>\",\n      \"builder_version\": \"<string>\",\n      \"xml_data\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:41:56.000Z",
+                          "updatedAt": "2026-07-28T01:41:56.000Z",
+                          "uid": "35240-ee536d26-6ff3-4008-a88a-feae84f95e4c"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:41:56.000Z",
+                      "updatedAt": "2026-07-28T01:41:56.000Z",
+                      "uid": "35240-2b9bc711-19fb-4bee-856f-fe5a7b1e317e"
+                    }
+                  ],
+                  "id": "71845cf3-e690-425d-a11d-ab8a4df8a928",
+                  "createdAt": "2026-07-28T01:41:56.000Z",
+                  "updatedAt": "2026-07-28T01:41:56.000Z",
+                  "uid": "35240-71845cf3-e690-425d-a11d-ab8a4df8a928"
+                }
+              ],
+              "id": "87cbcf2c-75ab-410f-b46b-cfba66ad3c12",
+              "createdAt": "2026-07-28T01:41:56.000Z",
+              "updatedAt": "2026-07-28T01:41:56.000Z",
+              "uid": "35240-87cbcf2c-75ab-410f-b46b-cfba66ad3c12"
+            },
+            {
+              "name": "connectors",
+              "item": [
+                {
+                  "name": "view",
+                  "item": [
+                    {
+                      "name": "{connectorId}.{format}",
+                      "item": [
+                        {
+                          "name": "View connector definition (Admin)",
+                          "id": "5058ed61-837a-4120-a476-e3039777baba",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/admin/api_v1/connectors/view/{{connectorId}}.{{format}}",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "admin",
+                                "api_v1",
+                                "connectors",
+                                "view",
+                                "{{connectorId}}.{{format}}"
+                              ]
+                            },
+                            "description": "Returns the full definition of a specific connector."
+                          },
+                          "response": [
+                            {
+                              "id": "26821be9-fba8-4be6-b3b8-f5a0e244f0c9",
+                              "name": "Connector definition",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/admin/api_v1/connectors/view/{{connectorId}}.{{format}}",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "admin",
+                                    "api_v1",
+                                    "connectors",
+                                    "view",
+                                    "{{connectorId}}.{{format}}"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"id\": \"<integer>\",\n  \"form_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"event\": \"beforerender\",\n  \"mapping\": \"<string>\",\n  \"login\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T01:41:56.000Z",
+                              "updatedAt": "2026-07-28T01:41:56.000Z",
+                              "uid": "35240-26821be9-fba8-4be6-b3b8-f5a0e244f0c9"
+                            },
+                            {
+                              "id": "aebbf343-d829-49a9-b3dc-90f5ca11206d",
+                              "name": "Connector not found",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/admin/api_v1/connectors/view/{{connectorId}}.{{format}}",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "admin",
+                                    "api_v1",
+                                    "connectors",
+                                    "view",
+                                    "{{connectorId}}.{{format}}"
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T01:41:56.000Z",
+                              "updatedAt": "2026-07-28T01:41:56.000Z",
+                              "uid": "35240-aebbf343-d829-49a9-b3dc-90f5ca11206d"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:41:56.000Z",
+                          "updatedAt": "2026-07-28T01:41:56.000Z",
+                          "uid": "35240-5058ed61-837a-4120-a476-e3039777baba"
+                        }
+                      ],
+                      "id": "8122b830-b07a-44cf-ab91-c500f944389b",
+                      "createdAt": "2026-07-28T01:41:56.000Z",
+                      "updatedAt": "2026-07-28T01:41:56.000Z",
+                      "uid": "35240-8122b830-b07a-44cf-ab91-c500f944389b"
+                    }
+                  ],
+                  "id": "b5a5d596-61e9-4626-8b66-3acc414da990",
+                  "createdAt": "2026-07-28T01:41:56.000Z",
+                  "updatedAt": "2026-07-28T01:41:56.000Z",
+                  "uid": "35240-b5a5d596-61e9-4626-8b66-3acc414da990"
+                },
+                {
+                  "name": "create",
+                  "item": [
+                    {
+                      "name": "{formId}",
+                      "item": [
+                        {
+                          "name": "{connectorName}.{format}",
+                          "item": [
+                            {
+                              "name": "Create a connector (Admin)",
+                              "id": "d2ef0cba-9e07-4f93-b745-38fea477bc47",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/x-www-form-urlencoded"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "urlencoded",
+                                  "urlencoded": [
+                                    {
+                                      "description": "Trigger event for the connector",
+                                      "key": "event",
+                                      "value": "background"
+                                    },
+                                    {
+                                      "description": "Field mapping configuration",
+                                      "key": "mapping",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "Login credential for the connector service",
+                                      "key": "login",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "Password credential for the connector service",
+                                      "key": "password",
+                                      "value": "<string>"
+                                    }
+                                  ]
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/admin/api_v1/connectors/create/:formId/{{connectorName}}.{{format}}",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "admin",
+                                    "api_v1",
+                                    "connectors",
+                                    "create",
+                                    ":formId",
+                                    "{{connectorName}}.{{format}}"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "a1307244-235f-4c87-b9b0-7b2ec32a6a68",
+                                      "key": "formId",
+                                      "value": "<integer>",
+                                      "description": "(Required) Unique identifier of the form"
+                                    }
+                                  ]
+                                },
+                                "description": "Creates a new connector for the specified form and connector type."
+                              },
+                              "response": [
+                                {
+                                  "id": "1193cc52-5493-451d-9451-b8ae126c7c24",
+                                  "name": "Connector created successfully",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/x-www-form-urlencoded"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "urlencoded",
+                                      "urlencoded": [
+                                        {
+                                          "description": "Trigger event for the connector",
+                                          "key": "event",
+                                          "value": "background"
+                                        },
+                                        {
+                                          "description": "Field mapping configuration",
+                                          "key": "mapping",
+                                          "value": "<string>"
+                                        },
+                                        {
+                                          "description": "Login credential for the connector service",
+                                          "key": "login",
+                                          "value": "<string>"
+                                        },
+                                        {
+                                          "description": "Password credential for the connector service",
+                                          "key": "password",
+                                          "value": "<string>"
+                                        }
+                                      ]
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/admin/api_v1/connectors/create/:formId/{{connectorName}}.{{format}}",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "admin",
+                                        "api_v1",
+                                        "connectors",
+                                        "create",
+                                        ":formId",
+                                        "{{connectorName}}.{{format}}"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "formId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"id\": \"<integer>\",\n  \"form_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"event\": \"beforerender\",\n  \"mapping\": \"<string>\",\n  \"login\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+                                  "createdAt": "2026-07-28T01:41:56.000Z",
+                                  "updatedAt": "2026-07-28T01:41:56.000Z",
+                                  "uid": "35240-1193cc52-5493-451d-9451-b8ae126c7c24"
+                                },
+                                {
+                                  "id": "25283a35-bd49-47ce-98c5-1a482ed738e7",
+                                  "name": "Invalid request",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/x-www-form-urlencoded"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "urlencoded",
+                                      "urlencoded": [
+                                        {
+                                          "description": "Trigger event for the connector",
+                                          "key": "event",
+                                          "value": "background"
+                                        },
+                                        {
+                                          "description": "Field mapping configuration",
+                                          "key": "mapping",
+                                          "value": "<string>"
+                                        },
+                                        {
+                                          "description": "Login credential for the connector service",
+                                          "key": "login",
+                                          "value": "<string>"
+                                        },
+                                        {
+                                          "description": "Password credential for the connector service",
+                                          "key": "password",
+                                          "value": "<string>"
+                                        }
+                                      ]
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/admin/api_v1/connectors/create/:formId/{{connectorName}}.{{format}}",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "admin",
+                                        "api_v1",
+                                        "connectors",
+                                        "create",
+                                        ":formId",
+                                        "{{connectorName}}.{{format}}"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "formId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Bad Request",
+                                  "code": 400,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T01:41:56.000Z",
+                                  "updatedAt": "2026-07-28T01:41:56.000Z",
+                                  "uid": "35240-25283a35-bd49-47ce-98c5-1a482ed738e7"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:41:56.000Z",
+                              "updatedAt": "2026-07-28T01:41:56.000Z",
+                              "uid": "35240-d2ef0cba-9e07-4f93-b745-38fea477bc47"
+                            }
+                          ],
+                          "id": "922fd0b7-28c2-4236-9ab2-d86fc7c86161",
+                          "createdAt": "2026-07-28T01:41:56.000Z",
+                          "updatedAt": "2026-07-28T01:41:56.000Z",
+                          "uid": "35240-922fd0b7-28c2-4236-9ab2-d86fc7c86161"
+                        }
+                      ],
+                      "id": "b9469058-9157-4eb7-a0e0-e79b7f344560",
+                      "createdAt": "2026-07-28T01:41:56.000Z",
+                      "updatedAt": "2026-07-28T01:41:56.000Z",
+                      "uid": "35240-b9469058-9157-4eb7-a0e0-e79b7f344560"
+                    }
+                  ],
+                  "id": "1daa24e8-b004-41d8-ad60-1ed8583cd99e",
+                  "createdAt": "2026-07-28T01:41:56.000Z",
+                  "updatedAt": "2026-07-28T01:41:56.000Z",
+                  "uid": "35240-1daa24e8-b004-41d8-ad60-1ed8583cd99e"
+                },
+                {
+                  "name": "edit",
+                  "item": [
+                    {
+                      "name": "{connectorId}.{format}",
+                      "item": [
+                        {
+                          "name": "Update a connector (Admin)",
+                          "id": "30ac2942-a08e-4bc7-b98b-1923306019d0",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/x-www-form-urlencoded"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "urlencoded",
+                              "urlencoded": [
+                                {
+                                  "key": "event",
+                                  "value": "interactive"
+                                },
+                                {
+                                  "key": "mapping",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "login",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "password",
+                                  "value": "<string>"
+                                }
+                              ]
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/admin/api_v1/connectors/edit/{{connectorId}}.{{format}}",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "admin",
+                                "api_v1",
+                                "connectors",
+                                "edit",
+                                "{{connectorId}}.{{format}}"
+                              ]
+                            },
+                            "description": "Updates the configuration of an existing connector."
+                          },
+                          "response": [
+                            {
+                              "id": "23d9db0e-7acd-40fc-8cc4-955060cd179e",
+                              "name": "Connector updated successfully",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/x-www-form-urlencoded"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "urlencoded",
+                                  "urlencoded": [
+                                    {
+                                      "key": "event",
+                                      "value": "interactive"
+                                    },
+                                    {
+                                      "key": "mapping",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "login",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "password",
+                                      "value": "<string>"
+                                    }
+                                  ]
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/admin/api_v1/connectors/edit/{{connectorId}}.{{format}}",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "admin",
+                                    "api_v1",
+                                    "connectors",
+                                    "edit",
+                                    "{{connectorId}}.{{format}}"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"id\": \"<integer>\",\n  \"form_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"event\": \"beforerender\",\n  \"mapping\": \"<string>\",\n  \"login\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T01:41:56.000Z",
+                              "updatedAt": "2026-07-28T01:41:56.000Z",
+                              "uid": "35240-23d9db0e-7acd-40fc-8cc4-955060cd179e"
+                            },
+                            {
+                              "id": "1abf3e4e-6b5d-4b41-becd-927f2d60bf42",
+                              "name": "Connector not found",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/x-www-form-urlencoded"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "urlencoded",
+                                  "urlencoded": [
+                                    {
+                                      "key": "event",
+                                      "value": "interactive"
+                                    },
+                                    {
+                                      "key": "mapping",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "login",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "password",
+                                      "value": "<string>"
+                                    }
+                                  ]
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/admin/api_v1/connectors/edit/{{connectorId}}.{{format}}",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "admin",
+                                    "api_v1",
+                                    "connectors",
+                                    "edit",
+                                    "{{connectorId}}.{{format}}"
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T01:41:56.000Z",
+                              "updatedAt": "2026-07-28T01:41:56.000Z",
+                              "uid": "35240-1abf3e4e-6b5d-4b41-becd-927f2d60bf42"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:41:56.000Z",
+                          "updatedAt": "2026-07-28T01:41:56.000Z",
+                          "uid": "35240-30ac2942-a08e-4bc7-b98b-1923306019d0"
+                        }
+                      ],
+                      "id": "997069a7-621b-467c-bed5-d8e98a79a528",
+                      "createdAt": "2026-07-28T01:41:56.000Z",
+                      "updatedAt": "2026-07-28T01:41:56.000Z",
+                      "uid": "35240-997069a7-621b-467c-bed5-d8e98a79a528"
+                    }
+                  ],
+                  "id": "825567fe-ee19-4779-bddd-9eb8da5a109a",
+                  "createdAt": "2026-07-28T01:41:56.000Z",
+                  "updatedAt": "2026-07-28T01:41:56.000Z",
+                  "uid": "35240-825567fe-ee19-4779-bddd-9eb8da5a109a"
+                },
+                {
+                  "name": "delete",
+                  "item": [
+                    {
+                      "name": "{connectorId}.{format}",
+                      "item": [
+                        {
+                          "name": "Delete a connector (Admin)",
+                          "id": "8c704027-b2de-4954-aa2b-5b4094178d7b",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/admin/api_v1/connectors/delete/{{connectorId}}.{{format}}",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "admin",
+                                "api_v1",
+                                "connectors",
+                                "delete",
+                                "{{connectorId}}.{{format}}"
+                              ]
+                            },
+                            "description": "Permanently removes the specified connector from a form."
+                          },
+                          "response": [
+                            {
+                              "id": "f91d4c9b-019b-41f1-a3dc-0473c0f2f5c3",
+                              "name": "Connector deleted successfully",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/admin/api_v1/connectors/delete/{{connectorId}}.{{format}}",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "admin",
+                                    "api_v1",
+                                    "connectors",
+                                    "delete",
+                                    "{{connectorId}}.{{format}}"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"status\": \"success\",\n  \"message\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T01:41:56.000Z",
+                              "updatedAt": "2026-07-28T01:41:56.000Z",
+                              "uid": "35240-f91d4c9b-019b-41f1-a3dc-0473c0f2f5c3"
+                            },
+                            {
+                              "id": "d5bae72a-9e2b-4116-b0a7-3821e62a7179",
+                              "name": "Connector not found",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/admin/api_v1/connectors/delete/{{connectorId}}.{{format}}",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "admin",
+                                    "api_v1",
+                                    "connectors",
+                                    "delete",
+                                    "{{connectorId}}.{{format}}"
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T01:41:56.000Z",
+                              "updatedAt": "2026-07-28T01:41:56.000Z",
+                              "uid": "35240-d5bae72a-9e2b-4116-b0a7-3821e62a7179"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:41:56.000Z",
+                          "updatedAt": "2026-07-28T01:41:56.000Z",
+                          "uid": "35240-8c704027-b2de-4954-aa2b-5b4094178d7b"
+                        }
+                      ],
+                      "id": "ae8b4217-b845-4486-9765-32b3a0d47837",
+                      "createdAt": "2026-07-28T01:41:56.000Z",
+                      "updatedAt": "2026-07-28T01:41:56.000Z",
+                      "uid": "35240-ae8b4217-b845-4486-9765-32b3a0d47837"
+                    }
+                  ],
+                  "id": "58cd2c63-6fc8-4efd-aa80-d3e5a84832b5",
+                  "createdAt": "2026-07-28T01:41:56.000Z",
+                  "updatedAt": "2026-07-28T01:41:56.000Z",
+                  "uid": "35240-58cd2c63-6fc8-4efd-aa80-d3e5a84832b5"
+                }
+              ],
+              "id": "1798b5ec-d926-4df7-bb6b-3eb42d229c74",
+              "createdAt": "2026-07-28T01:41:56.000Z",
+              "updatedAt": "2026-07-28T01:41:56.000Z",
+              "uid": "35240-1798b5ec-d926-4df7-bb6b-3eb42d229c74"
+            },
+            {
+              "name": "themes",
+              "item": [
+                {
+                  "name": "view",
+                  "item": [
+                    {
+                      "name": "{themeId}.json",
+                      "item": [
+                        {
+                          "name": "View theme CSS (Admin)",
+                          "id": "d05234b6-b1ca-4d87-96fa-52b2a8c3a22a",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/admin/api_v1/themes/view/{{themeId}}.json",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "admin",
+                                "api_v1",
+                                "themes",
+                                "view",
+                                "{{themeId}}.json"
+                              ]
+                            },
+                            "description": "Returns the CSS content and metadata for the specified theme."
+                          },
+                          "response": [
+                            {
+                              "id": "9590754b-3bb4-40ab-9ac5-e6e168af79a2",
+                              "name": "Theme definition",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/admin/api_v1/themes/view/{{themeId}}.json",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "admin",
+                                    "api_v1",
+                                    "themes",
+                                    "view",
+                                    "{{themeId}}.json"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"css_data\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T01:41:56.000Z",
+                              "updatedAt": "2026-07-28T01:41:56.000Z",
+                              "uid": "35240-9590754b-3bb4-40ab-9ac5-e6e168af79a2"
+                            },
+                            {
+                              "id": "71b178cf-e310-4e4e-b602-20f28dad628f",
+                              "name": "Theme not found",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/admin/api_v1/themes/view/{{themeId}}.json",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "admin",
+                                    "api_v1",
+                                    "themes",
+                                    "view",
+                                    "{{themeId}}.json"
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T01:41:56.000Z",
+                              "updatedAt": "2026-07-28T01:41:56.000Z",
+                              "uid": "35240-71b178cf-e310-4e4e-b602-20f28dad628f"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:41:56.000Z",
+                          "updatedAt": "2026-07-28T01:41:56.000Z",
+                          "uid": "35240-d05234b6-b1ca-4d87-96fa-52b2a8c3a22a"
+                        }
+                      ],
+                      "id": "7fa5bffb-3edd-4525-a23b-d683f75b500d",
+                      "createdAt": "2026-07-28T01:41:56.000Z",
+                      "updatedAt": "2026-07-28T01:41:56.000Z",
+                      "uid": "35240-7fa5bffb-3edd-4525-a23b-d683f75b500d"
+                    }
+                  ],
+                  "id": "c3197c51-7703-4057-86b6-892d7dfb5938",
+                  "createdAt": "2026-07-28T01:41:56.000Z",
+                  "updatedAt": "2026-07-28T01:41:56.000Z",
+                  "uid": "35240-c3197c51-7703-4057-86b6-892d7dfb5938"
+                },
+                {
+                  "name": "create.json",
+                  "item": [
+                    {
+                      "name": "Create a theme (Admin)",
+                      "id": "f02e508b-8434-4160-8f30-4405a02175d4",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/x-www-form-urlencoded"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "urlencoded",
+                          "urlencoded": [
+                            {
+                              "description": "Display name for the theme",
+                              "key": "name",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Full CSS stylesheet content",
+                              "key": "css_data",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/admin/api_v1/themes/create.json",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "admin",
+                            "api_v1",
+                            "themes",
+                            "create.json"
+                          ]
+                        },
+                        "description": "Creates a new CSS theme for use with forms."
+                      },
+                      "response": [
+                        {
+                          "id": "09594dcb-55ef-4cae-95e9-7903e2f25014",
+                          "name": "Theme created successfully",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/x-www-form-urlencoded"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "urlencoded",
+                              "urlencoded": [
+                                {
+                                  "description": "Display name for the theme",
+                                  "key": "name",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Full CSS stylesheet content",
+                                  "key": "css_data",
+                                  "value": "<string>"
+                                }
+                              ]
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/admin/api_v1/themes/create.json",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "admin",
+                                "api_v1",
+                                "themes",
+                                "create.json"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"css_data\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T01:41:56.000Z",
+                          "updatedAt": "2026-07-28T01:41:56.000Z",
+                          "uid": "35240-09594dcb-55ef-4cae-95e9-7903e2f25014"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:41:56.000Z",
+                      "updatedAt": "2026-07-28T01:41:56.000Z",
+                      "uid": "35240-f02e508b-8434-4160-8f30-4405a02175d4"
+                    }
+                  ],
+                  "id": "1570e3d4-ea13-4a77-9685-3c6c65888df0",
+                  "createdAt": "2026-07-28T01:41:56.000Z",
+                  "updatedAt": "2026-07-28T01:41:56.000Z",
+                  "uid": "35240-1570e3d4-ea13-4a77-9685-3c6c65888df0"
+                },
+                {
+                  "name": "edit",
+                  "item": [
+                    {
+                      "name": "{themeId}.json",
+                      "item": [
+                        {
+                          "name": "Update a theme (Admin)",
+                          "id": "de7958b7-6426-4dc5-866e-83751543275e",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/x-www-form-urlencoded"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "urlencoded",
+                              "urlencoded": [
+                                {
+                                  "key": "name",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "css_data",
+                                  "value": "<string>"
+                                }
+                              ]
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/admin/api_v1/themes/edit/{{themeId}}.json",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "admin",
+                                "api_v1",
+                                "themes",
+                                "edit",
+                                "{{themeId}}.json"
+                              ]
+                            },
+                            "description": "Updates the name and/or CSS of an existing theme."
+                          },
+                          "response": [
+                            {
+                              "id": "70347258-fb6b-4e5a-8700-37f52773aa81",
+                              "name": "Theme updated successfully",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/x-www-form-urlencoded"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "urlencoded",
+                                  "urlencoded": [
+                                    {
+                                      "key": "name",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "css_data",
+                                      "value": "<string>"
+                                    }
+                                  ]
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/admin/api_v1/themes/edit/{{themeId}}.json",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "admin",
+                                    "api_v1",
+                                    "themes",
+                                    "edit",
+                                    "{{themeId}}.json"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"css_data\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T01:41:56.000Z",
+                              "updatedAt": "2026-07-28T01:41:56.000Z",
+                              "uid": "35240-70347258-fb6b-4e5a-8700-37f52773aa81"
+                            },
+                            {
+                              "id": "e2c18fc3-abf8-4bd8-95c0-60d3fe18525e",
+                              "name": "Theme not found",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/x-www-form-urlencoded"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "urlencoded",
+                                  "urlencoded": [
+                                    {
+                                      "key": "name",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "css_data",
+                                      "value": "<string>"
+                                    }
+                                  ]
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/admin/api_v1/themes/edit/{{themeId}}.json",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "admin",
+                                    "api_v1",
+                                    "themes",
+                                    "edit",
+                                    "{{themeId}}.json"
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T01:41:56.000Z",
+                              "updatedAt": "2026-07-28T01:41:56.000Z",
+                              "uid": "35240-e2c18fc3-abf8-4bd8-95c0-60d3fe18525e"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:41:56.000Z",
+                          "updatedAt": "2026-07-28T01:41:56.000Z",
+                          "uid": "35240-de7958b7-6426-4dc5-866e-83751543275e"
+                        }
+                      ],
+                      "id": "6bf995d8-c951-4d7d-9893-f9a675c20371",
+                      "createdAt": "2026-07-28T01:41:56.000Z",
+                      "updatedAt": "2026-07-28T01:41:56.000Z",
+                      "uid": "35240-6bf995d8-c951-4d7d-9893-f9a675c20371"
+                    }
+                  ],
+                  "id": "a4ac805e-a100-4a73-86bb-b90ed889a7d0",
+                  "createdAt": "2026-07-28T01:41:56.000Z",
+                  "updatedAt": "2026-07-28T01:41:56.000Z",
+                  "uid": "35240-a4ac805e-a100-4a73-86bb-b90ed889a7d0"
+                },
+                {
+                  "name": "delete",
+                  "item": [
+                    {
+                      "name": "{themeId}.json",
+                      "item": [
+                        {
+                          "name": "Delete a theme (Admin)",
+                          "id": "0708fa38-86ad-4791-9e0a-119e90da1261",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/admin/api_v1/themes/delete/{{themeId}}.json",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "admin",
+                                "api_v1",
+                                "themes",
+                                "delete",
+                                "{{themeId}}.json"
+                              ]
+                            },
+                            "description": "Permanently removes the specified theme."
+                          },
+                          "response": [
+                            {
+                              "id": "d91f03d5-4da1-433e-98c7-68e6a472af2d",
+                              "name": "Theme deleted successfully",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/admin/api_v1/themes/delete/{{themeId}}.json",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "admin",
+                                    "api_v1",
+                                    "themes",
+                                    "delete",
+                                    "{{themeId}}.json"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"status\": \"success\",\n  \"message\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T01:41:56.000Z",
+                              "updatedAt": "2026-07-28T01:41:56.000Z",
+                              "uid": "35240-d91f03d5-4da1-433e-98c7-68e6a472af2d"
+                            },
+                            {
+                              "id": "c09cedae-b53b-407b-9a73-db66225af463",
+                              "name": "Theme not found",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/admin/api_v1/themes/delete/{{themeId}}.json",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "admin",
+                                    "api_v1",
+                                    "themes",
+                                    "delete",
+                                    "{{themeId}}.json"
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T01:41:56.000Z",
+                              "updatedAt": "2026-07-28T01:41:56.000Z",
+                              "uid": "35240-c09cedae-b53b-407b-9a73-db66225af463"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:41:56.000Z",
+                          "updatedAt": "2026-07-28T01:41:56.000Z",
+                          "uid": "35240-0708fa38-86ad-4791-9e0a-119e90da1261"
+                        }
+                      ],
+                      "id": "6b264077-a108-4409-bf6a-55a7fba0fe33",
+                      "createdAt": "2026-07-28T01:41:56.000Z",
+                      "updatedAt": "2026-07-28T01:41:56.000Z",
+                      "uid": "35240-6b264077-a108-4409-bf6a-55a7fba0fe33"
+                    }
+                  ],
+                  "id": "2bad0331-d4a2-43a9-8985-e7d89c2f3309",
+                  "createdAt": "2026-07-28T01:41:56.000Z",
+                  "updatedAt": "2026-07-28T01:41:56.000Z",
+                  "uid": "35240-2bad0331-d4a2-43a9-8985-e7d89c2f3309"
+                }
+              ],
+              "id": "be5dc3e9-8b54-4d35-8747-4257ddb6c4ed",
+              "createdAt": "2026-07-28T01:41:56.000Z",
+              "updatedAt": "2026-07-28T01:41:56.000Z",
+              "uid": "35240-be5dc3e9-8b54-4d35-8747-4257ddb6c4ed"
+            },
+            {
+              "name": "form_elements",
+              "item": [
+                {
+                  "name": "view",
+                  "item": [
+                    {
+                      "name": "{elementId}.xml",
+                      "item": [
+                        {
+                          "name": "View form element definition (Admin)",
+                          "id": "7ae4d883-46ca-471a-9173-59de3873d1ac",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/xml"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/admin/api_v1/form_elements/view/{{elementId}}.xml",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "admin",
+                                "api_v1",
+                                "form_elements",
+                                "view",
+                                "{{elementId}}.xml"
+                              ]
+                            },
+                            "description": "Returns the full XML definition of the specified form element type."
+                          },
+                          "response": [
+                            {
+                              "id": "a1568603-847b-4625-ba69-ae968991f44c",
+                              "name": "Form element definition",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/xml"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/admin/api_v1/form_elements/view/{{elementId}}.xml",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "admin",
+                                    "api_v1",
+                                    "form_elements",
+                                    "view",
+                                    "{{elementId}}.xml"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "xml",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/xml"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <id>(integer)</id>\n  <name>(string)</name>\n  <comments>(string)</comments>\n  <category>(string)</category>\n  <subcategory>(string)</subcategory>\n  <xml_data>(string)</xml_data>\n  <batch>(string)</batch>\n</element>",
+                              "createdAt": "2026-07-28T01:41:56.000Z",
+                              "updatedAt": "2026-07-28T01:41:56.000Z",
+                              "uid": "35240-a1568603-847b-4625-ba69-ae968991f44c"
+                            },
+                            {
+                              "id": "ec44a241-fbac-48b7-925c-a2062e5645d1",
+                              "name": "Element not found",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/admin/api_v1/form_elements/view/{{elementId}}.xml",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "admin",
+                                    "api_v1",
+                                    "form_elements",
+                                    "view",
+                                    "{{elementId}}.xml"
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T01:41:56.000Z",
+                              "updatedAt": "2026-07-28T01:41:56.000Z",
+                              "uid": "35240-ec44a241-fbac-48b7-925c-a2062e5645d1"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:41:56.000Z",
+                          "updatedAt": "2026-07-28T01:41:56.000Z",
+                          "uid": "35240-7ae4d883-46ca-471a-9173-59de3873d1ac"
+                        }
+                      ],
+                      "id": "f01153e7-4f24-4201-9c16-580ed34c9ef3",
+                      "createdAt": "2026-07-28T01:41:56.000Z",
+                      "updatedAt": "2026-07-28T01:41:56.000Z",
+                      "uid": "35240-f01153e7-4f24-4201-9c16-580ed34c9ef3"
+                    }
+                  ],
+                  "id": "b36b929e-7d96-4c6c-94f0-9a674891a896",
+                  "createdAt": "2026-07-28T01:41:56.000Z",
+                  "updatedAt": "2026-07-28T01:41:56.000Z",
+                  "uid": "35240-b36b929e-7d96-4c6c-94f0-9a674891a896"
+                },
+                {
+                  "name": "create.json",
+                  "item": [
+                    {
+                      "name": "Create a form element (Admin)",
+                      "id": "cab390c9-32e1-4156-a392-94f9641d5a2b",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/x-www-form-urlencoded"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "urlencoded",
+                          "urlencoded": [
+                            {
+                              "description": "XML definition of the element",
+                              "key": "xml_data",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Display name for the element",
+                              "key": "name",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Notes about the element",
+                              "key": "comments",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Category for organizing elements",
+                              "key": "category",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Subcategory for further organization",
+                              "key": "subcategory",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Batch identifier for bulk operations",
+                              "key": "batch",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/admin/api_v1/form_elements/create.json",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "admin",
+                            "api_v1",
+                            "form_elements",
+                            "create.json"
+                          ]
+                        },
+                        "description": "Creates a new custom form element type."
+                      },
+                      "response": [
+                        {
+                          "id": "a496815b-535c-4adb-9556-cec47ad73928",
+                          "name": "Form element created successfully",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/x-www-form-urlencoded"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "urlencoded",
+                              "urlencoded": [
+                                {
+                                  "description": "XML definition of the element",
+                                  "key": "xml_data",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Display name for the element",
+                                  "key": "name",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Notes about the element",
+                                  "key": "comments",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Category for organizing elements",
+                                  "key": "category",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Subcategory for further organization",
+                                  "key": "subcategory",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Batch identifier for bulk operations",
+                                  "key": "batch",
+                                  "value": "<string>"
+                                }
+                              ]
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/admin/api_v1/form_elements/create.json",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "admin",
+                                "api_v1",
+                                "form_elements",
+                                "create.json"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"comments\": \"<string>\",\n  \"category\": \"<string>\",\n  \"subcategory\": \"<string>\",\n  \"xml_data\": \"<string>\",\n  \"batch\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T01:41:56.000Z",
+                          "updatedAt": "2026-07-28T01:41:56.000Z",
+                          "uid": "35240-a496815b-535c-4adb-9556-cec47ad73928"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:41:56.000Z",
+                      "updatedAt": "2026-07-28T01:41:56.000Z",
+                      "uid": "35240-cab390c9-32e1-4156-a392-94f9641d5a2b"
+                    }
+                  ],
+                  "id": "603b6952-6682-4e8e-9c24-18cf5ab4b37d",
+                  "createdAt": "2026-07-28T01:41:56.000Z",
+                  "updatedAt": "2026-07-28T01:41:56.000Z",
+                  "uid": "35240-603b6952-6682-4e8e-9c24-18cf5ab4b37d"
+                },
+                {
+                  "name": "edit",
+                  "item": [
+                    {
+                      "name": "{elementId}.json",
+                      "item": [
+                        {
+                          "name": "Update a form element (Admin)",
+                          "id": "a102490a-0dec-43ce-91ec-bc1cb11fa39b",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/x-www-form-urlencoded"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "urlencoded",
+                              "urlencoded": [
+                                {
+                                  "key": "xml_data",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "name",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "comments",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "category",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "subcategory",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "batch",
+                                  "value": "<string>"
+                                }
+                              ]
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/admin/api_v1/form_elements/edit/{{elementId}}.json",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "admin",
+                                "api_v1",
+                                "form_elements",
+                                "edit",
+                                "{{elementId}}.json"
+                              ]
+                            },
+                            "description": "Updates an existing custom form element type."
+                          },
+                          "response": [
+                            {
+                              "id": "032cf7b1-dd6f-4556-bf96-b75047310a4c",
+                              "name": "Form element updated successfully",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/x-www-form-urlencoded"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "urlencoded",
+                                  "urlencoded": [
+                                    {
+                                      "key": "xml_data",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "name",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "comments",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "category",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "subcategory",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "batch",
+                                      "value": "<string>"
+                                    }
+                                  ]
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/admin/api_v1/form_elements/edit/{{elementId}}.json",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "admin",
+                                    "api_v1",
+                                    "form_elements",
+                                    "edit",
+                                    "{{elementId}}.json"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"comments\": \"<string>\",\n  \"category\": \"<string>\",\n  \"subcategory\": \"<string>\",\n  \"xml_data\": \"<string>\",\n  \"batch\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T01:41:56.000Z",
+                              "updatedAt": "2026-07-28T01:41:56.000Z",
+                              "uid": "35240-032cf7b1-dd6f-4556-bf96-b75047310a4c"
+                            },
+                            {
+                              "id": "179b5fd3-1e66-4f30-889e-63a89a54cb10",
+                              "name": "Element not found",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/x-www-form-urlencoded"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "urlencoded",
+                                  "urlencoded": [
+                                    {
+                                      "key": "xml_data",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "name",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "comments",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "category",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "subcategory",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "batch",
+                                      "value": "<string>"
+                                    }
+                                  ]
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/admin/api_v1/form_elements/edit/{{elementId}}.json",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "admin",
+                                    "api_v1",
+                                    "form_elements",
+                                    "edit",
+                                    "{{elementId}}.json"
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T01:41:56.000Z",
+                              "updatedAt": "2026-07-28T01:41:56.000Z",
+                              "uid": "35240-179b5fd3-1e66-4f30-889e-63a89a54cb10"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:41:56.000Z",
+                          "updatedAt": "2026-07-28T01:41:56.000Z",
+                          "uid": "35240-a102490a-0dec-43ce-91ec-bc1cb11fa39b"
+                        }
+                      ],
+                      "id": "c7b4dd1e-8961-4e5a-b967-855e1fed4e81",
+                      "createdAt": "2026-07-28T01:41:56.000Z",
+                      "updatedAt": "2026-07-28T01:41:56.000Z",
+                      "uid": "35240-c7b4dd1e-8961-4e5a-b967-855e1fed4e81"
+                    }
+                  ],
+                  "id": "10175a34-b109-4f69-a38f-e397957a79da",
+                  "createdAt": "2026-07-28T01:41:56.000Z",
+                  "updatedAt": "2026-07-28T01:41:56.000Z",
+                  "uid": "35240-10175a34-b109-4f69-a38f-e397957a79da"
+                },
+                {
+                  "name": "delete",
+                  "item": [
+                    {
+                      "name": "{elementId}.json",
+                      "item": [
+                        {
+                          "name": "Delete a form element (Admin)",
+                          "id": "c9ae479b-580f-4d11-b5da-a5244ee15745",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/admin/api_v1/form_elements/delete/{{elementId}}.json",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "admin",
+                                "api_v1",
+                                "form_elements",
+                                "delete",
+                                "{{elementId}}.json"
+                              ]
+                            },
+                            "description": "Permanently removes a custom form element type."
+                          },
+                          "response": [
+                            {
+                              "id": "00e0190f-ec0b-4fa3-ba25-e2de11407397",
+                              "name": "Form element deleted",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/admin/api_v1/form_elements/delete/{{elementId}}.json",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "admin",
+                                    "api_v1",
+                                    "form_elements",
+                                    "delete",
+                                    "{{elementId}}.json"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"status\": \"success\",\n  \"message\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T01:41:56.000Z",
+                              "updatedAt": "2026-07-28T01:41:56.000Z",
+                              "uid": "35240-00e0190f-ec0b-4fa3-ba25-e2de11407397"
+                            },
+                            {
+                              "id": "56f3d795-477c-4753-b257-2c367a8706f3",
+                              "name": "Element not found",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/admin/api_v1/form_elements/delete/{{elementId}}.json",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "admin",
+                                    "api_v1",
+                                    "form_elements",
+                                    "delete",
+                                    "{{elementId}}.json"
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T01:41:56.000Z",
+                              "updatedAt": "2026-07-28T01:41:56.000Z",
+                              "uid": "35240-56f3d795-477c-4753-b257-2c367a8706f3"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:41:56.000Z",
+                          "updatedAt": "2026-07-28T01:41:56.000Z",
+                          "uid": "35240-c9ae479b-580f-4d11-b5da-a5244ee15745"
+                        }
+                      ],
+                      "id": "826ed5a6-7c23-422f-9dcc-8bd56e5d0fc2",
+                      "createdAt": "2026-07-28T01:41:56.000Z",
+                      "updatedAt": "2026-07-28T01:41:56.000Z",
+                      "uid": "35240-826ed5a6-7c23-422f-9dcc-8bd56e5d0fc2"
+                    }
+                  ],
+                  "id": "5d0ac5dc-d471-48f7-8c5b-f8a0378d530f",
+                  "createdAt": "2026-07-28T01:41:56.000Z",
+                  "updatedAt": "2026-07-28T01:41:56.000Z",
+                  "uid": "35240-5d0ac5dc-d471-48f7-8c5b-f8a0378d530f"
+                }
+              ],
+              "id": "80099650-2f93-4f07-990f-7556680456d8",
+              "createdAt": "2026-07-28T01:41:56.000Z",
+              "updatedAt": "2026-07-28T01:41:56.000Z",
+              "uid": "35240-80099650-2f93-4f07-990f-7556680456d8"
+            },
+            {
+              "name": "aggregates",
+              "item": [
+                {
+                  "name": "reset_counters",
+                  "item": [
+                    {
+                      "name": "{formId}.json",
+                      "item": [
+                        {
+                          "name": "Reset form counters (Admin)",
+                          "id": "d546d7ed-2f5b-4c71-af2a-ae552e5bb1c9",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/admin/api_v1/aggregates/reset_counters/{{formId}}.json",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "admin",
+                                "api_v1",
+                                "aggregates",
+                                "reset_counters",
+                                "{{formId}}.json"
+                              ]
+                            },
+                            "description": "Resets submission counters and aggregated statistics for the specified form."
+                          },
+                          "response": [
+                            {
+                              "id": "aaf6d2b5-7dd8-439f-887b-ef357b833c92",
+                              "name": "Counters reset successfully",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/admin/api_v1/aggregates/reset_counters/{{formId}}.json",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "admin",
+                                    "api_v1",
+                                    "aggregates",
+                                    "reset_counters",
+                                    "{{formId}}.json"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"status\": \"success\",\n  \"message\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T01:41:56.000Z",
+                              "updatedAt": "2026-07-28T01:41:56.000Z",
+                              "uid": "35240-aaf6d2b5-7dd8-439f-887b-ef357b833c92"
+                            },
+                            {
+                              "id": "7d14e0d9-44be-454b-b2f0-33d228b41014",
+                              "name": "Form not found",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/admin/api_v1/aggregates/reset_counters/{{formId}}.json",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "admin",
+                                    "api_v1",
+                                    "aggregates",
+                                    "reset_counters",
+                                    "{{formId}}.json"
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T01:41:56.000Z",
+                              "updatedAt": "2026-07-28T01:41:56.000Z",
+                              "uid": "35240-7d14e0d9-44be-454b-b2f0-33d228b41014"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:41:56.000Z",
+                          "updatedAt": "2026-07-28T01:41:56.000Z",
+                          "uid": "35240-d546d7ed-2f5b-4c71-af2a-ae552e5bb1c9"
+                        }
+                      ],
+                      "id": "1d55e160-387b-4c3b-a011-51f06a028ed2",
+                      "createdAt": "2026-07-28T01:41:56.000Z",
+                      "updatedAt": "2026-07-28T01:41:56.000Z",
+                      "uid": "35240-1d55e160-387b-4c3b-a011-51f06a028ed2"
+                    }
+                  ],
+                  "id": "9e6718eb-405f-4ede-83f3-b972813ac43d",
+                  "createdAt": "2026-07-28T01:41:56.000Z",
+                  "updatedAt": "2026-07-28T01:41:56.000Z",
+                  "uid": "35240-9e6718eb-405f-4ede-83f3-b972813ac43d"
+                }
+              ],
+              "id": "dfb36876-daf9-47bb-a339-313024a83c50",
+              "createdAt": "2026-07-28T01:41:56.000Z",
+              "updatedAt": "2026-07-28T01:41:56.000Z",
+              "uid": "35240-dfb36876-daf9-47bb-a339-313024a83c50"
+            }
+          ],
+          "id": "37d352cd-f17a-43f8-9695-424a1505e156",
+          "createdAt": "2026-07-28T01:41:56.000Z",
+          "updatedAt": "2026-07-28T01:41:56.000Z",
+          "uid": "35240-37d352cd-f17a-43f8-9695-424a1505e156"
+        }
+      ],
+      "id": "bbbcbc71-8e8e-40b1-a6b2-c525cd44f67e",
+      "createdAt": "2026-07-28T01:41:56.000Z",
+      "updatedAt": "2026-07-28T01:41:56.000Z",
+      "uid": "35240-bbbcbc71-8e8e-40b1-a6b2-c525cd44f67e"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://app.formassembly.com/oauth/access_token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://app.formassembly.com/oauth/login",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://app.formassembly.com"
+    },
+    {
+      "key": "format",
+      "value": "json"
+    },
+    {
+      "key": "connectorId",
+      "value": "<integer>"
+    },
+    {
+      "key": "connectorName",
+      "value": "<string>"
+    },
+    {
+      "key": "themeId",
+      "value": "<integer>"
+    },
+    {
+      "key": "elementId",
+      "value": "<integer>"
+    },
+    {
+      "key": "formId",
+      "value": "<integer>"
+    }
+  ]
+}
