@@ -1,0 +1,310 @@
+{
+  "item": [
+    {
+      "id": "705c029a-b777-4a1d-a5cd-8f0a2953843b",
+      "name": "Responses",
+      "description": {
+        "content": "Export and manage form submission responses",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e7bb9f5a-b985-4279-a39f-c3576585d938",
+          "name": "Export form responses",
+          "request": {
+            "name": "Export form responses",
+            "description": {
+              "content": "Exports submitted responses for a form. Supports JSON, XML, CSV, and ZIP formats. Filtering by date range, specific response IDs, and flag status is supported.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api_v1",
+                "responses",
+                "export",
+                "{{formId}}.{{format}}"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "date_from",
+                  "value": "<date>",
+                  "description": "Filter responses submitted on or after this date"
+                },
+                {
+                  "disabled": false,
+                  "key": "date_to",
+                  "value": "<date>",
+                  "description": "Filter responses submitted on or before this date"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "all",
+                  "description": "Filter preset"
+                },
+                {
+                  "disabled": false,
+                  "key": "response_ids",
+                  "value": "<string>",
+                  "description": "Comma-delimited list of specific response IDs to export"
+                },
+                {
+                  "disabled": false,
+                  "key": "flag",
+                  "value": "<integer>",
+                  "description": "Filter by flag status"
+                },
+                {
+                  "disabled": false,
+                  "key": "unlock",
+                  "value": "<boolean>",
+                  "description": "Include locked responses"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page number for paginated results"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "200",
+                  "description": "Number of responses per page (default 200)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8a7faa90-520b-46ef-81d3-eb2d4df7e815",
+              "name": "Exported responses",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api_v1",
+                    "responses",
+                    "export",
+                    "{{formId}}.{{format}}"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "date_from",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "date_to",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "all"
+                    },
+                    {
+                      "key": "response_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "flag",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "unlock",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "200"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"responses\": [\n    {\n      \"id\": 8878,\n      \"form_id\": 9043,\n      \"date_created\": \"1967-04-18T11:06:54.444Z\",\n      \"flag\": 7992\n    },\n    {\n      \"id\": 2786,\n      \"form_id\": 6833,\n      \"date_created\": \"1950-07-20T01:33:36.121Z\",\n      \"flag\": 8428\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f2b68146-36a6-47bc-9fd5-dcbd65ae9468",
+              "name": "Form not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api_v1",
+                    "responses",
+                    "export",
+                    "{{formId}}.{{format}}"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "date_from",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "date_to",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "all"
+                    },
+                    {
+                      "key": "response_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "flag",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "unlock",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "200"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.formassembly.com",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) Unique identifier of the form",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<integer>",
+      "key": "formId"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) Export format",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "format"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://app.formassembly.com/oauth/access_token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://app.formassembly.com/oauth/login"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "539dffe8-8ff3-404c-abef-bf50b5443a53",
+    "name": "FormAssembly REST Admin Responses API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for managing FormAssembly forms, responses, themes, connectors, form elements, and account data. Supports JSON, XML, CSV, and ZIP response formats. OAuth2 authentication is required for all requests. Endpoints vary by deployment edition including Developer Sandbox, FormAssembly.com cloud, and self-hosted Enterprise instances.\n\n\nContact Support:\n Name: FormAssembly Developer Hub",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,436 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "FormAssembly REST Admin API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://app.formassembly.com/oauth/login",
+      "accessTokenUrl": "https://app.formassembly.com/oauth/access_token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Admin",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all forms (Admin)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.formassembly.com/admin/api_v1/forms/index.:format",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "path",
+                "description": "Response format (json or xml)"
+              }
+            ]
+          },
+          "docs": "Admin-only endpoint that returns all forms across all users in the account."
+        },
+        {
+          "info": {
+            "name": "View connector definition (Admin)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.formassembly.com/admin/api_v1/connectors/view/:connectorId.:format",
+            "params": [
+              {
+                "name": "connectorId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the connector"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "path",
+                "description": "Response format (json or xml)"
+              }
+            ]
+          },
+          "docs": "Returns the full definition of a specific connector."
+        },
+        {
+          "info": {
+            "name": "Create a connector (Admin)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.formassembly.com/admin/api_v1/connectors/create/:formId/:connectorName.:format",
+            "params": [
+              {
+                "name": "formId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the form"
+              },
+              {
+                "name": "connectorName",
+                "value": "",
+                "type": "path",
+                "description": "Name of the connector type to create"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "path",
+                "description": "Response format (json or xml)"
+              }
+            ],
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "event",
+                  "value": ""
+                },
+                {
+                  "name": "mapping",
+                  "value": ""
+                },
+                {
+                  "name": "login",
+                  "value": ""
+                },
+                {
+                  "name": "password",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Creates a new connector for the specified form and connector type."
+        },
+        {
+          "info": {
+            "name": "Update a connector (Admin)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.formassembly.com/admin/api_v1/connectors/edit/:connectorId.:format",
+            "params": [
+              {
+                "name": "connectorId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the connector"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "path",
+                "description": "Response format (json or xml)"
+              }
+            ],
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "event",
+                  "value": ""
+                },
+                {
+                  "name": "mapping",
+                  "value": ""
+                },
+                {
+                  "name": "login",
+                  "value": ""
+                },
+                {
+                  "name": "password",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Updates the configuration of an existing connector."
+        },
+        {
+          "info": {
+            "name": "Delete a connector (Admin)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.formassembly.com/admin/api_v1/connectors/delete/:connectorId.:format",
+            "params": [
+              {
+                "name": "connectorId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the connector"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "path",
+                "description": "Response format (json or xml)"
+              }
+            ]
+          },
+          "docs": "Permanently removes the specified connector from a form."
+        },
+        {
+          "info": {
+            "name": "View theme CSS (Admin)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.formassembly.com/admin/api_v1/themes/view/:themeId.json",
+            "params": [
+              {
+                "name": "themeId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the theme"
+              }
+            ]
+          },
+          "docs": "Returns the CSS content and metadata for the specified theme."
+        },
+        {
+          "info": {
+            "name": "Create a theme (Admin)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.formassembly.com/admin/api_v1/themes/create.json",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "name",
+                  "value": ""
+                },
+                {
+                  "name": "css_data",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Creates a new CSS theme for use with forms."
+        },
+        {
+          "info": {
+            "name": "Update a theme (Admin)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.formassembly.com/admin/api_v1/themes/edit/:themeId.json",
+            "params": [
+              {
+                "name": "themeId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the theme"
+              }
+            ],
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "name",
+                  "value": ""
+                },
+                {
+                  "name": "css_data",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Updates the name and/or CSS of an existing theme."
+        },
+        {
+          "info": {
+            "name": "Delete a theme (Admin)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.formassembly.com/admin/api_v1/themes/delete/:themeId.json",
+            "params": [
+              {
+                "name": "themeId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the theme"
+              }
+            ]
+          },
+          "docs": "Permanently removes the specified theme."
+        },
+        {
+          "info": {
+            "name": "View form element definition (Admin)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.formassembly.com/admin/api_v1/form_elements/view/:elementId.xml",
+            "params": [
+              {
+                "name": "elementId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the form element"
+              }
+            ]
+          },
+          "docs": "Returns the full XML definition of the specified form element type."
+        },
+        {
+          "info": {
+            "name": "Create a form element (Admin)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.formassembly.com/admin/api_v1/form_elements/create.json",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "xml_data",
+                  "value": ""
+                },
+                {
+                  "name": "name",
+                  "value": ""
+                },
+                {
+                  "name": "comments",
+                  "value": ""
+                },
+                {
+                  "name": "category",
+                  "value": ""
+                },
+                {
+                  "name": "subcategory",
+                  "value": ""
+                },
+                {
+                  "name": "batch",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Creates a new custom form element type."
+        },
+        {
+          "info": {
+            "name": "Update a form element (Admin)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.formassembly.com/admin/api_v1/form_elements/edit/:elementId.json",
+            "params": [
+              {
+                "name": "elementId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the form element"
+              }
+            ],
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "xml_data",
+                  "value": ""
+                },
+                {
+                  "name": "name",
+                  "value": ""
+                },
+                {
+                  "name": "comments",
+                  "value": ""
+                },
+                {
+                  "name": "category",
+                  "value": ""
+                },
+                {
+                  "name": "subcategory",
+                  "value": ""
+                },
+                {
+                  "name": "batch",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Updates an existing custom form element type."
+        },
+        {
+          "info": {
+            "name": "Delete a form element (Admin)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.formassembly.com/admin/api_v1/form_elements/delete/:elementId.json",
+            "params": [
+              {
+                "name": "elementId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the form element"
+              }
+            ]
+          },
+          "docs": "Permanently removes a custom form element type."
+        },
+        {
+          "info": {
+            "name": "Reset form counters (Admin)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.formassembly.com/admin/api_v1/aggregates/reset_counters/:formId.json",
+            "params": [
+              {
+                "name": "formId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the form"
+              }
+            ]
+          },
+          "docs": "Resets submission counters and aggregated statistics for the specified form."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

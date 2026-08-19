@@ -1,0 +1,103 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "FormAssembly REST Admin Responses API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://app.formassembly.com/oauth/login",
+      "accessTokenUrl": "https://app.formassembly.com/oauth/access_token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Responses",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Export form responses",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.formassembly.com/api_v1/responses/export/:formId.:format",
+            "params": [
+              {
+                "name": "formId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the form"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "path",
+                "description": "Export format"
+              },
+              {
+                "name": "date_from",
+                "value": "",
+                "type": "query",
+                "description": "Filter responses submitted on or after this date"
+              },
+              {
+                "name": "date_to",
+                "value": "",
+                "type": "query",
+                "description": "Filter responses submitted on or before this date"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "Filter preset"
+              },
+              {
+                "name": "response_ids",
+                "value": "",
+                "type": "query",
+                "description": "Comma-delimited list of specific response IDs to export"
+              },
+              {
+                "name": "flag",
+                "value": "",
+                "type": "query",
+                "description": "Filter by flag status"
+              },
+              {
+                "name": "unlock",
+                "value": "",
+                "type": "query",
+                "description": "Include locked responses"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number for paginated results"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Number of responses per page (default 200)"
+              }
+            ]
+          },
+          "docs": "Exports submitted responses for a form. Supports JSON, XML, CSV, and ZIP formats. Filtering by date range, specific response IDs, and flag status is supported.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

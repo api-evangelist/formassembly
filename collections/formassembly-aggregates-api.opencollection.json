@@ -1,0 +1,49 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "FormAssembly REST Admin Aggregates API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://app.formassembly.com/oauth/login",
+      "accessTokenUrl": "https://app.formassembly.com/oauth/access_token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Aggregates",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Reset form counters (Admin)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.formassembly.com/admin/api_v1/aggregates/reset_counters/:formId.json",
+            "params": [
+              {
+                "name": "formId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the form"
+              }
+            ]
+          },
+          "docs": "Resets submission counters and aggregated statistics for the specified form."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

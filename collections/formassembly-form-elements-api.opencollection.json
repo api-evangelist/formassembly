@@ -1,0 +1,167 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "FormAssembly REST Admin Form Elements API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://app.formassembly.com/oauth/login",
+      "accessTokenUrl": "https://app.formassembly.com/oauth/access_token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Form Elements",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List available form elements",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.formassembly.com/api_v1/form_elements/index.xml"
+          },
+          "docs": "Returns a list of all available form element types in XML format."
+        },
+        {
+          "info": {
+            "name": "View form element definition (Admin)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.formassembly.com/admin/api_v1/form_elements/view/:elementId.xml",
+            "params": [
+              {
+                "name": "elementId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the form element"
+              }
+            ]
+          },
+          "docs": "Returns the full XML definition of the specified form element type."
+        },
+        {
+          "info": {
+            "name": "Create a form element (Admin)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.formassembly.com/admin/api_v1/form_elements/create.json",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "xml_data",
+                  "value": ""
+                },
+                {
+                  "name": "name",
+                  "value": ""
+                },
+                {
+                  "name": "comments",
+                  "value": ""
+                },
+                {
+                  "name": "category",
+                  "value": ""
+                },
+                {
+                  "name": "subcategory",
+                  "value": ""
+                },
+                {
+                  "name": "batch",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Creates a new custom form element type."
+        },
+        {
+          "info": {
+            "name": "Update a form element (Admin)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.formassembly.com/admin/api_v1/form_elements/edit/:elementId.json",
+            "params": [
+              {
+                "name": "elementId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the form element"
+              }
+            ],
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "xml_data",
+                  "value": ""
+                },
+                {
+                  "name": "name",
+                  "value": ""
+                },
+                {
+                  "name": "comments",
+                  "value": ""
+                },
+                {
+                  "name": "category",
+                  "value": ""
+                },
+                {
+                  "name": "subcategory",
+                  "value": ""
+                },
+                {
+                  "name": "batch",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Updates an existing custom form element type."
+        },
+        {
+          "info": {
+            "name": "Delete a form element (Admin)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.formassembly.com/admin/api_v1/form_elements/delete/:elementId.json",
+            "params": [
+              {
+                "name": "elementId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the form element"
+              }
+            ]
+          },
+          "docs": "Permanently removes a custom form element type."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

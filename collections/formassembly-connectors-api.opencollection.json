@@ -1,0 +1,203 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "FormAssembly REST Admin Connectors API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://app.formassembly.com/oauth/login",
+      "accessTokenUrl": "https://app.formassembly.com/oauth/access_token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Connectors",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List connectors for a form",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.formassembly.com/api_v1/connectors/index/:formId.:format",
+            "params": [
+              {
+                "name": "formId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the form"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "path",
+                "description": "Response format (json or xml)"
+              }
+            ]
+          },
+          "docs": "Returns all connectors attached to the specified form."
+        },
+        {
+          "info": {
+            "name": "View connector definition (Admin)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.formassembly.com/admin/api_v1/connectors/view/:connectorId.:format",
+            "params": [
+              {
+                "name": "connectorId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the connector"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "path",
+                "description": "Response format (json or xml)"
+              }
+            ]
+          },
+          "docs": "Returns the full definition of a specific connector."
+        },
+        {
+          "info": {
+            "name": "Create a connector (Admin)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.formassembly.com/admin/api_v1/connectors/create/:formId/:connectorName.:format",
+            "params": [
+              {
+                "name": "formId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the form"
+              },
+              {
+                "name": "connectorName",
+                "value": "",
+                "type": "path",
+                "description": "Name of the connector type to create"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "path",
+                "description": "Response format (json or xml)"
+              }
+            ],
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "event",
+                  "value": ""
+                },
+                {
+                  "name": "mapping",
+                  "value": ""
+                },
+                {
+                  "name": "login",
+                  "value": ""
+                },
+                {
+                  "name": "password",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Creates a new connector for the specified form and connector type."
+        },
+        {
+          "info": {
+            "name": "Update a connector (Admin)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.formassembly.com/admin/api_v1/connectors/edit/:connectorId.:format",
+            "params": [
+              {
+                "name": "connectorId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the connector"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "path",
+                "description": "Response format (json or xml)"
+              }
+            ],
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "event",
+                  "value": ""
+                },
+                {
+                  "name": "mapping",
+                  "value": ""
+                },
+                {
+                  "name": "login",
+                  "value": ""
+                },
+                {
+                  "name": "password",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Updates the configuration of an existing connector."
+        },
+        {
+          "info": {
+            "name": "Delete a connector (Admin)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.formassembly.com/admin/api_v1/connectors/delete/:connectorId.:format",
+            "params": [
+              {
+                "name": "connectorId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the connector"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "path",
+                "description": "Response format (json or xml)"
+              }
+            ]
+          },
+          "docs": "Permanently removes the specified connector from a form."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

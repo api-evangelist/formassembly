@@ -1,0 +1,105 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "FormAssembly REST Admin OAuth2 API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://app.formassembly.com/oauth/login",
+      "accessTokenUrl": "https://app.formassembly.com/oauth/access_token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "OAuth2",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Initiate OAuth2 authorization",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.formassembly.com/oauth/login",
+            "params": [
+              {
+                "name": "type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "client_id",
+                "value": "",
+                "type": "query",
+                "description": "Your registered OAuth2 client ID"
+              },
+              {
+                "name": "redirect_uri",
+                "value": "",
+                "type": "query",
+                "description": "Callback URI registered with your application"
+              },
+              {
+                "name": "response_type",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Redirect users here to begin the OAuth2 authorization code flow."
+        },
+        {
+          "info": {
+            "name": "Exchange authorization code for access token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.formassembly.com/oauth/access_token",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "grant_type",
+                  "value": ""
+                },
+                {
+                  "name": "type",
+                  "value": ""
+                },
+                {
+                  "name": "client_id",
+                  "value": ""
+                },
+                {
+                  "name": "client_secret",
+                  "value": ""
+                },
+                {
+                  "name": "redirect_uri",
+                  "value": ""
+                },
+                {
+                  "name": "code",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Exchange the authorization code received after login for an OAuth2 access token."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

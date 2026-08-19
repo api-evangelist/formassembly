@@ -1,0 +1,906 @@
+{
+  "item": [
+    {
+      "id": "51c11e95-1d71-46b2-961e-912373fce43e",
+      "name": "Connectors",
+      "description": {
+        "content": "Manage integrations (Salesforce, etc.) attached to forms",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f252412a-67d5-4a29-b828-6a7161b4fc46",
+          "name": "List connectors for a form",
+          "request": {
+            "name": "List connectors for a form",
+            "description": {
+              "content": "Returns all connectors attached to the specified form.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api_v1",
+                "connectors",
+                "index",
+                "{{formId}}.{{format}}"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "860503cf-bd42-4730-adb3-7cfe4ed10d5b",
+              "name": "List of connectors",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api_v1",
+                    "connectors",
+                    "index",
+                    "{{formId}}.{{format}}"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"connectors\": [\n    {\n      \"id\": 4494,\n      \"form_id\": 7873,\n      \"name\": \"string\",\n      \"event\": \"interactive\",\n      \"mapping\": \"string\",\n      \"login\": \"string\",\n      \"password\": \"string\"\n    },\n    {\n      \"id\": 7341,\n      \"form_id\": 2794,\n      \"name\": \"string\",\n      \"event\": \"before_save\",\n      \"mapping\": \"string\",\n      \"login\": \"string\",\n      \"password\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "81860633-e758-4469-bf48-a02a8645a433",
+          "name": "View connector definition (Admin)",
+          "request": {
+            "name": "View connector definition (Admin)",
+            "description": {
+              "content": "Returns the full definition of a specific connector.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "admin",
+                "api_v1",
+                "connectors",
+                "view",
+                "{{connectorId}}.{{format}}"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "64578109-ea64-4f93-a5c7-727359834663",
+              "name": "Connector definition",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "api_v1",
+                    "connectors",
+                    "view",
+                    "{{connectorId}}.{{format}}"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 9691,\n  \"form_id\": 180,\n  \"name\": \"string\",\n  \"event\": \"background\",\n  \"mapping\": \"string\",\n  \"login\": \"string\",\n  \"password\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d339fd2b-98cb-4578-9c6b-4e079f66bfc5",
+              "name": "Connector not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "api_v1",
+                    "connectors",
+                    "view",
+                    "{{connectorId}}.{{format}}"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "737ecc4f-6018-461a-af98-6088e5d50181",
+          "name": "Create a connector (Admin)",
+          "request": {
+            "name": "Create a connector (Admin)",
+            "description": {
+              "content": "Creates a new connector for the specified form and connector type.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "admin",
+                "api_v1",
+                "connectors",
+                "create",
+                ":formId",
+                "{{connectorName}}.{{format}}"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "formId",
+                  "description": "(Required) Unique identifier of the form"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "event",
+                  "value": "<string>",
+                  "description": "Trigger event for the connector"
+                },
+                {
+                  "disabled": false,
+                  "key": "mapping",
+                  "value": "<string>",
+                  "description": "Field mapping configuration"
+                },
+                {
+                  "disabled": false,
+                  "key": "login",
+                  "value": "<string>",
+                  "description": "Login credential for the connector service"
+                },
+                {
+                  "disabled": false,
+                  "key": "password",
+                  "value": "<string>",
+                  "description": "Password credential for the connector service"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "0bac1347-0fe9-4ed8-940e-7ac3d83ec8b9",
+              "name": "Connector created successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "api_v1",
+                    "connectors",
+                    "create",
+                    ":formId",
+                    "{{connectorName}}.{{format}}"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "formId",
+                      "description": "(Required) Unique identifier of the form"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Trigger event for the connector",
+                        "type": "text/plain"
+                      },
+                      "key": "event",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Field mapping configuration",
+                        "type": "text/plain"
+                      },
+                      "key": "mapping",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Login credential for the connector service",
+                        "type": "text/plain"
+                      },
+                      "key": "login",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Password credential for the connector service",
+                        "type": "text/plain"
+                      },
+                      "key": "password",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 9691,\n  \"form_id\": 180,\n  \"name\": \"string\",\n  \"event\": \"background\",\n  \"mapping\": \"string\",\n  \"login\": \"string\",\n  \"password\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "89460170-3bd6-4ef2-ba50-3c69e3fd5f23",
+              "name": "Invalid request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "api_v1",
+                    "connectors",
+                    "create",
+                    ":formId",
+                    "{{connectorName}}.{{format}}"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "formId",
+                      "description": "(Required) Unique identifier of the form"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Trigger event for the connector",
+                        "type": "text/plain"
+                      },
+                      "key": "event",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Field mapping configuration",
+                        "type": "text/plain"
+                      },
+                      "key": "mapping",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Login credential for the connector service",
+                        "type": "text/plain"
+                      },
+                      "key": "login",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Password credential for the connector service",
+                        "type": "text/plain"
+                      },
+                      "key": "password",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dd1ed1d4-bf9f-407e-9230-13176ee79dfc",
+          "name": "Update a connector (Admin)",
+          "request": {
+            "name": "Update a connector (Admin)",
+            "description": {
+              "content": "Updates the configuration of an existing connector.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "admin",
+                "api_v1",
+                "connectors",
+                "edit",
+                "{{connectorId}}.{{format}}"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "event",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "mapping",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "login",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "password",
+                  "value": "<string>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "ab1702c8-7f4b-4c4b-8113-37bae4b96ede",
+              "name": "Connector updated successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "api_v1",
+                    "connectors",
+                    "edit",
+                    "{{connectorId}}.{{format}}"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "key": "event",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "mapping",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "login",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "password",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 9691,\n  \"form_id\": 180,\n  \"name\": \"string\",\n  \"event\": \"background\",\n  \"mapping\": \"string\",\n  \"login\": \"string\",\n  \"password\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "44d24471-1334-4efb-befd-693ae031a5cc",
+              "name": "Connector not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "api_v1",
+                    "connectors",
+                    "edit",
+                    "{{connectorId}}.{{format}}"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "key": "event",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "mapping",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "login",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "password",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "31b40e39-c88d-469b-85c2-c9c87b651548",
+          "name": "Delete a connector (Admin)",
+          "request": {
+            "name": "Delete a connector (Admin)",
+            "description": {
+              "content": "Permanently removes the specified connector from a form.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "admin",
+                "api_v1",
+                "connectors",
+                "delete",
+                "{{connectorId}}.{{format}}"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2bf19d5e-b9cf-4874-9d9c-9d76de1209d4",
+              "name": "Connector deleted successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "api_v1",
+                    "connectors",
+                    "delete",
+                    "{{connectorId}}.{{format}}"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"success\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c3a952fe-1ff5-484b-987f-b53a98d09e9f",
+              "name": "Connector not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "api_v1",
+                    "connectors",
+                    "delete",
+                    "{{connectorId}}.{{format}}"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.formassembly.com",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) Unique identifier of the form",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<integer>",
+      "key": "formId"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) Response format (json or xml)",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "json",
+      "key": "format"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) Unique identifier of the connector",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<integer>",
+      "key": "connectorId"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) Name of the connector type to create",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "connectorName"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://app.formassembly.com/oauth/access_token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://app.formassembly.com/oauth/login"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "de6af7da-2784-4a43-8041-ec94f2b0fc86",
+    "name": "FormAssembly REST Admin Connectors API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for managing FormAssembly forms, responses, themes, connectors, form elements, and account data. Supports JSON, XML, CSV, and ZIP response formats. OAuth2 authentication is required for all requests. Endpoints vary by deployment edition including Developer Sandbox, FormAssembly.com cloud, and self-hosted Enterprise instances.\n\n\nContact Support:\n Name: FormAssembly Developer Hub",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "FormAssembly REST Admin Forms API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://app.formassembly.com/oauth/login",
+      "accessTokenUrl": "https://app.formassembly.com/oauth/access_token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Forms",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List user's forms",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.formassembly.com/api_v1/forms/index.:format",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "path",
+                "description": "Response format (json or xml)"
+              }
+            ]
+          },
+          "docs": "Returns a list of all forms belonging to the authenticated user."
+        },
+        {
+          "info": {
+            "name": "List all forms (Admin)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.formassembly.com/admin/api_v1/forms/index.:format",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "path",
+                "description": "Response format (json or xml)"
+              }
+            ]
+          },
+          "docs": "Admin-only endpoint that returns all forms across all users in the account."
+        },
+        {
+          "info": {
+            "name": "View form definition",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.formassembly.com/api_v1/forms/view/:formId.:format",
+            "params": [
+              {
+                "name": "formId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the form"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "path",
+                "description": "Response format (json or xml)"
+              }
+            ]
+          },
+          "docs": "Returns the full definition of a specific form including its XML structure."
+        },
+        {
+          "info": {
+            "name": "Create a new form",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.formassembly.com/api_v1/forms/create.:format",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "path",
+                "description": "Response format (json or xml)"
+              }
+            ],
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "xml_data",
+                  "value": ""
+                },
+                {
+                  "name": "builder_version",
+                  "value": ""
+                },
+                {
+                  "name": "language",
+                  "value": ""
+                },
+                {
+                  "name": "name",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Creates a new form with the provided XML definition and metadata."
+        },
+        {
+          "info": {
+            "name": "Update an existing form",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.formassembly.com/api_v1/forms/edit/:formId.:format",
+            "params": [
+              {
+                "name": "formId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the form"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "path",
+                "description": "Response format (json or xml)"
+              }
+            ],
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "xml_data",
+                  "value": ""
+                },
+                {
+                  "name": "builder_version",
+                  "value": ""
+                },
+                {
+                  "name": "language",
+                  "value": ""
+                },
+                {
+                  "name": "name",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Updates the definition and metadata of an existing form."
+        },
+        {
+          "info": {
+            "name": "Delete a form",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.formassembly.com/api_v1/forms/delete/:formId.:format",
+            "params": [
+              {
+                "name": "formId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the form"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "path",
+                "description": "Response format (json or xml)"
+              }
+            ]
+          },
+          "docs": "Permanently deletes the specified form and all associated data."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

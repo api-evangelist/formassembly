@@ -1,0 +1,135 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "FormAssembly REST Admin Themes API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://app.formassembly.com/oauth/login",
+      "accessTokenUrl": "https://app.formassembly.com/oauth/access_token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Themes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List user themes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.formassembly.com/api_v1/themes/index.json"
+          },
+          "docs": "Returns all themes belonging to the authenticated user."
+        },
+        {
+          "info": {
+            "name": "View theme CSS (Admin)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.formassembly.com/admin/api_v1/themes/view/:themeId.json",
+            "params": [
+              {
+                "name": "themeId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the theme"
+              }
+            ]
+          },
+          "docs": "Returns the CSS content and metadata for the specified theme."
+        },
+        {
+          "info": {
+            "name": "Create a theme (Admin)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.formassembly.com/admin/api_v1/themes/create.json",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "name",
+                  "value": ""
+                },
+                {
+                  "name": "css_data",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Creates a new CSS theme for use with forms."
+        },
+        {
+          "info": {
+            "name": "Update a theme (Admin)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.formassembly.com/admin/api_v1/themes/edit/:themeId.json",
+            "params": [
+              {
+                "name": "themeId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the theme"
+              }
+            ],
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "name",
+                  "value": ""
+                },
+                {
+                  "name": "css_data",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Updates the name and/or CSS of an existing theme."
+        },
+        {
+          "info": {
+            "name": "Delete a theme (Admin)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.formassembly.com/admin/api_v1/themes/delete/:themeId.json",
+            "params": [
+              {
+                "name": "themeId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the theme"
+              }
+            ]
+          },
+          "docs": "Permanently removes the specified theme."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
