@@ -32,22 +32,6 @@ tags:
   - Workflows
   - E-Signatures
 apis:
-- aid: formassembly:formassembly-admin-api
-  name: FormAssembly Admin API
-  description: Admin-only endpoints requiring elevated permissions
-  humanURL: https://help.formassembly.com/help/working-with-the-formassembly-api
-  baseURL: https://app.formassembly.com/api_v1
-  tags:
-  - Admin
-  properties:
-  - type: OpenAPI
-    url: openapi/formassembly-admin-api-openapi.yml
-  - type: Documentation
-    url: https://help.formassembly.com/help/working-with-the-formassembly-api
-  - type: GitHubRepository
-    url: https://github.com/FormAssembly/formassembly-api
-  - type: PostmanCollection
-    url: https://www.postman.com/hayleyj1/my-workspace/collection/ot30hq0/formassembly-api
 - aid: formassembly:formassembly-aggregates-api
   name: FormAssembly Aggregates API
   description: Manage aggregated statistics and counters for forms
