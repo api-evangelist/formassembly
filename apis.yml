@@ -109,24 +109,6 @@ apis:
     url: https://github.com/FormAssembly/formassembly-api
   - type: PostmanCollection
     url: https://www.postman.com/hayleyj1/my-workspace/collection/ot30hq0/formassembly-api
-- aid: formassembly:formassembly-oauth2-api
-  name: FormAssembly OAuth2 API
-  description: OAuth2 authorization code flow for obtaining access tokens
-  humanURL: https://help.formassembly.com/help/working-with-the-formassembly-api
-  baseURL: https://app.formassembly.com/api_v1
-  tags:
-  - Authentication
-  tags_raw:
-  - OAuth2
-  properties:
-  - type: OpenAPI
-    url: openapi/formassembly-oauth2-api-openapi.yml
-  - type: Documentation
-    url: https://help.formassembly.com/help/working-with-the-formassembly-api
-  - type: GitHubRepository
-    url: https://github.com/FormAssembly/formassembly-api
-  - type: PostmanCollection
-    url: https://www.postman.com/hayleyj1/my-workspace/collection/ot30hq0/formassembly-api
 - aid: formassembly:formassembly-responses-api
   name: FormAssembly Responses API
   description: Export and manage form submission responses
@@ -153,6 +135,22 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/formassembly-themes-api-openapi.yml
+  - type: Documentation
+    url: https://help.formassembly.com/help/working-with-the-formassembly-api
+  - type: GitHubRepository
+    url: https://github.com/FormAssembly/formassembly-api
+  - type: PostmanCollection
+    url: https://www.postman.com/hayleyj1/my-workspace/collection/ot30hq0/formassembly-api
+- aid: formassembly:formassembly-oauth2-api
+  name: FormAssembly O Auth2 API
+  description: OAuth2 authorization code flow for obtaining access tokens
+  humanURL: https://help.formassembly.com/help/working-with-the-formassembly-api
+  baseURL: https://app.formassembly.com/api_v1
+  tags:
+  - OAuth2
+  properties:
+  - type: OpenAPI
+    url: openapi/formassembly-oauth2-api-openapi.yml
   - type: Documentation
     url: https://help.formassembly.com/help/working-with-the-formassembly-api
   - type: GitHubRepository
