@@ -43,6 +43,17 @@ tags:
   - Government
   - FedRAMP
   - Workflows
+  - E-Signature
+tags_raw:
+  - Forms
+  - Data Collection
+  - Salesforce
+  - Enterprise
+  - HIPAA
+  - Compliance
+  - Government
+  - FedRAMP
+  - Workflows
   - E-Signatures
 apis:
 - aid: formassembly:formassembly-aggregates-api
@@ -147,6 +158,8 @@ apis:
   humanURL: https://help.formassembly.com/help/working-with-the-formassembly-api
   baseURL: https://app.formassembly.com/api_v1
   tags:
+  - Authentication
+  tags_raw:
   - OAuth2
   properties:
   - type: OpenAPI
