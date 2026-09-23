@@ -1,9 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: FormAssembly REST Admin Themes API
-  description: 'REST API for managing FormAssembly forms, responses, themes, connectors, form elements, and account data. Supports JSON, XML, CSV, and ZIP response formats. OAuth2 authentication is required for all requests. Endpoints vary by deployment edition including Developer Sandbox, FormAssembly.com cloud, and self-hosted Enterprise instances.
-
-    '
+  title: FormAssembly REST Themes API
+  description: REST API for managing FormAssembly forms, responses, themes, connectors, form elements, and account data. Supports JSON, XML, CSV, and ZIP response formats. OAuth2 authentication is required for all requests. Endpoints vary by deployment edition including Developer Sandbox, FormAssembly.com cloud, and self-hosted Enterprise instances.
   version: 1.0.0
   contact:
     name: FormAssembly Developer Hub
@@ -135,6 +133,14 @@ paths:
         '404':
           description: Theme not found
 components:
+  parameters:
+    themeId:
+      name: themeId
+      in: path
+      description: Unique identifier of the theme
+      required: true
+      schema:
+        type: integer
   schemas:
     ThemeList:
       type: object
@@ -143,15 +149,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Theme'
-    SuccessResponse:
-      type: object
-      properties:
-        status:
-          type: string
-          enum:
-          - success
-        message:
-          type: string
     Theme:
       type: object
       properties:
@@ -164,14 +161,15 @@ components:
         css_data:
           type: string
           description: CSS stylesheet content of the theme
-  parameters:
-    themeId:
-      name: themeId
-      in: path
-      description: Unique identifier of the theme
-      required: true
-      schema:
-        type: integer
+    SuccessResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+          - success
+        message:
+          type: string
   securitySchemes:
     oauth2:
       type: oauth2

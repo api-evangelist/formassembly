@@ -1,9 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: FormAssembly REST Admin Connectors API
-  description: 'REST API for managing FormAssembly forms, responses, themes, connectors, form elements, and account data. Supports JSON, XML, CSV, and ZIP response formats. OAuth2 authentication is required for all requests. Endpoints vary by deployment edition including Developer Sandbox, FormAssembly.com cloud, and self-hosted Enterprise instances.
-
-    '
+  title: FormAssembly REST Connectors API
+  description: REST API for managing FormAssembly forms, responses, themes, connectors, form elements, and account data. Supports JSON, XML, CSV, and ZIP response formats. OAuth2 authentication is required for all requests. Endpoints vary by deployment edition including Developer Sandbox, FormAssembly.com cloud, and self-hosted Enterprise instances.
   version: 1.0.0
   contact:
     name: FormAssembly Developer Hub
@@ -178,6 +176,39 @@ paths:
         '404':
           description: Connector not found
 components:
+  parameters:
+    connectorId:
+      name: connectorId
+      in: path
+      description: Unique identifier of the connector
+      required: true
+      schema:
+        type: integer
+    formatJson:
+      name: format
+      in: path
+      description: Response format (json or xml)
+      required: true
+      schema:
+        type: string
+        enum:
+        - json
+        - xml
+        default: json
+    connectorName:
+      name: connectorName
+      in: path
+      description: Name of the connector type to create
+      required: true
+      schema:
+        type: string
+    formId:
+      name: formId
+      in: path
+      description: Unique identifier of the form
+      required: true
+      schema:
+        type: integer
   schemas:
     Connector:
       type: object
@@ -217,39 +248,6 @@ components:
           - success
         message:
           type: string
-  parameters:
-    connectorName:
-      name: connectorName
-      in: path
-      description: Name of the connector type to create
-      required: true
-      schema:
-        type: string
-    connectorId:
-      name: connectorId
-      in: path
-      description: Unique identifier of the connector
-      required: true
-      schema:
-        type: integer
-    formId:
-      name: formId
-      in: path
-      description: Unique identifier of the form
-      required: true
-      schema:
-        type: integer
-    formatJson:
-      name: format
-      in: path
-      description: Response format (json or xml)
-      required: true
-      schema:
-        type: string
-        enum:
-        - json
-        - xml
-        default: json
   securitySchemes:
     oauth2:
       type: oauth2

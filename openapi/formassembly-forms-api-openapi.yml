@@ -1,9 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: FormAssembly REST Admin Forms API
-  description: 'REST API for managing FormAssembly forms, responses, themes, connectors, form elements, and account data. Supports JSON, XML, CSV, and ZIP response formats. OAuth2 authentication is required for all requests. Endpoints vary by deployment edition including Developer Sandbox, FormAssembly.com cloud, and self-hosted Enterprise instances.
-
-    '
+  title: FormAssembly REST Forms API
+  description: REST API for managing FormAssembly forms, responses, themes, connectors, form elements, and account data. Supports JSON, XML, CSV, and ZIP response formats. OAuth2 authentication is required for all requests. Endpoints vary by deployment edition including Developer Sandbox, FormAssembly.com cloud, and self-hosted Enterprise instances.
   version: 1.0.0
   contact:
     name: FormAssembly Developer Hub
@@ -197,13 +195,15 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
 components:
   schemas:
-    FormList:
+    ErrorResponse:
       type: object
       properties:
-        forms:
-          type: array
-          items:
-            $ref: '#/components/schemas/Form'
+        status:
+          type: string
+          enum:
+          - error
+        message:
+          type: string
     Form:
       type: object
       properties:
@@ -225,6 +225,13 @@ components:
       required:
       - id
       - name
+    FormList:
+      type: object
+      properties:
+        forms:
+          type: array
+          items:
+            $ref: '#/components/schemas/Form'
     SuccessResponse:
       type: object
       properties:
@@ -234,23 +241,7 @@ components:
           - success
         message:
           type: string
-    ErrorResponse:
-      type: object
-      properties:
-        status:
-          type: string
-          enum:
-          - error
-        message:
-          type: string
   parameters:
-    formId:
-      name: formId
-      in: path
-      description: Unique identifier of the form
-      required: true
-      schema:
-        type: integer
     formatJson:
       name: format
       in: path
@@ -262,6 +253,13 @@ components:
         - json
         - xml
         default: json
+    formId:
+      name: formId
+      in: path
+      description: Unique identifier of the form
+      required: true
+      schema:
+        type: integer
   securitySchemes:
     oauth2:
       type: oauth2

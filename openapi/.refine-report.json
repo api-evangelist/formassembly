@@ -1,17 +1,9 @@
 {
   "provider": "formassembly",
   "sources": [
-    "formassembly-admin-api-openapi.yml",
-    "formassembly-aggregates-api-openapi.yml",
-    "formassembly-connectors-api-openapi.yml",
-    "formassembly-form-elements-api-openapi.yml",
-    "formassembly-forms-api-openapi.yml",
-    "formassembly-oauth2-api-openapi.yml",
-    "formassembly-responses-api-openapi.yml",
-    "formassembly-themes-api-openapi.yml"
+    "_original/formassembly-formassembly-api-openapi.yml"
   ],
   "outputs": [
-    "formassembly-admin-api-openapi.yml",
     "formassembly-aggregates-api-openapi.yml",
     "formassembly-connectors-api-openapi.yml",
     "formassembly-form-elements-api-openapi.yml",
@@ -20,9 +12,25 @@
     "formassembly-responses-api-openapi.yml",
     "formassembly-themes-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "formassembly-formassembly-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "formassembly-formassembly-api-openapi.yml: multi-axis tagging (8 tags, 7 first tags, 1.56x duplication over 25 operations) \u2014 split on first tag, 14 operations narrowed",
+    "superseded outputs removed: formassembly-o-auth2-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 7 total)"
+  ],
+  "skipped": [
+    "formassembly-aggregates-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "formassembly-connectors-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "formassembly-form-elements-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "formassembly-forms-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "formassembly-o-auth2-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "formassembly-responses-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "formassembly-themes-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

@@ -1,9 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: FormAssembly REST Admin OAuth2 API
-  description: 'REST API for managing FormAssembly forms, responses, themes, connectors, form elements, and account data. Supports JSON, XML, CSV, and ZIP response formats. OAuth2 authentication is required for all requests. Endpoints vary by deployment edition including Developer Sandbox, FormAssembly.com cloud, and self-hosted Enterprise instances.
-
-    '
+  title: FormAssembly REST O Auth2 API
+  description: REST API for managing FormAssembly forms, responses, themes, connectors, form elements, and account data. Supports JSON, XML, CSV, and ZIP response formats. OAuth2 authentication is required for all requests. Endpoints vary by deployment edition including Developer Sandbox, FormAssembly.com cloud, and self-hosted Enterprise instances.
   version: 1.0.0
   contact:
     name: FormAssembly Developer Hub

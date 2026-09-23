@@ -1,9 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: FormAssembly REST Admin Form Elements API
-  description: 'REST API for managing FormAssembly forms, responses, themes, connectors, form elements, and account data. Supports JSON, XML, CSV, and ZIP response formats. OAuth2 authentication is required for all requests. Endpoints vary by deployment edition including Developer Sandbox, FormAssembly.com cloud, and self-hosted Enterprise instances.
-
-    '
+  title: FormAssembly REST Form Elements API
+  description: REST API for managing FormAssembly forms, responses, themes, connectors, form elements, and account data. Supports JSON, XML, CSV, and ZIP response formats. OAuth2 authentication is required for all requests. Endpoints vary by deployment edition including Developer Sandbox, FormAssembly.com cloud, and self-hosted Enterprise instances.
   version: 1.0.0
   contact:
     name: FormAssembly Developer Hub
@@ -161,15 +159,6 @@ paths:
           description: Element not found
 components:
   schemas:
-    SuccessResponse:
-      type: object
-      properties:
-        status:
-          type: string
-          enum:
-          - success
-        message:
-          type: string
     FormElement:
       type: object
       properties:
@@ -194,6 +183,15 @@ components:
         batch:
           type: string
           description: Batch identifier for bulk operations
+    SuccessResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+          - success
+        message:
+          type: string
   parameters:
     elementId:
       name: elementId
