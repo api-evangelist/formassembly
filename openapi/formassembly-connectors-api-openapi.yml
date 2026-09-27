@@ -177,6 +177,13 @@ paths:
           description: Connector not found
 components:
   parameters:
+    formId:
+      name: formId
+      in: path
+      description: Unique identifier of the form
+      required: true
+      schema:
+        type: integer
     connectorId:
       name: connectorId
       in: path
@@ -202,14 +209,16 @@ components:
       required: true
       schema:
         type: string
-    formId:
-      name: formId
-      in: path
-      description: Unique identifier of the form
-      required: true
-      schema:
-        type: integer
   schemas:
+    SuccessResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+          - success
+        message:
+          type: string
     Connector:
       type: object
       properties:
@@ -239,15 +248,6 @@ components:
         password:
           type: string
           description: Password credential for connector
-    SuccessResponse:
-      type: object
-      properties:
-        status:
-          type: string
-          enum:
-          - success
-        message:
-          type: string
   securitySchemes:
     oauth2:
       type: oauth2

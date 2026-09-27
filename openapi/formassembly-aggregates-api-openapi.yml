@@ -45,6 +45,14 @@ paths:
         '404':
           description: Form not found
 components:
+  parameters:
+    formId:
+      name: formId
+      in: path
+      description: Unique identifier of the form
+      required: true
+      schema:
+        type: integer
   schemas:
     SuccessResponse:
       type: object
@@ -55,14 +63,6 @@ components:
           - success
         message:
           type: string
-  parameters:
-    formId:
-      name: formId
-      in: path
-      description: Unique identifier of the form
-      required: true
-      schema:
-        type: integer
   securitySchemes:
     oauth2:
       type: oauth2

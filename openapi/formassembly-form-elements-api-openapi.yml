@@ -159,6 +159,15 @@ paths:
           description: Element not found
 components:
   schemas:
+    SuccessResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+          - success
+        message:
+          type: string
     FormElement:
       type: object
       properties:
@@ -183,15 +192,6 @@ components:
         batch:
           type: string
           description: Batch identifier for bulk operations
-    SuccessResponse:
-      type: object
-      properties:
-        status:
-          type: string
-          enum:
-          - success
-        message:
-          type: string
   parameters:
     elementId:
       name: elementId

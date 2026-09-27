@@ -142,13 +142,6 @@ components:
       schema:
         type: integer
   schemas:
-    ThemeList:
-      type: object
-      properties:
-        themes:
-          type: array
-          items:
-            $ref: '#/components/schemas/Theme'
     Theme:
       type: object
       properties:
@@ -170,6 +163,13 @@ components:
           - success
         message:
           type: string
+    ThemeList:
+      type: object
+      properties:
+        themes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Theme'
   securitySchemes:
     oauth2:
       type: oauth2
