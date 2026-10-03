@@ -194,33 +194,14 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 components:
-  parameters:
-    formId:
-      name: formId
-      in: path
-      description: Unique identifier of the form
-      required: true
-      schema:
-        type: integer
-    formatJson:
-      name: format
-      in: path
-      description: Response format (json or xml)
-      required: true
-      schema:
-        type: string
-        enum:
-        - json
-        - xml
-        default: json
   schemas:
-    SuccessResponse:
+    ErrorResponse:
       type: object
       properties:
         status:
           type: string
           enum:
-          - success
+          - error
         message:
           type: string
     FormList:
@@ -230,6 +211,15 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Form'
+    SuccessResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+          - success
+        message:
+          type: string
     Form:
       type: object
       properties:
@@ -251,15 +241,25 @@ components:
       required:
       - id
       - name
-    ErrorResponse:
-      type: object
-      properties:
-        status:
-          type: string
-          enum:
-          - error
-        message:
-          type: string
+  parameters:
+    formId:
+      name: formId
+      in: path
+      description: Unique identifier of the form
+      required: true
+      schema:
+        type: integer
+    formatJson:
+      name: format
+      in: path
+      description: Response format (json or xml)
+      required: true
+      schema:
+        type: string
+        enum:
+        - json
+        - xml
+        default: json
   securitySchemes:
     oauth2:
       type: oauth2

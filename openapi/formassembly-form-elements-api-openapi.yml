@@ -158,16 +158,15 @@ paths:
         '404':
           description: Element not found
 components:
+  parameters:
+    elementId:
+      name: elementId
+      in: path
+      description: Unique identifier of the form element
+      required: true
+      schema:
+        type: integer
   schemas:
-    SuccessResponse:
-      type: object
-      properties:
-        status:
-          type: string
-          enum:
-          - success
-        message:
-          type: string
     FormElement:
       type: object
       properties:
@@ -192,14 +191,15 @@ components:
         batch:
           type: string
           description: Batch identifier for bulk operations
-  parameters:
-    elementId:
-      name: elementId
-      in: path
-      description: Unique identifier of the form element
-      required: true
-      schema:
-        type: integer
+    SuccessResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+          - success
+        message:
+          type: string
   securitySchemes:
     oauth2:
       type: oauth2

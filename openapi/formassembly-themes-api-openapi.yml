@@ -133,27 +133,7 @@ paths:
         '404':
           description: Theme not found
 components:
-  parameters:
-    themeId:
-      name: themeId
-      in: path
-      description: Unique identifier of the theme
-      required: true
-      schema:
-        type: integer
   schemas:
-    Theme:
-      type: object
-      properties:
-        id:
-          type: integer
-          description: Unique identifier of the theme
-        name:
-          type: string
-          description: Display name of the theme
-        css_data:
-          type: string
-          description: CSS stylesheet content of the theme
     SuccessResponse:
       type: object
       properties:
@@ -170,6 +150,26 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Theme'
+    Theme:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Unique identifier of the theme
+        name:
+          type: string
+          description: Display name of the theme
+        css_data:
+          type: string
+          description: CSS stylesheet content of the theme
+  parameters:
+    themeId:
+      name: themeId
+      in: path
+      description: Unique identifier of the theme
+      required: true
+      schema:
+        type: integer
   securitySchemes:
     oauth2:
       type: oauth2

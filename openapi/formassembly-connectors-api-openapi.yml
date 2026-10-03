@@ -176,39 +176,6 @@ paths:
         '404':
           description: Connector not found
 components:
-  parameters:
-    formId:
-      name: formId
-      in: path
-      description: Unique identifier of the form
-      required: true
-      schema:
-        type: integer
-    connectorId:
-      name: connectorId
-      in: path
-      description: Unique identifier of the connector
-      required: true
-      schema:
-        type: integer
-    formatJson:
-      name: format
-      in: path
-      description: Response format (json or xml)
-      required: true
-      schema:
-        type: string
-        enum:
-        - json
-        - xml
-        default: json
-    connectorName:
-      name: connectorName
-      in: path
-      description: Name of the connector type to create
-      required: true
-      schema:
-        type: string
   schemas:
     SuccessResponse:
       type: object
@@ -248,6 +215,39 @@ components:
         password:
           type: string
           description: Password credential for connector
+  parameters:
+    connectorId:
+      name: connectorId
+      in: path
+      description: Unique identifier of the connector
+      required: true
+      schema:
+        type: integer
+    formId:
+      name: formId
+      in: path
+      description: Unique identifier of the form
+      required: true
+      schema:
+        type: integer
+    connectorName:
+      name: connectorName
+      in: path
+      description: Name of the connector type to create
+      required: true
+      schema:
+        type: string
+    formatJson:
+      name: format
+      in: path
+      description: Response format (json or xml)
+      required: true
+      schema:
+        type: string
+        enum:
+        - json
+        - xml
+        default: json
   securitySchemes:
     oauth2:
       type: oauth2
