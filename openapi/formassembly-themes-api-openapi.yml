@@ -134,6 +134,13 @@ paths:
           description: Theme not found
 components:
   schemas:
+    ThemeList:
+      type: object
+      properties:
+        themes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Theme'
     SuccessResponse:
       type: object
       properties:
@@ -143,13 +150,6 @@ components:
           - success
         message:
           type: string
-    ThemeList:
-      type: object
-      properties:
-        themes:
-          type: array
-          items:
-            $ref: '#/components/schemas/Theme'
     Theme:
       type: object
       properties:

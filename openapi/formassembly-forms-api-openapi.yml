@@ -195,15 +195,6 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
 components:
   schemas:
-    ErrorResponse:
-      type: object
-      properties:
-        status:
-          type: string
-          enum:
-          - error
-        message:
-          type: string
     FormList:
       type: object
       properties:
@@ -241,6 +232,15 @@ components:
       required:
       - id
       - name
+    ErrorResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+          - error
+        message:
+          type: string
   parameters:
     formId:
       name: formId

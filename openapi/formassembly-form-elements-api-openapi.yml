@@ -158,14 +158,6 @@ paths:
         '404':
           description: Element not found
 components:
-  parameters:
-    elementId:
-      name: elementId
-      in: path
-      description: Unique identifier of the form element
-      required: true
-      schema:
-        type: integer
   schemas:
     FormElement:
       type: object
@@ -200,6 +192,14 @@ components:
           - success
         message:
           type: string
+  parameters:
+    elementId:
+      name: elementId
+      in: path
+      description: Unique identifier of the form element
+      required: true
+      schema:
+        type: integer
   securitySchemes:
     oauth2:
       type: oauth2
