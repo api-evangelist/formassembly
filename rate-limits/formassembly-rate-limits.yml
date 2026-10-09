@@ -1,3 +1,7 @@
+# Provenance stamped 2026-10-07 (roadmap#943): written by an API Evangelist sweep (undated — the file carries no date and git cannot supply one), not
+# harvested from the provider. `method: generated` so the economics campaign may replace it with a
+# dated, verbatim transcription; every figure below is unverified until it does.
+method: generated
 name: FormAssembly API Rate Limits
 description: FormAssembly does not publish explicit numeric rate limits in their public API documentation. The REST API uses OAuth2 bearer tokens for authentication and is available across all plan tiers. Submission volume is described as unlimited on all current Atlas plans. Rate limiting details, if any, are enforced at the infrastructure level and may be addressed in enterprise support agreements. Access token lifespan is 10 years with refresh token support.
 specificationVersion: '0.1'

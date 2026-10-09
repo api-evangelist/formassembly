@@ -1,3 +1,7 @@
+# Provenance stamped 2026-10-07 (roadmap#943): written by an API Evangelist sweep (undated — the file carries no date and git cannot supply one), not
+# harvested from the provider. `method: generated` so the economics campaign may replace it with a
+# dated, verbatim transcription; every figure below is unverified until it does.
+method: generated
 name: FormAssembly Plans and Pricing
 description: FormAssembly offers four plan tiers under the Atlas platform, targeting individuals, small businesses, enterprises, and government agencies. All plans include unlimited forms and responses. The REST API is available across all plans. Higher tiers unlock advanced compliance features, multi-user access, Salesforce integrations, and government-grade FedRAMP authorization.
 specificationVersion: '0.1'
@@ -74,3 +78,34 @@ plans:
       - FedRAMP-authorized (High-Impact level)
       - Government-grade security controls
       - Salesforce and other integrations
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - negotiated
+  units: []
+  plans:
+  - name: Atlas Explorer
+    access: freemium
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Atlas Team
+    access: paid
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Atlas Enterprise
+    access: enterprise
+    model: negotiated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Gov Cloud
+    access: enterprise
+    model: negotiated
+    model_how: derived
+    units: []
+    periods: []
