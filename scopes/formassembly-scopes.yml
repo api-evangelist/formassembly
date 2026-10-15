@@ -1,13 +1,52 @@
-generated: '2026-07-11'
-method: derived
-source: openapi/formassembly-formassembly-api-openapi.yml
-docs: https://github.com/FormAssembly/formassembly-api
-note: FormAssembly's OAuth2 API documents an authorization-code flow whose token response includes a scope field, but publishes no named scopes; access tokens are user-based with permissions tied to the authorizing user's account (https://github.com/FormAssembly/formassembly-api).
+generated: '2026-10-14'
+method: none
+source: openapi/formassembly-aggregates-api-openapi.yml, openapi/formassembly-connectors-api-openapi.yml,
+  openapi/formassembly-form-elements-api-openapi.yml, openapi/formassembly-forms-api-openapi.yml,
+  openapi/formassembly-oauth2-api-openapi.yml, openapi/formassembly-responses-api-openapi.yml,
+  openapi/formassembly-themes-api-openapi.yml
 schemes:
 - name: oauth2
-  source: openapi/formassembly-formassembly-api-openapi.yml
+  source: openapi/formassembly-aggregates-api-openapi.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://app.formassembly.com/oauth/login
+    tokenUrl: https://app.formassembly.com/oauth/access_token
+- name: oauth2
+  source: openapi/formassembly-connectors-api-openapi.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://app.formassembly.com/oauth/login
+    tokenUrl: https://app.formassembly.com/oauth/access_token
+- name: oauth2
+  source: openapi/formassembly-form-elements-api-openapi.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://app.formassembly.com/oauth/login
+    tokenUrl: https://app.formassembly.com/oauth/access_token
+- name: oauth2
+  source: openapi/formassembly-forms-api-openapi.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://app.formassembly.com/oauth/login
+    tokenUrl: https://app.formassembly.com/oauth/access_token
+- name: oauth2
+  source: openapi/formassembly-oauth2-api-openapi.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://app.formassembly.com/oauth/login
+    tokenUrl: https://app.formassembly.com/oauth/access_token
+- name: oauth2
+  source: openapi/formassembly-responses-api-openapi.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://app.formassembly.com/oauth/login
+    tokenUrl: https://app.formassembly.com/oauth/access_token
+- name: oauth2
+  source: openapi/formassembly-themes-api-openapi.yml
   flows:
   - flow: authorizationCode
     authorizationUrl: https://app.formassembly.com/oauth/login
     tokenUrl: https://app.formassembly.com/oauth/access_token
 scopes: []
+note: The OAuth2 security scheme(s) in the OpenAPI declare no scopes, and no security requirement
+  references one.
