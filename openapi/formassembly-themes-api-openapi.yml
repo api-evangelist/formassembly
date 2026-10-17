@@ -134,22 +134,6 @@ paths:
           description: Theme not found
 components:
   schemas:
-    ThemeList:
-      type: object
-      properties:
-        themes:
-          type: array
-          items:
-            $ref: '#/components/schemas/Theme'
-    SuccessResponse:
-      type: object
-      properties:
-        status:
-          type: string
-          enum:
-          - success
-        message:
-          type: string
     Theme:
       type: object
       properties:
@@ -162,6 +146,22 @@ components:
         css_data:
           type: string
           description: CSS stylesheet content of the theme
+    SuccessResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+          - success
+        message:
+          type: string
+    ThemeList:
+      type: object
+      properties:
+        themes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Theme'
   parameters:
     themeId:
       name: themeId
