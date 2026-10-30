@@ -64,45 +64,189 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-FormAssembly is an enterprise form and data collection platform with a REST API for managing forms, collecting submissions, handling Salesforce integrations, and building compliant data collection workflows. The platform serves over 5,500 organizations and offers deployment options including cloud (FormAssembly.com), self-hosted Enterprise, and FedRAMP-authorized Government Cloud.
+FormAssembly is an enterprise form and data collection platform with a REST API for managing forms, exporting submission data, handling Salesforce integrations, and building compliant data collection workflows. The API supports OAuth2 authentication and enables programmatic access to forms, responses, themes, connectors, and account components across cloud, enterprise, and government deployment environments.
 
-## API
+**Areas:** Forms · Data Collection · Salesforce · Enterprise · HIPAA · Compliance · Government · FedRAMP · Workflows · E-Signature
 
-The FormAssembly REST API (`/api_v1/`) supports OAuth2 authentication and provides endpoints for:
+## FormAssembly on APIs.io
 
-- **Forms** — create, view, edit, delete, and list forms; admin index for Enterprise
-- **Responses** — export submissions in CSV, JSON, XML, or ZIP format with date range and pagination filtering
-- **Connectors** — manage integration connectors including Salesforce mappings
-- **Themes** — manage CSS themes applied to forms
-- **Form Elements** — manage individual form field definitions
+Everything profiled for FormAssembly is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/formassembly/](https://apis.io/providers/formassembly/)** — or go straight to one of the APIs or properties below.
 
-Base URLs vary by edition:
+### APIs (7)
 
-| Edition | Base URL |
-|---------|----------|
-| Developer Sandbox | `https://developer.formassembly.com/api_v1/` |
-| FormAssembly.com | `https://app.formassembly.com/api_v1/` |
-| Enterprise | `https://{instance_name}.tfaforms.net/api_v1/` |
+- [FormAssembly Aggregates API](https://apis.io/apis/formassembly/formassembly-aggregates-api/) — Manage aggregated statistics and counters for forms
+- [FormAssembly Connectors API](https://apis.io/apis/formassembly/formassembly-connectors-api/) — Manage integrations (Salesforce, etc.) attached to forms
+- [FormAssembly Form Elements API](https://apis.io/apis/formassembly/formassembly-form-elements-api/) — Manage custom reusable form element types
+- [FormAssembly Forms API](https://apis.io/apis/formassembly/formassembly-forms-api/) — Create, read, update, and delete form definitions
+- [FormAssembly Responses API](https://apis.io/apis/formassembly/formassembly-responses-api/) — Export and manage form submission responses
+- [FormAssembly Themes API](https://apis.io/apis/formassembly/formassembly-themes-api/) — Manage CSS themes applied to forms
+- [FormAssembly O Auth2 API](https://apis.io/apis/formassembly/formassembly-oauth2-api/) — OAuth2 authorization code flow for obtaining access tokens
 
-## Authentication
+### Published properties
 
-OAuth2 protocol. Register at the FormAssembly Developer Hub to obtain a `CLIENT_ID` and `CLIENT_SECRET`. Access tokens are valid for 10 years; refresh tokens enable renewal.
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## Plans
+#### MCP servers (1)
 
-- **Atlas Explorer** — individuals, 1 user, 3 workflows, unlimited forms/responses
-- **Atlas Team** — small businesses, 8 users, unlimited workflows, custom HTML/CSS/JS
-- **Atlas Enterprise** — large organizations, HIPAA compliance with BAA, advanced security
-- **Gov Cloud** — U.S. government agencies, FedRAMP High authorization
+Model Context Protocol servers that expose the API to agents.
 
-## Resources
+- [formassembly](https://apis.io/servers/formassembly/formassembly/)
 
-- Website: https://www.formassembly.com/
-- API Documentation: https://help.formassembly.com/help/working-with-the-formassembly-api
-- Developer Hub: https://developer.formassembly.com/
-- GitHub: https://github.com/formassembly
-- Status: https://status.formassembly.com/
-- Pricing: https://www.formassembly.com/pricing/
-- Blog: https://www.formassembly.com/blog/
-- LinkedIn: https://www.linkedin.com/company/formassembly
-- X: https://twitter.com/FormAssembly
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Formassembly Agentic Access](https://apis.io/agentic-access/formassembly/formassembly-agentic-access/)
+
+#### JSON Schema (4)
+
+The data models the API reads and writes.
+
+- [FormAssembly Connector](https://apis.io/schemas/formassembly/formassembly-connector/)
+- [FormAssembly Form](https://apis.io/schemas/formassembly/formassembly-form/)
+- [FormAssembly Response](https://apis.io/schemas/formassembly/formassembly-response/)
+- [FormAssembly Theme](https://apis.io/schemas/formassembly/formassembly-theme/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Formassembly Context](https://apis.io/jsonld/formassembly/formassembly-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Formassembly Vocabulary](https://apis.io/vocabularies/formassembly/formassembly-vocabulary/)
+
+#### Examples (3)
+
+Example requests and responses.
+
+- [Formassembly Connector Example](https://apis.io/examples/formassembly/formassembly-connector-example/)
+- [Formassembly Form Example](https://apis.io/examples/formassembly/formassembly-form-example/)
+- [Formassembly Response Export Example](https://apis.io/examples/formassembly/formassembly-response-export-example/)
+
+#### Collections (16)
+
+Postman and Open Collection request collections.
+
+- [FormAssembly REST Admin API](https://apis.io/collections/formassembly/open-formassembly-admin-api/)
+- [FormAssembly REST Admin Aggregates API](https://apis.io/collections/formassembly/open-formassembly-aggregates-api/)
+- [FormAssembly REST Admin Connectors API](https://apis.io/collections/formassembly/open-formassembly-connectors-api/)
+- [FormAssembly REST Admin Form Elements API](https://apis.io/collections/formassembly/open-formassembly-form-elements-api/)
+- [FormAssembly REST Admin Forms API](https://apis.io/collections/formassembly/open-formassembly-forms-api/)
+- [FormAssembly REST Admin OAuth2 API](https://apis.io/collections/formassembly/open-formassembly-oauth2-api/)
+- [FormAssembly REST Admin Responses API](https://apis.io/collections/formassembly/open-formassembly-responses-api/)
+- [FormAssembly REST Admin Themes API](https://apis.io/collections/formassembly/open-formassembly-themes-api/)
+- [FormAssembly REST Admin API](https://apis.io/collections/formassembly/postman-formassembly-admin-api/)
+- [FormAssembly REST Admin Aggregates API](https://apis.io/collections/formassembly/postman-formassembly-aggregates-api/)
+- [FormAssembly REST Admin Connectors API](https://apis.io/collections/formassembly/postman-formassembly-connectors-api/)
+- [FormAssembly REST Admin Form Elements API](https://apis.io/collections/formassembly/postman-formassembly-form-elements-api/)
+- [FormAssembly REST Admin Forms API](https://apis.io/collections/formassembly/postman-formassembly-forms-api/)
+- [FormAssembly REST Admin OAuth2 API](https://apis.io/collections/formassembly/postman-formassembly-oauth2-api/)
+- [FormAssembly REST Admin Responses API](https://apis.io/collections/formassembly/postman-formassembly-responses-api/)
+- [FormAssembly REST Admin Themes API](https://apis.io/collections/formassembly/postman-formassembly-themes-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [FormAssembly — jsonschema rules](https://apis.io/rules/formassembly/formassembly-jsonschema-spectral-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Formassembly Authentication](https://apis.io/security/formassembly/formassembly-authentication/)
+- [Formassembly Domain Security](https://apis.io/security/formassembly/formassembly-domain-security/)
+- [Formassembly Trust Center](https://apis.io/security/formassembly/formassembly-trust-center/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Formassembly Scopes](https://apis.io/scopes/formassembly/formassembly-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Formassembly Plans Pricing](https://apis.io/plans/formassembly/formassembly-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Formassembly Rate Limits](https://apis.io/rate-limits/formassembly/formassembly-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Formassembly Finops](https://apis.io/finops/formassembly/formassembly-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.formassembly.com/)
+- [Documentation](https://help.formassembly.com/help/working-with-the-formassembly-api)
+- [Pricing](https://www.formassembly.com/pricing/)
+- [Blog](https://www.formassembly.com/blog/)
+- [Status](https://status.formassembly.com/)
+
+## API Evangelist rating
+
+**Kin Score 40.1** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 68.3 |
+| Contract quality | 54.8 |
+| Contract governance | 23.5 |
+| Operational transparency | 28.9 |
+| Developer ergonomics | 28.6 |
+| Access clarity | 26.3 |
+
+**Agent readiness 47.9** — agent-ready (gated down from agent-native)
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | verified |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+| Pagination Ratio | — |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 31.4** — Government & Public Sector
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/formassembly/](https://apis.io/providers/formassembly/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for FormAssembly: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/formassembly/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
